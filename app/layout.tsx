@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | SeedPix",
   },
   description:
-    "SeedPix is a free AI photo editor that lets you edit photos by typing. Remove objects, restore old photos, remove watermarks, upscale to 4K, and more. No Photoshop needed.",
+    "Free AI photo editor online. Remove objects, restore old photos, remove watermarks, upscale to 4K — edit by typing, no Photoshop needed.",
   keywords: [
     "ai photo editor",
     "ai image editor",
@@ -28,14 +28,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-size='18' font-weight='bold' text-anchor='middle' fill='white' font-family='sans-serif'%3ES%3C/text%3E%3C/svg%3E",
+  },
   openGraph: {
     title: "SeedPix - AI Photo Editor | Edit Photos Online Free",
     description:
-      "Edit photos seamlessly just by typing. Remove objects, restore old photos, upscale, and more. Free AI photo editing tool online.",
+      "Free AI photo editor online. Remove objects, restore old photos, remove watermarks, upscale to 4K — edit by typing, no Photoshop needed.",
     type: "website",
     url: "/",
     siteName: "SeedPix",
     locale: "en_US",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SeedPix AI Photo Editor" }],
   },
   robots: {
     index: true,

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PhotoEditor from "@/components/PhotoEditor";
+import HomeSeoContent from "@/components/HomeSeoContent";
 import { tools } from "@/lib/tools";
 import { landings } from "@/lib/landings";
 import {
@@ -29,12 +30,51 @@ export default function HomePage() {
     },
   };
 
+  // 首页 FAQ（单一数据源：同时驱动可见 FAQ 渲染与 FAQPage JSON-LD）
+  const homeFaqs = [
+    {
+      q: "Do I need to sign up to use the SeedPix AI photo editor?",
+      a: "No. You can open the editor and try several edits without creating an account. Signing up simply unlocks your free daily credits and lets you save your work.",
+    },
+    {
+      q: "What file formats does the AI photo editor accept?",
+      a: "SeedPix accepts JPG, PNG, and WebP files up to 20 MB. PNG is best when you need a transparent background.",
+    },
+    {
+      q: "Will my edited photo have a watermark?",
+      a: "No. Every image you download from SeedPix is free of watermarks and can be used commercially, so you can use the results in products, listings, and marketing.",
+    },
+    {
+      q: "Can I remove an object from a photo without Photoshop?",
+      a: "Yes - that is one of the most popular SeedPix tools. Upload the photo, click Remove objects, and the AI erases the unwanted element and fills the gap with realistic background.",
+    },
+    {
+      q: "How is SeedPix different from other AI photo editors?",
+      a: "SeedPix combines a free-form text editor with over one hundred dedicated one-click tools in a single place, so you can remove objects, remove backgrounds, restore old photos, upscale to 4K, and remove AI filters without switching apps or paying multiple subscriptions.",
+    },
+  ];
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: homeFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
       {/* 首页 SoftwareApplication JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }}
+      />
+      {/* 首页 FAQPage JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       {/* Hero */}
       <section className="bg-gradient-to-b from-blue-50/60 to-white">
@@ -187,6 +227,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* SEO 正文区 —— 补足首页内容到 1200+ 词 */}
+      <HomeSeoContent faqs={homeFaqs} />
     </>
   );
 }
