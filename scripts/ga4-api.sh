@@ -75,9 +75,12 @@ case "${1:-}" in
   sources)
     ga4_query "{\"dateRanges\":[$(date_range 30)],\"dimensions\":[{\"name\":\"sessionDefaultChannelGroup\"}],\"metrics\":[{\"name\":\"sessions\"},{\"name\":\"totalUsers\"}],\"orderBys\":[{\"metric\":{\"metricName\":\"sessions\"},\"desc\":true}]}" | fmt_rows
     ;;
-  # 实时（最近 30 分钟）
+  # 实时（最近 30 分钟活跃用户）
   realtime)
-    ga4_query "{\"dimensions\":[{\"name\":\"unifiedScreenName\"}],\"metrics\":[{\"name\":\"activeUsers\"}]}" | fmt_rows
+    token=$(get_token)
+    curl -s --max-time 30 -x "http://127.0.0.1:7897" -X POST "$API/properties/$PROPERTY_ID:runRealtimeReport" \
+      -H "Authorization: Bearer $token" -H "Content-Type: application/json" \
+      --data-raw '{"dimensions":[{"name":"unifiedScreenName"}],"metrics":[{"name":"activeUsers"}]}' | fmt_rows
     ;;
   *) echo "用法: ga4-api.sh {overview|pages|events|sources|realtime}" ;;
 esac
