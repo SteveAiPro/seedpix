@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
 import "./globals.css";
 
 // GA4 Measurement ID（在 .env.local / Vercel 环境变量配置 NEXT_PUBLIC_GA_ID）
@@ -101,32 +102,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
-          <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
-            <Link href="/" className="flex items-center gap-1.5 text-lg font-bold text-neutral-900">
-              <span className="text-blue-600">✦</span> SeedPix
-            </Link>
-            <nav className="hidden items-center gap-5 text-sm text-neutral-600 md:flex">
-              <Link href="/" className="hover:text-neutral-900">AI Photo Editor</Link>
-              <Link href="/ai-photo-tools" className="hover:text-neutral-900">Tools</Link>
-              <Link href="/pricing" className="hover:text-neutral-900">Pricing</Link>
-            </nav>
-            <div className="flex items-center gap-2 text-sm">
-              <Link
-                href="/sign-in"
-                className="rounded-lg px-3 py-1.5 text-neutral-700 hover:bg-neutral-100"
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/sign-up"
-                className="rounded-lg bg-blue-600 px-3 py-1.5 font-medium text-white hover:bg-blue-700"
-              >
-                Get 5 Free Credits
-              </Link>
-            </div>
-          </div>
-        </header>
+        <SiteHeader />
         <main>{children}</main>
         <footer className="border-t border-neutral-200 bg-neutral-50">
           <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-4">
