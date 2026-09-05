@@ -9,8 +9,24 @@ export default function KeywordLanding({ landing }: { landing: KeywordLandingDat
   const linkedTools = tools.filter((t) => landing.toolSlugs.includes(t.slug));
   const otherLandings = landings.filter((l) => l.slug !== landing.slug);
 
+  // FAQPage JSON-LD（页面真实渲染 FAQ 区块，与内容一致）
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: landing.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="mx-auto max-w-6xl px-4">
+      {/* FAQPage JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="py-10 text-center md:py-14">
         <h1 className="mx-auto max-w-3xl text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">

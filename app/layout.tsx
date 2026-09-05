@@ -5,8 +5,11 @@ import "./globals.css";
 
 // GA4 Measurement ID（在 .env.local / Vercel 环境变量配置 NEXT_PUBLIC_GA_ID）
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+// 站点基准 URL（用于把相对 canonical 解析为绝对 URL，统一 https://seedpix.org）
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://seedpix.org";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "SeedPix - AI Photo Editor | Edit Photos Online Free",
     template: "%s | SeedPix",
@@ -22,11 +25,21 @@ export const metadata: Metadata = {
     "image upscaler",
     "filter remover",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "SeedPix - AI Photo Editor | Edit Photos Online Free",
     description:
       "Edit photos seamlessly just by typing. Remove objects, restore old photos, upscale, and more. Free AI photo editing tool online.",
     type: "website",
+    url: "/",
+    siteName: "SeedPix",
+    locale: "en_US",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -57,6 +70,33 @@ export default function RootLayout({
         )}
       </head>
       <body>
+        {/* 全站 JSON-LD：WebSite + Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": `${SITE_URL}/#website`,
+                  url: SITE_URL,
+                  name: "SeedPix",
+                  description:
+                    "Free AI photo editor. Edit photos by typing - remove objects, restore, upscale, remove watermarks.",
+                  inLanguage: "en",
+                  publisher: { "@id": `${SITE_URL}/#organization` },
+                },
+                {
+                  "@type": "Organization",
+                  "@id": `${SITE_URL}/#organization`,
+                  name: "SeedPix",
+                  url: SITE_URL,
+                },
+              ],
+            }),
+          }}
+        />
         <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
           <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
             <Link href="/" className="flex items-center gap-1.5 text-lg font-bold text-neutral-900">

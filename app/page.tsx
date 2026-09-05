@@ -13,8 +13,29 @@ import {
 export default function HomePage() {
   const featured = tools.slice(0, 8);
 
+  const appJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "SeedPix",
+    applicationCategory: "MultimediaApplication",
+    operatingSystem: "Web",
+    url: "https://seedpix.org/",
+    description:
+      "Free AI photo editor. Edit photos by typing - remove objects, restore old photos, remove watermarks, upscale to 4K, and more.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  };
+
   return (
     <>
+      {/* 首页 SoftwareApplication JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-b from-blue-50/60 to-white">
         <div className="mx-auto max-w-6xl px-4 py-14 text-center md:py-20">
