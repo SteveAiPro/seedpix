@@ -8,6 +8,16 @@ export const metadata: Metadata = {
   title: "100+ AI Photo Tools",
   description:
     "Explore SeedPix's full collection of AI photo tools: remove objects, remove backgrounds, restore old photos, upscale to 4K, remove watermarks, edit text, and more. All free to start.",
+  alternates: { canonical: "/ai-photo-tools" },
+  openGraph: {
+    title: "100+ AI Photo Tools | SeedPix",
+    description:
+      "Explore SeedPix's full collection of AI photo tools: remove objects, remove backgrounds, restore old photos, upscale to 4K, remove watermarks, edit text, and more. All free to start.",
+    type: "website",
+    url: "/ai-photo-tools",
+    siteName: "SeedPix",
+    locale: "en_US",
+  },
 };
 
 export default function ToolsPage() {

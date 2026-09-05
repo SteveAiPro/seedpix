@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Pricing - Simple, Transparent Credit Packages",
   description:
     "Simple, transparent pricing. Choose the package that fits your needs. Free 5 credits to start, no subscription, no credit card needed.",
+  alternates: { canonical: "/pricing" },
 };
 
 const PLANS = [
