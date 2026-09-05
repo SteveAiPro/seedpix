@@ -88,13 +88,18 @@ case "${1:-}" in
     gsc_get "/sites/$SITE_URL/sitemaps" | "$NODE_BIN" -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{const j=JSON.parse(d);(j.sitemap||[]).forEach(s=>{console.log(s.path);console.log("   submitted:",(s.contents||[]).map(c=>c.submitted).join("/"),"indexed:",(s.contents||[]).map(c=>c.indexed).join("/"),"errors:",s.errors,"isPending:",s.isPending)})})'
     ;;
   inspect)
-    local url="${2:?用法: gsc-api.sh inspect <url>}"
-    gsc_post "/sites/$SITE_URL/urlInspection/index:inspect" "{\"inspectionUrl\":\"$url\",\"siteUrl\":\"$SITE_URL\"}" | \
-      "$NODE_BIN" -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{const j=JSON.parse(d);const r=(j.inspectionResult||{});console.log(JSON.stringify({indexStatus:(r.indexStatusResult||{}).coverageState,pageFetch:(r.pageFetchResult||{}).fetchState,canonical:r.canonical,indexingState:(r.indexStatusResult||{}).indexingState},null,2))})'
+    # URL Inspection 用独立 base（v1），与 sitemap/searchAnalytics(v3) 不同
+    url="${2:?用法: gsc-api.sh inspect <url>}"
+    token=$(get_token)
+    curl -s --max-time 30 -x "http://127.0.0.1:7897" -X POST \
+      "https://searchconsole.googleapis.com/v1/urlInspection/index:inspect" \
+      -H "Authorization: Bearer $token" -H "Content-Type: application/json" \
+      --data-raw "{\"inspectionUrl\":\"$url\",\"siteUrl\":\"$SITE_URL\"}" | \
+      "$NODE_BIN" -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{const j=JSON.parse(d);if(j.error){console.error("API_ERROR:",j.error.message||JSON.stringify(j.error));process.exit(1)}const r=(j.inspectionResult||{});console.log(JSON.stringify({indexStatus:(r.indexStatusResult||{}).coverageState,pageFetch:(r.pageFetchResult||{}).fetchState,canonical:r.canonical,indexingState:(r.indexStatusResult||{}).indexingState},null,2))})'
     ;;
   queries)
-    local today=$(date +%Y-%m-%d)
-    local start=$("$NODE_BIN" -e 'const d=new Date(Date.now()-28*864e5);console.log(d.toISOString().slice(0,10))')
+    today=$(date +%Y-%m-%d)
+    start=$("$NODE_BIN" -e 'const d=new Date(Date.now()-28*864e5);console.log(d.toISOString().slice(0,10))')
     gsc_post "/sites/$SITE_URL/searchAnalytics/query" "{\"startDate\":\"$start\",\"endDate\":\"$today\",\"dimensions\":[\"query\"],\"rowLimit\":25}" | \
       "$NODE_BIN" -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{const j=JSON.parse(d);(j.rows||[]).forEach(r=>console.log(`${r.clicks}\t${r.impressions}\t${(r.ctr*100).toFixed(1)}%\t${r.position.toFixed(1)}\t${r.keys[0]}`))})'
     ;;
