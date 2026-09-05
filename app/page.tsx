@@ -246,6 +246,7 @@ export default function HomePage() {
                     title={tool.title.split(" - ")[0]}
                     description={tool.shortDescription}
                     aspect="4 / 3"
+                    autoPlay
                   />
                   <Link
                     href={`/${tool.slug}`}
