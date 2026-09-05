@@ -34,15 +34,30 @@ export default function SiteHeader() {
         return;
       }
       setEmail(user.email ?? null);
-      // 查 users 表拿 is_admin + credits（受 admin RLS 控制，普通用户只能查自己）
+      // 普通 anon 查询只查 credits（自己读自己，RLS 允许）
       const { data: profile } = await supabase
         .from("users")
-        .select("is_admin, credits")
+        .select("credits")
         .eq("id", user.id)
         .single();
       if (profile) {
-        setIsAdmin(!!profile.is_admin);
         setCredits(typeof profile.credits === "number" ? profile.credits : null);
+      }
+      // is_admin 走服务端 API 拿（避开 RLS 循环）
+      try {
+        const { data: session } = await supabase.auth.getSession();
+        const token = session?.session?.access_token;
+        if (token) {
+          const res = await fetch("/api/me", {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+          if (res.ok) {
+            const me = await res.json();
+            if (typeof me.is_admin === "boolean") setIsAdmin(me.is_admin);
+          }
+        }
+      } catch {
+        // 静默失败：is_admin 默认 false
       }
       setLoading(false);
     }
