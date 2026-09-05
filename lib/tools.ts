@@ -1053,3 +1053,22 @@ export function getToolsByCategory(category: string): ToolPageData[] {
 export function getCategories(): string[] {
   return [...new Set(tools.map((t) => t.category))];
 }
+
+/**
+ * 返回工具的封面示例图 URL（供首页/卡片复用）。
+ * 优先取第一个 demo 的 afterImage，其次单图 image，最后 beforeImage。
+ */
+export function getToolCover(tool: ToolPageData): string | undefined {
+  const d = tool.demos?.[0];
+  if (!d) return undefined;
+  return d.afterImage || d.image || d.beforeImage || undefined;
+}
+
+/** 返回工具的第一对 before/after 示例图（做成滑块/对比用）。 */
+export function getToolBeforeAfter(
+  tool: ToolPageData,
+): { before?: string; after?: string } | undefined {
+  const d = tool.demos?.[0];
+  if (!d) return undefined;
+  return { before: d.beforeImage || d.image, after: d.afterImage || d.image };
+}
