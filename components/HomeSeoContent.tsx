@@ -43,6 +43,26 @@ const features = [
     title: "Remove AI filters",
     text: "Take matcha, anime, and other AI filter effects off a photo and restore the realistic original underneath.",
   },
+  {
+    href: "/ai-photo-generator",
+    title: "Generate photos from text",
+    text: "Describe the picture you want and the AI renders a photorealistic image from scratch — no camera, no stock photo, no design skills.",
+  },
+  {
+    href: "/text-to-image",
+    title: "Turn text into images",
+    text: "Type a scene, style, or product idea and get a finished image in seconds. Every download is watermark-free and free for commercial use.",
+  },
+  {
+    href: "/ai-portrait-generator",
+    title: "Create AI portraits",
+    text: "Generate studio-quality headshots and character portraits from a short description, with natural skin, hair, and lighting.",
+  },
+  {
+    href: "/photo-text-editor",
+    title: "Rewrite text on a photo",
+    text: "Change signs, labels, and captions inside a photo. The AI swaps the words and matches the original font, angle, and lighting.",
+  },
 ];
 
 export default function HomeSeoContent({

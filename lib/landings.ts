@@ -13,6 +13,11 @@ export interface KeywordLandingData {
   sections: { heading: string; paragraphs: string[] }[];
   /** FAQ 区块（长尾词收割机） */
   faqs: { question: string; answer: string }[];
+  /**
+   * 该页内容最后一次实质性修改的日期（YYYY-MM-DD）。
+   * 用于 sitemap 的 lastmod；不填则回退到 CONTENT_BASELINE。
+   */
+  updatedAt?: string;
 }
 
 export const landings: KeywordLandingData[] = [

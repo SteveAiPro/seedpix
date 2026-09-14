@@ -105,7 +105,7 @@ export default function RootLayout({
         <SiteHeader />
         <main>{children}</main>
         <footer className="border-t border-neutral-200 bg-neutral-50">
-          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-4">
+          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-5">
             <div>
               <p className="mb-2 text-sm font-semibold text-neutral-900">SeedPix</p>
               <p className="text-xs leading-relaxed text-neutral-500">
@@ -119,6 +119,7 @@ export default function RootLayout({
                 <li><Link href="/remove-object-from-photo" className="hover:text-neutral-900">Remove Objects</Link></li>
                 <li><Link href="/background-remover" className="hover:text-neutral-900">Background Remover</Link></li>
                 <li><Link href="/edit-text-in-image" className="hover:text-neutral-900">Edit Text in Image</Link></li>
+                <li><Link href="/photo-text-editor" className="hover:text-neutral-900">Photo Text Editor</Link></li>
               </ul>
             </div>
             <div>
@@ -136,6 +137,14 @@ export default function RootLayout({
                 <li><Link href="/gemini-watermark-remover" className="hover:text-neutral-900">Gemini Watermark Remover</Link></li>
                 <li><Link href="/remove-person-from-photo" className="hover:text-neutral-900">Remove Person from Photo</Link></li>
                 <li><Link href="/ai-photo-to-real" className="hover:text-neutral-900">AI Photo to Real</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p className="mb-2 text-sm font-semibold text-neutral-900">Generate Tools</p>
+              <ul className="space-y-1.5 text-xs text-neutral-500">
+                <li><Link href="/text-to-image" className="hover:text-neutral-900">Text to Image</Link></li>
+                <li><Link href="/ai-photo-generator" className="hover:text-neutral-900">AI Photo Generator</Link></li>
+                <li><Link href="/ai-portrait-generator" className="hover:text-neutral-900">AI Portrait Generator</Link></li>
               </ul>
             </div>
           </div>

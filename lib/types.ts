@@ -19,6 +19,12 @@ export interface ToolPageData {
   keywords: string[];
   /** FAQ 区块（长尾词收割机） */
   faqs: { question: string; answer: string }[];
+  /**
+   * 该页内容最后一次实质性修改的日期（YYYY-MM-DD）。
+   * 用于 sitemap 的 lastmod；不填则回退到 CONTENT_BASELINE。
+   * 改完这页的正文/FAQ 后请顺手更新，让 Google 拿到真实的“这页变了”信号。
+   */
+  updatedAt?: string;
   /** 对比表（可选）：第一列是维度 */
   comparison?: { name: string; rows: string[] }[];
   /** 使用步骤 */
