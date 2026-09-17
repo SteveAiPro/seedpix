@@ -3,6 +3,7 @@ import type { ToolPageData } from "@/lib/types";
 import PhotoEditor from "@/components/PhotoEditor";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { tools } from "@/lib/tools";
+import { getToolExtraContent } from "@/lib/toolContent";
 import {
   Check,
   Sparkles,
@@ -11,6 +12,15 @@ import {
 } from "lucide-react";
 
 export default function ToolPage({ tool }: { tool: ToolPageData }) {
+  const extra = getToolExtraContent(tool.slug);
+
+  // 步骤优先用 lib/tools.ts 里的，其次用 lib/toolContent.ts 补的。
+  // 原先直接渲染 tool.steps ?? []，而 15/16 个工具没有 steps —— 页面上的
+  //「How It Works」区块因此只有标题、内容为空。
+  const steps = tool.steps ?? extra?.steps ?? [];
+  // FAQ = 原有 FAQ + 补充 FAQ（补充的也会进 FAQPage JSON-LD）
+  const allFaqs = [...tool.faqs, ...(extra?.extraFaqs ?? [])];
+
   const related = tools
     .filter((t) => t.slug !== tool.slug)
     .sort((a, b) => (a.category === tool.category ? -1 : 1) - (b.category === tool.category ? -1 : 1))
@@ -73,24 +83,26 @@ export default function ToolPage({ tool }: { tool: ToolPageData }) {
       )}
 
       {/* How it works */}
-      <section className="py-10">
-        <h2 className="text-center text-2xl font-bold text-neutral-900">
-          How It Works
-        </h2>
-        <div className="mx-auto mt-6 grid max-w-4xl gap-4 md:grid-cols-3">
-          {(tool.steps ?? []).map((step, i) => (
-            <div key={i} className="rounded-xl border border-neutral-200 bg-white p-5">
-              <div className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
-                {i + 1}
+      {steps.length > 0 && (
+        <section className="py-10">
+          <h2 className="text-center text-2xl font-bold text-neutral-900">
+            How It Works
+          </h2>
+          <div className="mx-auto mt-6 grid max-w-4xl gap-4 md:grid-cols-3">
+            {steps.map((step, i) => (
+              <div key={i} className="rounded-xl border border-neutral-200 bg-white p-5">
+                <div className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
+                  {i + 1}
+                </div>
+                <h3 className="text-sm font-semibold text-neutral-900">{step.title}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-neutral-500">
+                  {step.description}
+                </p>
               </div>
-              <h3 className="text-sm font-semibold text-neutral-900">{step.title}</h3>
-              <p className="mt-1 text-xs leading-relaxed text-neutral-500">
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Content sections */}
       <section className="py-8">
@@ -100,13 +112,37 @@ export default function ToolPage({ tool }: { tool: ToolPageData }) {
               Why use SeedPix for this?
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-              {tool.description} Our AI runs on state-of-the-art image editing
-              models with a purpose-built instruction baked in. The model keeps
-              the exact subject, pose, framing, and composition while
-              re-rendering natural detail. You upload, click once, and download
-              a photo that looks like it was never edited.
+              {extra?.whyUse ??
+                `${tool.description} Our AI runs on state-of-the-art image editing models with a purpose-built instruction baked in. The model keeps the exact subject, pose, framing, and composition while re-rendering natural detail. You upload, click once, and download a photo that looks like it was never edited.`}
             </p>
           </div>
+
+          {/* 具体使用场景（每页内容不同） */}
+          {extra?.useCases && extra.useCases.length > 0 && (
+            <div>
+              <h2 className="text-xl font-bold text-neutral-900">
+                When to use {tool.title.split(" - ")[0]}
+              </h2>
+              <p className="mt-1 text-sm text-neutral-500">
+                The situations this tool is actually built for.
+              </p>
+              <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                {extra.useCases.map((u, i) => (
+                  <div
+                    key={i}
+                    className="rounded-xl border border-neutral-200 bg-white p-5"
+                  >
+                    <h3 className="text-sm font-semibold text-neutral-900">
+                      {u.title}
+                    </h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-neutral-500">
+                      {u.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Comparison table */}
           {tool.comparison && (
@@ -167,7 +203,7 @@ export default function ToolPage({ tool }: { tool: ToolPageData }) {
               Frequently Asked Questions
             </h2>
             <div className="mt-4 space-y-3">
-              {tool.faqs.map((faq, i) => (
+              {allFaqs.map((faq, i) => (
                 <details
                   key={i}
                   className="group rounded-xl border border-neutral-200 bg-white"

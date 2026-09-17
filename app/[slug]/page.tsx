@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ToolPage from "@/components/ToolPage";
 import { tools, getToolBySlug, getToolCover } from "@/lib/tools";
+import { getToolExtraContent } from "@/lib/toolContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -49,10 +50,14 @@ export default async function ToolPageRoute({ params }: Props) {
   if (!tool) notFound();
 
   // FAQPage JSON-LD（页面可见 FAQ 区块，可支持）
+  // 必须与页面上渲染的 FAQ 完全一致：lib/toolContent.ts 里补的 extraFaqs 也要算进来，
+  // 否则结构化数据与可见内容不符。
+  const extra = getToolExtraContent(tool.slug);
+  const allFaqs = [...(tool.faqs || []), ...(extra?.extraFaqs ?? [])];
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: (tool.faqs || []).map((f) => ({
+    mainEntity: allFaqs.map((f) => ({
       "@type": "Question",
       name: f.question,
       acceptedAnswer: { "@type": "Answer", text: f.answer },
