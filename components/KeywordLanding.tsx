@@ -5,6 +5,9 @@ import { tools } from "@/lib/tools";
 import PhotoEditor from "@/components/PhotoEditor";
 import { Check, Sparkles, ArrowRight, ShieldCheck } from "lucide-react";
 
+// 站点基准 URL（与 app/layout.tsx 的 metadataBase 一致，用于 JSON-LD 的绝对 URL）
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://seedpix.org";
+
 export default function KeywordLanding({ landing }: { landing: KeywordLandingData }) {
   const linkedTools = tools.filter((t) => landing.toolSlugs.includes(t.slug));
   const otherLandings = landings.filter((l) => l.slug !== landing.slug);
@@ -20,12 +23,28 @@ export default function KeywordLanding({ landing }: { landing: KeywordLandingDat
     })),
   };
 
+  // BreadcrumbList JSON-LD：Home > AI Photo Tools > 本页
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "AI Photo Tools", item: `${SITE}/ai-photo-tools` },
+      { "@type": "ListItem", position: 3, name: landing.title, item: `${SITE}/${landing.slug}` },
+    ],
+  };
+
   return (
     <div className="mx-auto max-w-6xl px-4">
       {/* FAQPage JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      {/* BreadcrumbList JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {/* Hero */}
       <section className="py-10 text-center md:py-14">

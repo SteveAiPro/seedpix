@@ -3,7 +3,7 @@ import type { ToolPageData } from "./types";
 export const tools: ToolPageData[] = [
   {
     slug: "filter-remover",
-    title: "AI Filter Remover - Remove Filters from Photos Online Free",
+    title: "AI Filter Remover - Remove Any Filter Free",
     description:
       "Remove any AI filter from your photos for free. Restore the original photo from matcha, anime, cartoon, and other AI filters with one click. No signup needed.",
     shortDescription: "Remove matcha, anime & any AI filter from photos",
@@ -114,7 +114,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "remove-matcha-filter",
-    title: "Remove Matcha Filter - Turn Matcha Art Back into a Real Photo",
+    title: "Remove Matcha Filter - Restore the Real Photo",
     description:
       "Remove the viral matcha filter from photos and get the original back. AI reconstructs the real photo underneath the green liquid art. No original file needed.",
     shortDescription: "Reverse the viral matcha filter trend",
@@ -176,7 +176,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "edit-text-in-image",
-    title: "Edit Text in Image Online Free - Add, Remove or Change Text",
+    title: "Edit Text in Image - Add or Change Text Free",
     description:
       "Edit text in images online for free. Add, remove, or change text in any photo with AI - no Photoshop needed. Keep the original font and style automatically.",
     shortDescription: "Add, remove or change text in any image",
@@ -242,7 +242,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "remove-person-from-photo",
-    title: "Remove Person from Photo Online Free - AI Object Removal",
+    title: "Remove Person from Photo Free - AI Object Removal",
     description:
       "Remove people from photos online for free with AI. Erase tourists, photobombers, or ex-partners from any photo in seconds. No Photoshop needed.",
     shortDescription: "Erase people from photos in one click",
@@ -308,7 +308,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "remove-object-from-photo",
-    title: "Remove Object from Photo Online Free - AI Object Remover",
+    title: "Remove Object from Photo Free - AI Object Remover",
     description:
       "Remove unwanted objects from photos online for free. Erase text, watermarks, power lines, reflections, and any clutter with AI in seconds.",
     shortDescription: "Erase any unwanted object from photos",
@@ -369,7 +369,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "gemini-watermark-remover",
-    title: "Gemini Watermark Remover - Remove Gemini AI Watermark Free",
+    title: "Gemini Watermark Remover - Remove It Free",
     description:
       "Remove the Gemini AI watermark and logo from your images online free. Clean Gemini-generated photos without losing quality. No signup needed.",
     shortDescription: "Remove Gemini AI watermark & logo",
@@ -429,7 +429,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "unblur-image",
-    title: "Unblur Image Online Free - Fix Blurry Photos with AI",
+    title: "Unblur Image Free - Fix Blurry Photos with AI",
     description:
       "Unblur images online for free with AI. Fix blurry, out-of-focus, or shaky photos instantly. No signup needed, no quality loss.",
     shortDescription: "Fix blurry photos instantly with AI",
@@ -490,7 +490,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "4k-image-upscaler",
-    title: "4K Image Upscaler - Upscale Photos to 4K Online Free",
+    title: "4K Image Upscaler - Upscale Photos Free",
     description:
       "Upscale images to 4K resolution online free with AI. Enhance image quality, sharpness, and detail without losing quality. No Photoshop needed.",
     shortDescription: "Upscale any image to 4K quality",
@@ -551,7 +551,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "ai-photo-to-real",
-    title: "AI Photo to Real - Turn AI Images into Realistic Photos",
+    title: "AI Photo to Real - Make AI Images Realistic",
     description:
       "Turn AI-generated images into realistic photos online free. Remove the AI look, fix plastic skin, and make AI photos look human. No signup needed.",
     shortDescription: "Make AI images look like real photos",
@@ -612,7 +612,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "background-remover",
-    title: "Background Remover - Remove Image Background Online Free",
+    title: "Background Remover - Remove Image Background Free",
     description:
       "Remove image backgrounds online for free with AI. Cut out people, products, and objects with hair-level precision. No Photoshop needed.",
     shortDescription: "Remove & replace backgrounds in one click",
@@ -673,7 +673,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "photo-restoration",
-    title: "Photo Restoration - Restore Old Photos Online Free with AI",
+    title: "Photo Restoration - Restore Old Photos Free",
     description:
       "Restore old, damaged, faded, or scratched photos online free with AI. Repair scratches, fix tears, colorize black & white, and enhance quality.",
     shortDescription: "Bring damaged old photos back to life",
@@ -740,7 +740,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "ai-photo-enhancer",
-    title: "AI Photo Enhancer - Enhance Photo Quality Online Free",
+    title: "AI Photo Enhancer - Enhance Quality Free",
     description:
       "Enhance photo quality online free with AI. Improve resolution, sharpness, lighting, and colors automatically. Fix dark, blurry, or low-quality photos.",
     shortDescription: "One-click photo quality enhancement",
@@ -801,7 +801,7 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "photo-text-editor",
-    title: "Photo Text Editor - Edit Text on Photos Online Free",
+    title: "Photo Text Editor - Edit Text on Photos Free",
     description:
       "Edit text on photos online free with AI. Add, change, or remove text in any image while keeping the original font and style. No Photoshop, no downloads.",
     shortDescription: "Edit text on photos keeping the font",
@@ -862,9 +862,9 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "text-to-image",
-    title: "AI Image Generator - Text to Image Online Free",
+    title: "AI Image Generator - Text to Image Free",
     description:
-      "Create stunning images from text descriptions with AI. Generate art, illustrations, product mockups, and realistic photos in seconds. Free to start, no Photoshop needed.",
+      "Create stunning images from text with AI. Generate art, illustrations, product mockups, and realistic photos in seconds. Free, no Photoshop needed.",
     shortDescription: "Turn text prompts into images",
     category: "generate",
     credits: 10,
@@ -922,9 +922,9 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "ai-photo-generator",
-    title: "AI Photo Generator - Create Realistic Photos from Text",
+    title: "AI Photo Generator - Realistic Photos from Text",
     description:
-      "Create realistic photos from text descriptions with AI. Generate portraits, product shots, and scenes that look like real photographs. Free to start, no signup needed.",
+      "Create realistic photos from text with AI. Generate portraits, product shots, and scenes that look like real photographs. Free, no signup needed.",
     shortDescription: "Generate realistic photos from text",
     category: "generate",
     credits: 10,
@@ -982,9 +982,9 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "ai-portrait-generator",
-    title: "AI Portrait Generator - Create Stunning Portraits Online",
+    title: "AI Portrait Generator - Create Stunning Portraits",
     description:
-      "Generate stunning AI portraits online - professional headshots, artistic portraits, and avatar images from a text description. Free to start, no Photoshop needed.",
+      "Generate stunning AI portraits online - professional headshots, artistic portraits, and avatars from a text description. Free, no Photoshop needed.",
     shortDescription: "Generate portraits & headshots with AI",
     category: "generate",
     credits: 10,

@@ -22,10 +22,10 @@ function lastMod(updatedAt?: string): Date {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // 首页 —— canonical 解析为 https://seedpix.org/，这里保持带斜杠一致
+  // 首页 —— 与页面 canonical（https://seedpix.org，无尾斜杠）保持一致
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: `${BASE}/`,
+      url: BASE,
       lastModified: lastMod(),
       changeFrequency: "weekly",
       priority: 1,

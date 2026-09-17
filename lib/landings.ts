@@ -23,9 +23,9 @@ export interface KeywordLandingData {
 export const landings: KeywordLandingData[] = [
   {
     slug: "ai-image-generator",
-    title: "AI Image Generator - Create Images from Text Online Free",
+    title: "AI Image Generator - Create Images from Text Free",
     description:
-      "Turn words into stunning images with SeedPix AI image generator. Create art, realistic photos, illustrations, and designs from a text description in seconds. Free to start, no signup needed.",
+      "Turn words into images with the SeedPix AI image generator. Create art, realistic photos, illustrations, and designs from text in seconds. Free to start.",
     keywords: [
       "ai image generator",
       "ai photo generator",
@@ -98,9 +98,9 @@ export const landings: KeywordLandingData[] = [
   },
   {
     slug: "ai-photo-editor-free",
-    title: "AI Photo Editor Free - Edit Photos Online Without Paying",
+    title: "AI Photo Editor Free - Edit Photos Without Paying",
     description:
-      "Edit photos online free with SeedPix AI photo editor. Remove objects and people, change backgrounds, enhance quality, restore old photos, and more. No Photoshop, no subscription, no watermark.",
+      "Edit photos online free with SeedPix AI photo editor. Remove objects and people, change backgrounds, restore old photos, and more. No Photoshop, no watermark.",
     keywords: [
       "ai photo editor free",
       "free ai photo editor",
@@ -173,9 +173,9 @@ export const landings: KeywordLandingData[] = [
   },
   {
     slug: "ai-image-generator-unlimited",
-    title: "AI Image Generator Unlimited - No Sign Up, No Limits",
+    title: "AI Image Generator Unlimited - No Sign Up",
     description:
-      "Generate unlimited AI images without signup or daily caps. SeedPix unlimited image generator lets you create art, photos, and designs with no watermark and no restrictions. Try it now.",
+      "Generate unlimited AI images without signup or daily caps. Create art, photos, and designs with no watermark and no restrictions. Free to start.",
     keywords: [
       "ai image generator unlimited",
       "ai image generator no sign up",

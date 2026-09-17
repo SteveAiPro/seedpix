@@ -4,27 +4,54 @@ import { tools, getCategories } from "@/lib/tools";
 import { landings } from "@/lib/landings";
 import { Wand2, ArrowRight, Layers } from "lucide-react";
 
+// 站点基准 URL（与 app/layout.tsx 的 metadataBase 一致，用于 JSON-LD 的绝对 URL）
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://seedpix.org";
+
 export const metadata: Metadata = {
   title: "100+ AI Photo Tools",
+  // 注意：不要用撇号（SeedPix's）—— Next.js 会把 ' 转义成 &#x27; 出现在 HTML 里。
+  // 长度控制在 160 字符以内，避免 SERP 截断。
   description:
-    "Explore SeedPix's full collection of AI photo tools: remove objects, remove backgrounds, restore old photos, upscale to 4K, remove watermarks, edit text, and more. All free to start.",
+    "Explore the full SeedPix collection of AI photo tools: remove objects and backgrounds, restore old photos, upscale to 4K, remove watermarks, edit text, and more.",
   alternates: { canonical: "/ai-photo-tools" },
   openGraph: {
     title: "100+ AI Photo Tools | SeedPix",
     description:
-      "Explore SeedPix's full collection of AI photo tools: remove objects, remove backgrounds, restore old photos, upscale to 4K, remove watermarks, edit text, and more. All free to start.",
+      "Explore the full SeedPix collection of AI photo tools: remove objects and backgrounds, restore old photos, upscale to 4K, remove watermarks, edit text, and more.",
     type: "website",
     url: "/ai-photo-tools",
     siteName: "SeedPix",
     locale: "en_US",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "100+ AI Photo Tools | SeedPix",
+    description:
+      "Explore the full SeedPix collection of AI photo tools: remove objects and backgrounds, restore old photos, upscale to 4K, remove watermarks, edit text, and more.",
+    images: ["/og-image.png"],
   },
 };
 
 export default function ToolsPage() {
   const categories = getCategories();
 
+  // BreadcrumbList JSON-LD：Home > AI Photo Tools
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "AI Photo Tools", item: `${SITE}/ai-photo-tools` },
+    ],
+  };
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="mb-10 text-center">
         <h1 className="text-3xl font-bold text-neutral-900 md:text-4xl">
           100+ AI Photo Tools

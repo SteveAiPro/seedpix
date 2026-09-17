@@ -9,6 +9,21 @@ export async function generateMetadata(): Promise<Metadata> {
     description: landing?.description,
     keywords: landing?.keywords,
     alternates: { canonical: "/ai-image-generator-unlimited" },
+    openGraph: {
+      title: landing?.title,
+      description: landing?.description,
+      type: "website",
+      url: "/ai-image-generator-unlimited",
+      siteName: "SeedPix",
+      locale: "en_US",
+      images: ["/og-image.png"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: landing?.title,
+      description: landing?.description,
+      images: ["/og-image.png"],
+    },
   };
 }
 
