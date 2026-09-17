@@ -28,6 +28,32 @@ export default function ToolPage({ tool }: { tool: ToolPageData }) {
 
   return (
     <div className="mx-auto max-w-6xl px-4">
+      {/* 可见面包屑 —— 必须与 app/[slug]/page.tsx 里的 BreadcrumbList JSON-LD 一致
+          （Google 要求结构化数据对应页面上真实可见的内容）。 */}
+      <nav aria-label="Breadcrumb" className="pt-6">
+        <ol className="flex flex-wrap items-center gap-1.5 text-xs text-neutral-500">
+          <li>
+            <Link href="/" className="hover:text-neutral-900">
+              Home
+            </Link>
+          </li>
+          <li aria-hidden="true" className="text-neutral-300">
+            /
+          </li>
+          <li>
+            <Link href="/ai-photo-tools" className="hover:text-neutral-900">
+              AI Photo Tools
+            </Link>
+          </li>
+          <li aria-hidden="true" className="text-neutral-300">
+            /
+          </li>
+          <li aria-current="page" className="font-medium text-neutral-700">
+            {tool.title.split(" - ")[0]}
+          </li>
+        </ol>
+      </nav>
+
       {/* Hero */}
       <section className="py-10 text-center md:py-14">
         <h1 className="mx-auto max-w-3xl text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">

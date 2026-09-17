@@ -115,6 +115,24 @@ export default function ToolsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+
+      {/* 可见面包屑（与上面的 BreadcrumbList JSON-LD 一致） */}
+      <nav aria-label="Breadcrumb" className="mb-2">
+        <ol className="flex flex-wrap items-center gap-1.5 text-xs text-neutral-500">
+          <li>
+            <Link href="/" className="hover:text-neutral-900">
+              Home
+            </Link>
+          </li>
+          <li aria-hidden="true" className="text-neutral-300">
+            /
+          </li>
+          <li aria-current="page" className="font-medium text-neutral-700">
+            AI Photo Tools
+          </li>
+        </ol>
+      </nav>
+
       <div className="mb-10 text-center">
         <h1 className="text-3xl font-bold text-neutral-900 md:text-4xl">
           100+ AI Photo Tools

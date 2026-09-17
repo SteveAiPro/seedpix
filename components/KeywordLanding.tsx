@@ -24,13 +24,19 @@ export default function KeywordLanding({ landing }: { landing: KeywordLandingDat
   };
 
   // BreadcrumbList JSON-LD：Home > AI Photo Tools > 本页
+  // 名称用短名，与页面上可见的面包屑一致。
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
       { "@type": "ListItem", position: 2, name: "AI Photo Tools", item: `${SITE}/ai-photo-tools` },
-      { "@type": "ListItem", position: 3, name: landing.title, item: `${SITE}/${landing.slug}` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: landing.title.split(" - ")[0],
+        item: `${SITE}/${landing.slug}`,
+      },
     ],
   };
 
@@ -46,6 +52,31 @@ export default function KeywordLanding({ landing }: { landing: KeywordLandingDat
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+
+      {/* 可见面包屑（与上面的 BreadcrumbList JSON-LD 一致） */}
+      <nav aria-label="Breadcrumb" className="pt-6">
+        <ol className="flex flex-wrap items-center gap-1.5 text-xs text-neutral-500">
+          <li>
+            <Link href="/" className="hover:text-neutral-900">
+              Home
+            </Link>
+          </li>
+          <li aria-hidden="true" className="text-neutral-300">
+            /
+          </li>
+          <li>
+            <Link href="/ai-photo-tools" className="hover:text-neutral-900">
+              AI Photo Tools
+            </Link>
+          </li>
+          <li aria-hidden="true" className="text-neutral-300">
+            /
+          </li>
+          <li aria-current="page" className="font-medium text-neutral-700">
+            {landing.title.split(" - ")[0]}
+          </li>
+        </ol>
+      </nav>
       {/* Hero */}
       <section className="py-10 text-center md:py-14">
         <h1 className="mx-auto max-w-3xl text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">

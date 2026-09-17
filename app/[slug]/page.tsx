@@ -65,14 +65,19 @@ export default async function ToolPageRoute({ params }: Props) {
   };
 
   // BreadcrumbList JSON-LD：Home > AI Photo Tools > 本工具
-  // 注意：结构化数据应与页面可见内容一致，理想情况下页面上也放一条可见面包屑。
+  // 名称用短名（去掉 " - " 后面的部分），与页面上可见的面包屑保持一致。
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
       { "@type": "ListItem", position: 2, name: "AI Photo Tools", item: `${SITE}/ai-photo-tools` },
-      { "@type": "ListItem", position: 3, name: tool.title, item: `${SITE}/${tool.slug}` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: tool.title.split(" - ")[0],
+        item: `${SITE}/${tool.slug}`,
+      },
     ],
   };
 
