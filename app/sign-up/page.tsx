@@ -74,7 +74,7 @@ export default function SignUpPage() {
         {done ? (
           <div className="mt-6 rounded-xl bg-green-50 px-4 py-4 text-center text-sm text-green-800">
             Account created! Check your email to confirm, then sign in to get
-            your 5 free credits.
+            your 10 free credits.
           </div>
         ) : (
           <>

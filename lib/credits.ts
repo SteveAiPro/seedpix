@@ -5,8 +5,8 @@ import { getSupabaseAdmin } from "./supabase";
 export const CREDIT_PRICES = {
   // 每次 AI 处理消耗的 credits
   PER_EDIT: 10,
-  // 新用户注册赠送
-  SIGNUP_BONUS: 5,
+  // 新用户注册赠送（必须 >= PER_EDIT，否则新用户第一次编辑必定 402）
+  SIGNUP_BONUS: 10,
   // 每日签到赠送
   DAILY_BONUS: 1,
 } as const;

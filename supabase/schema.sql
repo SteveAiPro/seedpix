@@ -57,7 +57,8 @@ begin
 end;
 $$;
 
--- 5. 新用户注册时自动建行 + 送 5 积分
+-- 5. 新用户注册时自动建行 + 送 10 积分
+-- 注意：赠送额必须 >= CREDIT_PRICES.PER_EDIT，否则新用户第一次编辑必定失败
 create or replace function public.handle_new_user()
 returns trigger
 language plpgsql
@@ -65,10 +66,10 @@ security definer
 as $$
 begin
   insert into public.users (id, email, credits)
-  values (new.id, new.email, 5);
+  values (new.id, new.email, 10);
 
   insert into public.credit_transactions (user_id, amount, type)
-  values (new.id, 5, 'signup');
+  values (new.id, 10, 'signup');
 
   return new;
 end;
@@ -78,6 +79,33 @@ drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
+
+-- 6. 存量用户补发（一次性，可重复执行不会重复发放）
+-- 背景：早期注册送 5 积分 < 单次编辑 10 积分，老用户永远无法完成第一次编辑。
+-- 幂等保护：靠 credit_transactions 里的 ref_id 标记，已补发过的不再补。
+do $$
+declare
+  r record;
+begin
+  for r in
+    select u.id, u.credits
+    from public.users u
+    where not exists (
+      select 1 from public.credit_transactions t
+      where t.user_id = u.id
+        and t.type = 'refund'
+        and t.ref_id = 'backfill:signup-bonus-2026-09-19'
+    )
+  loop
+    update public.users
+    set credits = r.credits + (10 - 5)
+    where id = r.id;
+
+    insert into public.credit_transactions (user_id, amount, type, ref_id)
+    values (r.id, 10 - 5, 'refund', 'backfill:signup-bonus-2026-09-19');
+  end loop;
+end;
+$$;
 
 -- =====================================================
 -- RLS 策略

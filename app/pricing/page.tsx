@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 export const metadata: Metadata = {
   title: "Pricing - Simple, Transparent Credit Packages",
   description:
-    "Simple, transparent pricing. Choose the package that fits your needs. Free 5 credits to start, no subscription, no credit card needed.",
+    "Simple, transparent pricing. Choose the package that fits your needs. 10 free credits to start - enough for your first edit, no subscription, no credit card needed.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -13,13 +13,13 @@ const PLANS = [
     name: "Free",
     price: "$0",
     unit: "one-time",
-    desc: "Try SeedPix with a taste of credits.",
+    desc: "Enough for your first edit, on the house.",
     features: [
-      "5 free credits on signup",
+      "10 free credits on signup",
       "1 free credit daily",
-      "Try any tool",
+      "Every tool unlocked",
       "No credit card needed",
-      "Outputs include watermark",
+      "Watermark-free output",
     ],
     highlighted: false,
     cta: "Sign Up Free",
@@ -27,11 +27,11 @@ const PLANS = [
   {
     name: "Basic",
     price: "$9.99",
-    unit: "350 credits · ~70 images",
+    unit: "350 credits · ~35 images",
     desc: "For casual editing projects.",
     features: [
       "350 credits",
-      "Generate ~70 images",
+      "Generate ~35 images",
       "No watermarks",
       "Commercial use allowed",
       "Standard processing speed",
@@ -43,11 +43,11 @@ const PLANS = [
   {
     name: "Pro",
     price: "$29.99",
-    unit: "1200 credits · ~240 images",
+    unit: "1200 credits · ~120 images",
     desc: "Best value per credit, for regular users.",
     features: [
       "1200 credits",
-      "Generate ~240 images",
+      "Generate ~120 images",
       "No watermarks",
       "Commercial use allowed",
       "Priority processing",
@@ -59,11 +59,11 @@ const PLANS = [
   {
     name: "Premium",
     price: "$59.99",
-    unit: "3000 credits · ~600 images",
+    unit: "3000 credits · ~300 images",
     desc: "For power users and professionals.",
     features: [
       "3000 credits",
-      "Generate ~600 images",
+      "Generate ~300 images",
       "No watermarks",
       "Commercial use allowed",
       "Priority processing",

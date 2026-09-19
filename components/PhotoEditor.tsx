@@ -68,15 +68,32 @@ export default function PhotoEditor() {
         }),
       });
 
-      const data = await res.json();
+      // 网关或上游可能返回非 JSON（如 502 HTML 页），先兜住再解析
+      const raw = await res.text();
+      let data: {
+        error?: string;
+        credits?: number;
+        required?: number;
+        resultUrls?: string[];
+        creditsRemaining?: number;
+      } = {};
+      try {
+        data = raw ? JSON.parse(raw) : {};
+      } catch {
+        setError(`Server returned an unexpected response (${res.status})`);
+        setProcessing(false);
+        return;
+      }
 
       if (!res.ok) {
         if (res.status === 401) {
           setError("Please sign in to edit photos");
         } else if (res.status === 402) {
-          setError("Insufficient credits - get more credits to continue");
+          setError(
+            `Not enough credits - you have ${data.credits ?? 0}, this edit costs ${data.required ?? 10}.`
+          );
         } else {
-          setError(data.error || "Something went wrong");
+          setError(data.error || `Something went wrong (${res.status})`);
         }
         setProcessing(false);
         return;
@@ -229,7 +246,7 @@ export default function PhotoEditor() {
             <div className="flex items-center justify-between rounded-lg bg-amber-50 px-4 py-2.5 text-xs text-amber-800">
               <span>
                 {authConfigured
-                  ? "Sign in to get 5 free credits and save your edits"
+                  ? "Sign in to get 10 free credits - enough for your first edit"
                   : "Auth not configured yet - backend coming soon"}
               </span>
               {authConfigured && (

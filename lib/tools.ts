@@ -31,7 +31,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Can I remove any AI filter for free?",
         answer:
-          "Yes, you get 5 free credits when you sign up, plus 1 free credit every day. Each filter removal costs 10 credits. The first removal requires a credit package, starting at $9.99 for 350 credits.",
+          "Yes, you get 10 free credits when you sign up, which covers your first filter removal in full, plus 1 free credit every day. Each removal after that costs 10 credits, and packs start at $9.99 for 350 credits.",
       },
       {
         question: "What types of filters can be removed?",
@@ -46,7 +46,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Is the filter remover free without signup?",
         answer:
-          "You can try the tool immediately without signing up. To save your results and get free credits, sign up - new users receive 5 free credits plus 1 free credit daily.",
+          "You can try the tool immediately without signing up. To save your results and get free credits, sign up - new users receive 10 free credits plus 1 free credit daily.",
       },
       {
         question: "What image formats are supported?",
@@ -157,7 +157,7 @@ export const tools: ToolPageData[] = [
       {
         question: "How much does it cost to remove a matcha filter?",
         answer:
-          "One matcha filter removal costs 10 credits. Signing up gives you 5 free credits, which covers a start on other tools. Packs start at $9.99 for 350 credits.",
+          "One matcha filter removal costs 10 credits. Signing up gives you 10 free credits, so your first removal is free. Packs start at $9.99 for 350 credits.",
       },
       {
         question: "What formats are supported?",
@@ -228,7 +228,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Is editing text in images free?",
         answer:
-          "You get 5 free credits on signup plus 1 free daily credit. Text editing costs 10 credits per image. Credit packs start at $9.99.",
+          "You get 10 free credits on signup plus 1 free daily credit. Text editing costs 10 credits per image. Credit packs start at $9.99.",
       },
     ],
     demos: [
@@ -290,7 +290,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Is it really free?",
         answer:
-          "You get 5 free credits on signup plus 1 daily credit. Removal costs 10 credits per photo. Packs start at $9.99 for 350 credits.",
+          "You get 10 free credits on signup plus 1 daily credit. Removal costs 10 credits per photo. Packs start at $9.99 for 350 credits.",
       },
       {
         question: "What formats are supported?",
@@ -351,7 +351,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Is object removal free?",
         answer:
-          "You get 5 free credits on signup plus 1 daily credit. Removal costs 10 credits per photo.",
+          "You get 10 free credits on signup plus 1 daily credit. Removal costs 10 credits per photo.",
       },
       {
         question: "What formats are supported?",
@@ -396,7 +396,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Is there a free Gemini watermark remover?",
         answer:
-          "You get 5 free credits on signup plus 1 daily credit. Watermark removal costs 10 credits per image.",
+          "You get 10 free credits on signup plus 1 daily credit. Watermark removal costs 10 credits per image.",
       },
       {
         question: "Can I remove the Gemini logo without losing quality?",
@@ -457,7 +457,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Can I unblur images without signing up?",
         answer:
-          "You can try immediately. To save results and get free credits, sign up for 5 free credits plus 1 daily credit.",
+          "You can try immediately. To save results and get free credits, sign up for 10 free credits plus 1 daily credit.",
       },
       {
         question: "Can the AI fix motion blur?",
@@ -537,7 +537,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Is 4K upscaling really free?",
         answer:
-          "You get 5 free credits on signup plus 1 daily credit to try it out. Credit packs start at $9.99.",
+          "You get 10 free credits on signup plus 1 daily credit to try it out. Credit packs start at $9.99.",
       },
     ],
     demos: [
@@ -598,7 +598,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Is it free?",
         answer:
-          "You get 5 free credits on signup plus 1 daily credit. Costs 10 credits per image.",
+          "You get 10 free credits on signup plus 1 daily credit. Costs 10 credits per image.",
       },
     ],
     demos: [
@@ -716,7 +716,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Is photo restoration free?",
         answer:
-          "You get 5 free credits on signup plus 1 daily credit. Restoration costs 10 credits per photo.",
+          "You get 10 free credits on signup plus 1 daily credit. Restoration costs 10 credits per photo.",
       },
       {
         question: "What formats are supported?",
@@ -787,7 +787,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Do I need to sign up?",
         answer:
-          "You can try immediately. Sign up for 5 free credits + 1 daily credit to save results.",
+          "You can try immediately. Sign up for 10 free credits + 1 daily credit to save results.",
       },
     ],
     demos: [
@@ -844,7 +844,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Is there a free web-based image text editor?",
         answer:
-          "Yes, SeedPix runs entirely in your browser. You get 5 free credits on signup plus 1 daily credit. Text editing costs 10 credits per image.",
+          "Yes, SeedPix runs entirely in your browser. You get 10 free credits on signup plus 1 daily credit. Text editing costs 10 credits per image.",
       },
       {
         question: "What formats are supported?",
@@ -885,7 +885,7 @@ export const tools: ToolPageData[] = [
       {
         question: "How do I generate an image from text for free?",
         answer:
-          "Type your idea in the editor and click generate. The AI renders a high-quality image from your text description in seconds. New users get 5 free credits on signup plus 1 daily credit.",
+          "Type your idea in the editor and click generate. The AI renders a high-quality image from your text description in seconds. New users get 10 free credits on signup plus 1 daily credit.",
       },
       {
         question: "What styles can the AI image generator produce?",
@@ -905,7 +905,7 @@ export const tools: ToolPageData[] = [
       {
         question: "How much does one image generation cost?",
         answer:
-          "One generation costs 10 credits. Signup gives you 5 free credits plus 1 daily credit, and packs start at $9.99 for 350 credits.",
+          "One generation costs 10 credits. Signup gives you 10 free credits plus 1 daily credit, and packs start at $9.99 for 350 credits.",
       },
       {
         question: "What formats are supported?",
@@ -960,7 +960,7 @@ export const tools: ToolPageData[] = [
       {
         question: "Is the AI photo generator free?",
         answer:
-          "You get 5 free credits on signup plus 1 daily credit. Each generation costs 10 credits.",
+          "You get 10 free credits on signup plus 1 daily credit. Each generation costs 10 credits.",
       },
       {
         question: "Do I need to sign up?",
@@ -1020,7 +1020,7 @@ export const tools: ToolPageData[] = [
       {
         question: "How much does it cost to generate a portrait?",
         answer:
-          "One portrait costs 10 credits. Signup gives you 5 free credits plus 1 daily credit.",
+          "One portrait costs 10 credits. Signup gives you 10 free credits plus 1 daily credit.",
       },
       {
         question: "Can I use the portraits commercially?",

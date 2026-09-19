@@ -146,7 +146,7 @@ export default function SignInPage() {
             : "Auth backend not configured yet. "}
           {configured ? (
             <a href="/sign-up" className="text-blue-600 hover:underline">
-              Create an account (get 5 free credits)
+              Create an account (get 10 free credits)
             </a>
           ) : (
             "Add Supabase keys to .env.local to enable."

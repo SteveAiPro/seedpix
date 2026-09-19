@@ -60,7 +60,7 @@ export const landings: KeywordLandingData[] = [
       {
         heading: "Is the SeedPix AI image generator free?",
         paragraphs: [
-          "Yes, you can start for free. New users get 5 free credits on signup plus 1 free credit every day, and each generation costs 10 credits. You can try the generator immediately without signing up. When you run out of credits, packs start at $9.99 for 350 credits - a fraction of what other AI art tools charge.",
+          "Yes, you can start for free. New users get 10 free credits on signup plus 1 free credit every day, and each generation costs 10 credits. You can try the generator immediately without signing up. When you run out of credits, packs start at $9.99 for 350 credits - a fraction of what other AI art tools charge.",
         ],
       },
     ],
@@ -68,7 +68,7 @@ export const landings: KeywordLandingData[] = [
       {
         question: "How do I generate an image from text for free?",
         answer:
-          "Type your idea in the SeedPix editor and click generate. The AI renders a high-quality image from your text description in seconds. New users get 5 free credits on signup plus 1 daily credit - no credit card required.",
+          "Type your idea in the SeedPix editor and click generate. The AI renders a high-quality image from your text description in seconds. New users get 10 free credits on signup plus 1 daily credit - no credit card required.",
       },
       {
         question: "What is the best AI image generator?",
@@ -92,9 +92,10 @@ export const landings: KeywordLandingData[] = [
       {
         question: "How much does an AI image generation cost?",
         answer:
-          "One generation costs 10 credits. Signup gives you 5 free credits plus 1 daily credit, and credit packs start at $9.99 for 350 credits.",
+          "One generation costs 10 credits. Signup gives you 10 free credits plus 1 daily credit, and credit packs start at $9.99 for 350 credits.",
       },
     ],
+    updatedAt: "2026-09-19",
   },
   {
     slug: "ai-photo-editor-free",
@@ -129,13 +130,13 @@ export const landings: KeywordLandingData[] = [
       {
         heading: "Why SeedPix is the best free AI photo editor",
         paragraphs: [
-          "SeedPix gives you free credits on signup and one free credit every day, so the free tier is actually usable - not a teaser. The editor runs in your browser with no downloads, keeps the exact subject, pose, and framing of your photo, and adds no watermark to results. One click or one sentence does the job that used to take hours in professional software.",
+          "SeedPix gives you 10 free credits on signup, which is exactly what one full edit costs - so you can complete a real edit end to end without paying, no credit card and no watermark. After that you get 1 free credit every day. The editor runs in your browser with no downloads, keeps the exact subject, pose, and framing of your photo, and adds no watermark to results. One click or one sentence does the job that used to take hours in professional software.",
         ],
       },
       {
         heading: "What does 'free' mean at SeedPix?",
         paragraphs: [
-          "Free means you can genuinely start without paying: 5 free credits on signup, plus 1 free credit daily. Each edit costs 10 credits. If you need more, credit packs start at $9.99 for 350 credits - there is no subscription and no lock-in. Most casual edits can be covered by the daily free credits alone.",
+          "Free means you can genuinely start without paying: 10 free credits on signup, which is exactly what one full edit costs - your first edit is completely free, no credit card required. After that you get 1 free credit daily, and each additional edit costs 10 credits. If you need more, credit packs start at $9.99 for 350 credits - there is no subscription and no lock-in.",
         ],
       },
     ],
@@ -143,7 +144,7 @@ export const landings: KeywordLandingData[] = [
       {
         question: "Is there a really free AI photo editor?",
         answer:
-          "Yes. SeedPix gives new users 5 free credits on signup plus 1 free credit every day. Each edit costs 10 credits, so you can fix several photos for free - no credit card, no subscription.",
+          "Yes. SeedPix gives new users 10 free credits on signup - enough to edit one photo completely free - plus 1 free credit every day. Each additional edit costs 10 credits. No credit card, no subscription.",
       },
       {
         question: "Can I edit photos online without Photoshop?",
@@ -170,6 +171,7 @@ export const landings: KeywordLandingData[] = [
         answer: "JPG, PNG, and WebP files up to 20MB are supported, and the output keeps your original aspect ratio.",
       },
     ],
+    updatedAt: "2026-09-19",
   },
   {
     slug: "ai-image-generator-unlimited",
@@ -204,7 +206,7 @@ export const landings: KeywordLandingData[] = [
       {
         heading: "How SeedPix keeps it unlimited",
         paragraphs: [
-          "You can try the generator right away with no signup. When you create an account you get 5 free credits on top of the daily free credit, and every generation costs a flat 10 credits - no hidden tiers, no throttling, no watermark. If you create a lot, packs start at $9.99 for 350 credits, which keeps the cost per image far below other services.",
+          "You can try the generator right away with no signup. When you create an account you get 10 free credits on top of the daily free credit, and every generation costs a flat 10 credits - no hidden tiers, no throttling, no watermark. If you create a lot, packs start at $9.99 for 350 credits, which keeps the cost per image far below other services.",
         ],
       },
       {
@@ -245,6 +247,7 @@ export const landings: KeywordLandingData[] = [
         answer: "JPG, PNG, and WebP files up to 20MB, with the output keeping your original aspect ratio.",
       },
     ],
+    updatedAt: "2026-09-19",
   },
   {
     slug: "ai-photo-editor-no-restrictions",

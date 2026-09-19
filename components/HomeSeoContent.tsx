@@ -209,7 +209,7 @@ export default function HomeSeoContent({
               </tr>
               <tr>
                 <td className="px-4 py-3">Price to start</td>
-                <td className="px-4 py-3">Free, 5 credits included</td>
+                <td className="px-4 py-3">Free, 10 credits included</td>
                 <td className="px-4 py-3">Subscription</td>
               </tr>
             </tbody>
@@ -224,7 +224,7 @@ export default function HomeSeoContent({
           Is an AI photo editor free? Is it safe to use?
         </h2>
         <p className="mt-4 text-sm leading-relaxed text-neutral-600">
-          Yes — SeedPix is free to start. New users receive 5 free credits on signup plus
+          Yes — SeedPix is free to start. New users receive 10 free credits on signup plus
           1 free credit every day, and you can try the editor immediately without an
           account. When you run out, credit packs start at a low price, far below what
           most AI art tools charge. Your photos are processed for the edit and not used

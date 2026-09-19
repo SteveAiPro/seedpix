@@ -55,7 +55,7 @@ export default function ToolsPage() {
     {
       question: "Are all the SeedPix tools free?",
       answer:
-        "Every tool is free to try. New accounts get 5 free credits on signup plus 1 free credit every day, and each edit costs 10 credits. Credit packs start at $9.99 for 350 credits, and there is no subscription at any point.",
+        "Every tool costs a flat 10 credits per edit, and the free credits you get at signup cover your first edit in full. New accounts get 10 free credits on signup plus 1 free credit every day. Credit packs start at $9.99 for 350 credits, and there is no subscription at any point.",
     },
     {
       question: "Do I need to install anything to use these tools?",
@@ -162,7 +162,7 @@ export default function ToolsPage() {
         </p>
         <p>
           Every tool costs a flat 10 credits per image. New accounts start with
-          5 free credits plus 1 free credit every day, and credit packs begin at
+          10 free credits plus 1 free credit every day, and credit packs begin at
           $9.99 with no subscription. Outputs carry no watermark and are
           licensed for commercial use.
         </p>
