@@ -12,35 +12,46 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://seedpix.org";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "SeedPix - AI Photo Editor | Edit Photos Online Free",
+    default: "SeedPix - Free AI Photo Editor Online (No Sign Up & No Watermark)",
     template: "%s | SeedPix",
   },
   description:
-    "Free AI photo editor online. Remove objects, restore old photos, remove watermarks, upscale to 4K — edit by typing, no Photoshop needed.",
+    "100% Free AI photo editor online with no sign up and no restrictions. Remove objects, remove watermarks, upscale to 4K, edit text in images by typing — powered by leading AI models.",
   keywords: [
-    "ai photo editor",
-    "ai image editor",
+    "ai photo editor free",
+    "ai photo editor no sign up",
+    "ai photo editor no restrictions",
+    "free ai photo editor online",
+    "gemini ai photo editor",
     "remove object from photo",
-    "remove background",
-    "photo restoration",
-    "image upscaler",
-    "filter remover",
+    "remove background free",
+    "photo restoration online",
+    "4k image upscaler",
+    "filter remover ai",
   ],
   alternates: {
     canonical: "/",
+    languages: {
+      en: `${SITE_URL}/`,
+      es: `${SITE_URL}/es`,
+      pt: `${SITE_URL}/pt`,
+      ja: `${SITE_URL}/ja`,
+      zh: `${SITE_URL}/zh`,
+      "x-default": `${SITE_URL}/`,
+    },
   },
   icons: {
     icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='23' font-size='18' font-weight='bold' text-anchor='middle' fill='white' font-family='sans-serif'%3ES%3C/text%3E%3C/svg%3E",
   },
   openGraph: {
-    title: "SeedPix - AI Photo Editor | Edit Photos Online Free",
+    title: "SeedPix - Free AI Photo Editor Online (No Sign Up & No Watermark)",
     description:
-      "Free AI photo editor online. Remove objects, restore old photos, remove watermarks, upscale to 4K — edit by typing, no Photoshop needed.",
+      "100% Free AI photo editor online with no sign up and no restrictions. Remove objects, remove watermarks, upscale to 4K, edit text in images by typing — powered by leading AI models.",
     type: "website",
     url: "/",
     siteName: "SeedPix",
     locale: "en_US",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SeedPix AI Photo Editor" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SeedPix Free AI Photo Editor" }],
   },
   robots: {
     index: true,
@@ -105,12 +116,23 @@ export default function RootLayout({
         <SiteHeader />
         <main>{children}</main>
         <footer className="border-t border-neutral-200 bg-neutral-50">
-          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-5">
+          <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 sm:grid-cols-2 md:grid-cols-6">
             <div>
               <p className="mb-2 text-sm font-semibold text-neutral-900">SeedPix</p>
               <p className="text-xs leading-relaxed text-neutral-500">
-                Free AI photo editor. Edit photos by typing - no Photoshop skills needed.
+                100% Free AI photo editor online. Edit photos by typing — no Photoshop skills needed.
               </p>
+            </div>
+            <div>
+              <p className="mb-2 text-sm font-semibold text-neutral-900">Trending</p>
+              <ul className="space-y-1.5 text-xs text-neutral-500">
+                <li><Link href="/rsp-editing-ai-photo-prompts" className="font-medium text-blue-600 hover:text-blue-700">🔥 RSP Viral Prompts</Link></li>
+                <li><Link href="/ai-photo-editor-no-sign-up" className="hover:text-neutral-900">No Sign Up Editor</Link></li>
+                <li><Link href="/ai-photo-editor-no-restrictions" className="hover:text-neutral-900">No Restrictions</Link></li>
+                <li><Link href="/gemini-ai-photo-editor" className="hover:text-neutral-900">Gemini Photo Editor</Link></li>
+                <li><Link href="/ai-photo-editor-free" className="hover:text-neutral-900">Free AI Editor</Link></li>
+                <li><Link href="/ai-image-generator-unlimited" className="hover:text-neutral-900">Unlimited Generator</Link></li>
+              </ul>
             </div>
             <div>
               <p className="mb-2 text-sm font-semibold text-neutral-900">Edit Tools</p>
@@ -134,8 +156,8 @@ export default function RootLayout({
             <div>
               <p className="mb-2 text-sm font-semibold text-neutral-900">Watermark</p>
               <ul className="space-y-1.5 text-xs text-neutral-500">
-                <li><Link href="/gemini-watermark-remover" className="hover:text-neutral-900">Gemini Watermark Remover</Link></li>
-                <li><Link href="/remove-person-from-photo" className="hover:text-neutral-900">Remove Person from Photo</Link></li>
+                <li><Link href="/gemini-watermark-remover" className="hover:text-neutral-900">Gemini Watermark</Link></li>
+                <li><Link href="/remove-person-from-photo" className="hover:text-neutral-900">Remove Person</Link></li>
                 <li><Link href="/ai-photo-to-real" className="hover:text-neutral-900">AI Photo to Real</Link></li>
               </ul>
             </div>

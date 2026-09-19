@@ -8,22 +8,22 @@ HOST="seedpix.org"
 KEY="b0eab65a4812417e85697d303303f6f0"
 SITEMAP="https://$HOST/sitemap.xml"
 ENDPOINT="https://api.indexnow.org/indexnow"
-PROXY="${HTTP_PROXY:-http://127.0.0.1:7897}"
-CURL_PROXY=()
-if curl -s --max-time 8 -o /dev/null "$SITEMAP" 2>/dev/null; then :; fi
-# 探测是否直连可达，否则走代理
+PROXY="http://127.0.0.1:7897"
+
+# 探测直连是否可达；不可达则走代理
+PROXY_FLAG=""
 if ! curl -s --max-time 8 -o /dev/null "$SITEMAP" 2>/dev/null; then
-  CURL_PROXY=(-x "$PROXY")
+  PROXY_FLAG="-x $PROXY"
 fi
 
 echo "═══ 拉取 sitemap: $SITEMAP ═══"
-SITEMAP_XML=$(curl -s --max-time 30 "${CURL_PROXY[@]}" "$SITEMAP")
+SITEMAP_XML=$(curl -s --max-time 30 $PROXY_FLAG "$SITEMAP")
 URL_COUNT=$(printf '%s' "$SITEMAP_XML" | grep -o '<loc>' | wc -l | tr -d ' ')
 echo "sitemap 中 URL 数: $URL_COUNT"
 
 # 校验 key 文件可访问（IndexNow 提交前必查）
 KEY_URL="https://$HOST/$KEY.txt"
-KEY_BODY=$(curl -s --max-time 20 "${CURL_PROXY[@]}" "$KEY_URL")
+KEY_BODY=$(curl -s --max-time 20 $PROXY_FLAG "$KEY_URL")
 if [ "$KEY_BODY" = "$KEY" ]; then
   echo "✅ key 文件可访问且匹配: $KEY_URL"
 else
@@ -32,12 +32,19 @@ else
   exit 1
 fi
 
-# 组装 urlList JSON
-URL_JSON=$(printf '%s' "$SITEMAP_XML" | grep -oP '(?<=<loc>)[^<]+' | python3 -c 'import sys,json; print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))')
+# 组装 urlList JSON（用 python 解析 XML，避免 BSD grep 不支持 -P）
+URL_JSON=$(printf '%s' "$SITEMAP_XML" | python3 -c 'import sys,xml.etree.ElementTree as ET,json
+try:
+    root=ET.fromstring(sys.stdin.read())
+except Exception as e:
+    print("[]"); sys.exit(0)
+ns="{http://www.sitemaps.org/schemas/sitemap/0.9}"
+urls=[loc.text.strip() for loc in root.iter(f"{ns}loc") if loc.text]
+print(json.dumps(urls))')
 PAYLOAD=$(python3 -c "import json,sys; print(json.dumps({'host':'$HOST','key':'$KEY','urlList':json.loads('''$URL_JSON''')}))")
 
 echo "═══ POST 到 IndexNow: $ENDPOINT ═══"
-curl -s --max-time 30 "${CURL_PROXY[@]}" -X POST "$ENDPOINT" \
+curl -s --max-time 30 $PROXY_FLAG -X POST "$ENDPOINT" \
   -H "Content-Type: application/json" \
   -d "$PAYLOAD" \
   -w "\nHTTP %{http_code}\n"

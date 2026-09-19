@@ -13,3 +13,4 @@ vercel
 next-env.d.ts
 .secrets/
 .env*
+.workbuddy/

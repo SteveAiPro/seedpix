@@ -71,7 +71,7 @@ fmt_rows() {
   const dims=(j.dimensionHeaders||[]).map(h=>h.name), mets=(j.metricHeaders||[]).map(h=>h.name);
   console.log("维度:",dims.join(","),"| 指标:",mets.join(","));
   console.log("-".repeat(60));
-  (j.rows||[]).forEach(r=>{const d=r.dimensionValues.map(v=>v.value).join("\t");const m=r.metricValues.map(v=>v.value).join("\t");console.log(d+"\t"+m)});
+  (j.rows||[]).forEach(r=>{const d=(r.dimensionValues||[]).map(v=>v.value).join("\t");const m=(r.metricValues||[]).map(v=>v.value).join("\t");console.log(d+"\t"+m)});
   if(!(j.rows||[]).length)console.log("(无数据 — 站刚上线，标准报告有 30-60 分钟延迟)");})'
 }
 

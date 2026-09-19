@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -118,6 +119,7 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2 text-sm">
+          <LanguageSwitcher />
           {loading ? (
             <span className="px-3 py-1.5 text-neutral-400">…</span>
           ) : email ? (

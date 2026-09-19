@@ -246,6 +246,263 @@ export const landings: KeywordLandingData[] = [
       },
     ],
   },
+  {
+    slug: "ai-photo-editor-no-restrictions",
+    title: "AI Photo Editor No Restrictions - Free Online Image Editor",
+    description:
+      "Free AI photo editor online with no restrictions. Edit images without watermarks, daily lockouts, or resolution caps. Upscale to 4K and export freely.",
+    keywords: [
+      "ai photo editor no restrictions",
+      "unrestricted ai photo editor",
+      "ai photo editor no watermark",
+      "free ai photo editor without restrictions",
+      "ai photo editor unlimited free",
+      "high resolution ai photo editor",
+    ],
+    toolSlugs: [
+      "remove-object-from-photo",
+      "background-remover",
+      "4k-image-upscaler",
+      "photo-restoration",
+      "filter-remover",
+      "ai-photo-enhancer",
+    ],
+    sections: [
+      {
+        heading: "What does an unrestricted AI photo editor mean?",
+        paragraphs: [
+          "Most online photo editors slap huge watermarks on your images, throttle your resolution, or force you into expensive subscriptions after a single edit. SeedPix is built with no restrictions in mind: edit freely, download clean images without watermarks, and export in full resolution for personal and commercial projects.",
+        ],
+      },
+      {
+        heading: "Full creative freedom with text-driven editing",
+        paragraphs: [
+          "Whether you want to remove unwanted photobombers, erase distracting objects, reconstruct old family portraits, or upscale blurry images to 4K, you can do it all without arbitrary feature gates. Simply describe what you want to change in plain English, and the AI executes your vision cleanly.",
+        ],
+      },
+      {
+        heading: "Zero watermarks and commercial usage rights",
+        paragraphs: [
+          "Every image you edit or generate on SeedPix comes 100% watermark-free. You own the results and can use them freely in client deliverables, marketing materials, social media, and ecommerce stores without licensing headaches.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Are there any watermarks placed on edited photos?",
+        answer:
+          "No. All outputs from SeedPix are completely watermark-free, ensuring your photos look professional and ready for immediate publishing.",
+      },
+      {
+        question: "Can I use the edited photos commercially?",
+        answer:
+          "Yes. You have full rights to use your edited images for commercial purposes, including marketing, ads, ecommerce stores, and client presentations.",
+      },
+      {
+        question: "What resolution can I export photos in?",
+        answer:
+          "You can export images in their original full resolution, or use the 4K Image Upscaler to increase resolution up to 4x without losing clarity.",
+      },
+      {
+        question: "Is there a limit on image file size?",
+        answer:
+          "SeedPix supports JPG, PNG, and WebP images up to 20 MB per file, which covers virtually all high-res camera and phone photos.",
+      },
+    ],
+    updatedAt: "2026-09-19",
+  },
+  {
+    slug: "ai-photo-editor-no-sign-up",
+    title: "AI Photo Editor Free No Sign Up - Instant Online Photo Editing",
+    description:
+      "100% Free AI photo editor online with no sign up required. Edit photos instantly without creating an account or sharing your email. Download watermark-free.",
+    keywords: [
+      "ai photo editor free no sign up",
+      "ai photo editor no sign up",
+      "free photo editor without login",
+      "edit photos online without registration",
+      "instant ai photo editor",
+      "no account ai photo editor",
+    ],
+    toolSlugs: [
+      "remove-object-from-photo",
+      "background-remover",
+      "unblur-image",
+      "ai-photo-enhancer",
+      "gemini-watermark-remover",
+      "4k-image-upscaler",
+    ],
+    sections: [
+      {
+        heading: "Instant photo editing with zero friction",
+        paragraphs: [
+          "Why should you need to sign up, verify an email address, or enter credit card info just to touch up a quick photo? SeedPix lets you open the editor and start editing immediately. No accounts, no passwords to remember, and no spam in your inbox.",
+        ],
+      },
+      {
+        heading: "How to edit photos without an account",
+        paragraphs: [
+          "1. Drag and drop your photo into the SeedPix editor. 2. Type what you want to change (e.g., 'remove the passerby in the background' or 'enhance lighting'). 3. Click Edit and watch the AI work in seconds. 4. Download your finished photo immediately with no watermarks.",
+        ],
+      },
+      {
+        heading: "Privacy-focused and secure",
+        paragraphs: [
+          "Because you do not need an account to use the editor, your identity stays private. Your uploaded images are processed securely and not shared with third parties.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do I really not need to sign up to edit photos?",
+        answer:
+          "Yes! You can use SeedPix directly in your browser without creating an account or logging in. Just upload your image, type your edit request, and download the result.",
+      },
+      {
+        question: "Will I get spammed with emails?",
+        answer:
+          "Never. Since no sign-up is required, we do not even ask for your email address to try the editor.",
+      },
+      {
+        question: "Can I download my edited photos without paying?",
+        answer:
+          "Yes. SeedPix provides free credits so you can test and download your edited images immediately without entering payment details.",
+      },
+      {
+        question: "What tools work without an account?",
+        answer:
+          "All major photo editing tools — including object removal, background cutouts, photo restoration, unblurring, and upscaling — are available right away.",
+      },
+    ],
+    updatedAt: "2026-09-19",
+  },
+  {
+    slug: "gemini-ai-photo-editor",
+    title: "Gemini AI Photo Editor Free - Smart Multimodal Photo Editing",
+    description:
+      "Free Gemini AI photo editor online. Harness Google Gemini's vision intelligence to edit photos, erase unwanted objects, restore quality, and remove watermarks.",
+    keywords: [
+      "gemini ai photo editor",
+      "gemini ai photo editor free",
+      "google gemini photo editor",
+      "gemini image editor online",
+      "gemini photo editing tool",
+      "gemini multimodal photo editor",
+    ],
+    toolSlugs: [
+      "gemini-watermark-remover",
+      "remove-object-from-photo",
+      "background-remover",
+      "photo-restoration",
+      "ai-photo-enhancer",
+      "4k-image-upscaler",
+    ],
+    sections: [
+      {
+        heading: "Next-generation editing powered by Gemini AI",
+        paragraphs: [
+          "Google Gemini's multimodal reasoning represents a huge leap in computer vision. Unlike basic filter apps, a Gemini-powered photo editor truly understands the context, lighting, textures, and geometry of your photograph, allowing for edits that blend seamlessly with the original scene.",
+        ],
+      },
+      {
+        heading: "Edit complex photos using conversational natural language",
+        paragraphs: [
+          "With Gemini AI multimodal capabilities, you don't need complex selection tools or manual lasso brushes. Simply speak or type your instructions naturally — 'remove the glare on the window', 'erase the power lines behind the tree', or 'make the lighting look like golden hour sunset' — and the model executes with photographic realism.",
+        ],
+      },
+      {
+        heading: "Specialized in watermark removal and photo restoration",
+        paragraphs: [
+          "Gemini models excel at inpainting and texture reconstruction. Erase AI watermarks, camera timestamps, scratches on old family photos, and blurry artifacts with pristine clarity.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How does the Gemini AI photo editor work?",
+        answer:
+          "It uses advanced multimodal vision models that understand both image content and text prompts simultaneously. It analyzes the context of your image to make edits that maintain natural lighting, shadows, and textures.",
+      },
+      {
+        question: "Can Gemini remove watermarks from photos?",
+        answer:
+          "Yes. Our specialized Gemini Watermark Remover tool analyzes the background behind logos, text, or stamps and reconstructs the realistic photo underneath with zero visible trace.",
+      },
+      {
+        question: "Is the Gemini AI photo editor free?",
+        answer:
+          "Yes. You can test the editor for free and experience state-of-the-art vision editing without expensive software subscriptions.",
+      },
+    ],
+    updatedAt: "2026-09-19",
+  },
+  {
+    slug: "rsp-editing-ai-photo-prompts",
+    title: "RSP Editing AI Photo Prompts & Generator 2026 (Free Copy & Edit)",
+    description:
+      "Latest trending RSP Editing AI photo prompts from TikTok & Instagram. Copy trending couple, retro film, and 3D avatar prompts, or edit your photos online free with SeedPix.",
+    keywords: [
+      "ai editor rsp editing",
+      "rsp editing ai photo editor",
+      "rsp editing photo prompt",
+      "rsp editing prompts 2026",
+      "rsp editing couple photo prompt",
+      "trending ai photo prompts",
+      "anup sagar couple ai photo editor",
+      "instagram trending ai photo prompts",
+    ],
+    toolSlugs: [
+      "ai-photo-enhancer",
+      "remove-object-from-photo",
+      "background-remover",
+      "ai-portrait-generator",
+      "4k-image-upscaler",
+      "photo-restoration",
+    ],
+    sections: [
+      {
+        heading: "What is RSP Editing in AI photo editing?",
+        paragraphs: [
+          "RSP Editing refers to the massive viral trend across TikTok, Instagram Reels, and YouTube Shorts where creators share specialized AI prompts to transform everyday photos into cinematic portraits, 3D stylized avatars, and aesthetic retro film photographs. SeedPix lets you not only copy these viral prompts, but apply them directly to your photos in one click.",
+        ],
+      },
+      {
+        heading: "How to use RSP Editing prompts with SeedPix",
+        paragraphs: [
+          "1. Browse our curated collection of trending RSP style prompts below. 2. Click 'Try in Editor' to load the prompt into SeedPix, or copy the prompt text. 3. Upload your original photo and let the AI generate the aesthetic transformation in seconds. 4. Download your high-resolution watermark-free photo.",
+        ],
+      },
+      {
+        heading: "Popular viral styles: Anup Sagar couple, retro 90s, and 3D avatar",
+        paragraphs: [
+          "From romantic aesthetic couple portraits (inspired by the viral Anup Sagar trend) to 90s disposable camera film grain and Pixar-style 3D avatars, our prompt templates are continuously updated to reflect the top trending styles on social media.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the viral RSP Editing trend?",
+        answer:
+          "It is a social media movement where creators share AI photo prompts and filter presets for creating aesthetic portraits, couple pictures, and cinematic edits without needing Photoshop.",
+      },
+      {
+        question: "Can I use RSP Editing prompts for free on SeedPix?",
+        answer:
+          "Yes! You can copy all prompts for free, and test them directly in the SeedPix AI Photo Editor with free starter credits.",
+      },
+      {
+        question: "How do I get the Anup Sagar couple photo effect?",
+        answer:
+          "Use our dedicated couple portrait prompt template: upload a photo of you and your partner, apply the preset prompt, and the AI will render a golden-hour cinematic portrait.",
+      },
+      {
+        question: "Do SeedPix downloads have watermarks?",
+        answer:
+          "No. Every photo generated or edited on SeedPix is completely watermark-free and can be posted directly to TikTok, Instagram, or used commercially.",
+      },
+    ],
+    updatedAt: "2026-09-19",
+  },
 ];
 
 export function getLandingBySlug(slug: string): KeywordLandingData | undefined {

@@ -22,13 +22,37 @@ function lastMod(updatedAt?: string): Date {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // 首页 —— 与页面 canonical（https://seedpix.org，无尾斜杠）保持一致
+  // 首页与多语言主页 —— 与页面 canonical 保持一致
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: BASE,
       lastModified: lastMod(),
       changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: `${BASE}/es`,
+      lastModified: lastMod(),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${BASE}/pt`,
+      lastModified: lastMod(),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${BASE}/ja`,
+      lastModified: lastMod(),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${BASE}/zh`,
+      lastModified: lastMod(),
+      changeFrequency: "weekly",
+      priority: 0.95,
     },
     {
       url: `${BASE}/ai-photo-tools`,
