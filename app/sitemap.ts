@@ -60,6 +60,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: `${BASE}/pricing`,
+      lastModified: lastMod("2026-09-20"),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE}/about`,
+      lastModified: lastMod("2026-09-20"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/privacy`,
+      lastModified: lastMod("2026-09-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE}/terms`,
+      lastModified: lastMod("2026-09-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 
   // 词族 landing 页（扛大词）

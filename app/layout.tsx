@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | SeedPix",
   },
   description:
-    "100% Free AI photo editor online with no sign up and no restrictions. Remove objects, remove watermarks, upscale to 4K, edit text in images by typing — powered by leading AI models.",
+    "100% free AI photo editor online with no sign up. Remove objects, erase watermarks, upscale to 4K & edit images by typing. Try it free in your browser!",
   keywords: [
     "ai photo editor free",
     "ai photo editor no sign up",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SeedPix - Free AI Photo Editor Online (No Sign Up & No Watermark)",
     description:
-      "100% Free AI photo editor online with no sign up and no restrictions. Remove objects, remove watermarks, upscale to 4K, edit text in images by typing — powered by leading AI models.",
+      "100% free AI photo editor online with no sign up. Remove objects, erase watermarks, upscale to 4K & edit images by typing. Try it free in your browser!",
     type: "website",
     url: "/",
     siteName: "SeedPix",
@@ -122,6 +122,12 @@ export default function RootLayout({
               <p className="text-xs leading-relaxed text-neutral-500">
                 100% Free AI photo editor online. Edit photos by typing — no Photoshop skills needed.
               </p>
+              <ul className="mt-3 space-y-1 text-xs text-neutral-500">
+                <li><Link href="/about" className="hover:text-neutral-900">About Us</Link></li>
+                <li><Link href="/pricing" className="hover:text-neutral-900">Pricing & Credits</Link></li>
+                <li><Link href="/privacy" className="hover:text-neutral-900">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="hover:text-neutral-900">Terms of Service</Link></li>
+              </ul>
             </div>
             <div>
               <p className="mb-2 text-sm font-semibold text-neutral-900">Trending</p>
@@ -171,7 +177,15 @@ export default function RootLayout({
             </div>
           </div>
           <div className="border-t border-neutral-200 py-4 text-center text-xs text-neutral-400">
-            © {new Date().getFullYear()} SeedPix. All rights reserved.
+            <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 sm:flex-row">
+              <p>© {new Date().getFullYear()} SeedPix. All rights reserved.</p>
+              <div className="flex space-x-4">
+                <Link href="/about" className="hover:text-neutral-600">About</Link>
+                <Link href="/privacy" className="hover:text-neutral-600">Privacy Policy</Link>
+                <Link href="/terms" className="hover:text-neutral-600">Terms of Service</Link>
+                <Link href="/pricing" className="hover:text-neutral-600">Pricing</Link>
+              </div>
+            </div>
           </div>
         </footer>
       </body>
