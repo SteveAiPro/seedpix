@@ -124,6 +124,7 @@ export default function RootLayout({
               </p>
               <ul className="mt-3 space-y-1 text-xs text-neutral-500">
                 <li><Link href="/about" className="hover:text-neutral-900">About Us</Link></li>
+                <li><Link href="/blog" className="hover:text-neutral-900">Blog & Guides</Link></li>
                 <li><Link href="/pricing" className="hover:text-neutral-900">Pricing & Credits</Link></li>
                 <li><Link href="/privacy" className="hover:text-neutral-900">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-neutral-900">Terms of Service</Link></li>
@@ -182,6 +183,7 @@ export default function RootLayout({
               <p>© {new Date().getFullYear()} SeedPix. All rights reserved.</p>
               <div className="flex space-x-4">
                 <Link href="/about" className="hover:text-neutral-600">About</Link>
+                <Link href="/blog" className="hover:text-neutral-600">Blog</Link>
                 <Link href="/privacy" className="hover:text-neutral-600">Privacy Policy</Link>
                 <Link href="/terms" className="hover:text-neutral-600">Terms of Service</Link>
                 <Link href="/pricing" className="hover:text-neutral-600">Pricing</Link>

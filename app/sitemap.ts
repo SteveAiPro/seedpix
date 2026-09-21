@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { tools } from "@/lib/tools";
 import { landings } from "@/lib/landings";
+import { blogPosts } from "@/lib/blogPosts";
 
 const BASE = "https://seedpix.org";
 
@@ -84,6 +85,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${BASE}/blog`,
+      lastModified: lastMod("2026-09-21"),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
   ];
 
   // 词族 landing 页（扛大词）
@@ -94,6 +101,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // 博客与权威指南矩阵 (E-E-A-T)
+  const postPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: lastMod(p.updatedAt),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
+
   // 工具长尾页矩阵
   const toolPages: MetadataRoute.Sitemap = tools.map((t) => ({
     url: `${BASE}/${t.slug}`,
@@ -102,5 +117,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...landingPages, ...toolPages];
+  return [...staticPages, ...landingPages, ...postPages, ...toolPages];
 }

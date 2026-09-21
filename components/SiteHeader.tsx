@@ -108,6 +108,9 @@ export default function SiteHeader() {
           <Link href="/pricing" className="hover:text-neutral-900">
             Pricing
           </Link>
+          <Link href="/blog" className="hover:text-neutral-900">
+            Blog
+          </Link>
           {isAdmin && (
             <Link
               href="/admin"

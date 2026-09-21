@@ -56,7 +56,7 @@ export const tools: ToolPageData[] = [
     ],
     comparison: [
       {
-        name: "sparkpix filter remover",
+        name: "SeedPix filter remover",
         rows: [
           "Just the filtered image",
           "About 30 seconds",
