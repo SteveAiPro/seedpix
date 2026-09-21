@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 import "./globals.css";
 
 // GA4 Measurement ID（在 .env.local / Vercel 环境变量配置 NEXT_PUBLIC_GA_ID）
@@ -115,82 +116,7 @@ export default function RootLayout({
         />
         <SiteHeader />
         <main>{children}</main>
-        <footer className="border-t border-neutral-200 bg-neutral-50">
-          <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 sm:grid-cols-2 md:grid-cols-6">
-            <div>
-              <p className="mb-2 text-sm font-semibold text-neutral-900">SeedPix</p>
-              <p className="text-xs leading-relaxed text-neutral-500">
-                100% Free AI photo editor online. Edit photos by typing — no Photoshop skills needed.
-              </p>
-              <ul className="mt-3 space-y-1 text-xs text-neutral-500">
-                <li><Link href="/about" className="hover:text-neutral-900">About Us</Link></li>
-                <li><Link href="/blog" className="hover:text-neutral-900">Blog & Guides</Link></li>
-                <li><Link href="/pricing" className="hover:text-neutral-900">Pricing & Credits</Link></li>
-                <li><Link href="/privacy" className="hover:text-neutral-900">Privacy Policy</Link></li>
-                <li><Link href="/terms" className="hover:text-neutral-900">Terms of Service</Link></li>
-              </ul>
-            </div>
-            <div>
-              <p className="mb-2 text-sm font-semibold text-neutral-900">Trending</p>
-              <ul className="space-y-1.5 text-xs text-neutral-500">
-                <li><Link href="/rsp-editing-ai-photo-prompts" className="font-medium text-blue-600 hover:text-blue-700">🔥 RSP Viral Prompts</Link></li>
-                <li><Link href="/ai-photo-editor-no-sign-up" className="hover:text-neutral-900">No Sign Up Editor</Link></li>
-                <li><Link href="/ai-photo-editor-no-restrictions" className="hover:text-neutral-900">No Restrictions</Link></li>
-                <li><Link href="/gemini-ai-photo-editor" className="hover:text-neutral-900">Gemini Photo Editor</Link></li>
-                <li><Link href="/ai-photo-editor-free" className="hover:text-neutral-900">Free AI Editor</Link></li>
-                <li><Link href="/ai-image-generator-unlimited" className="hover:text-neutral-900">Unlimited Generator</Link></li>
-              </ul>
-            </div>
-            <div>
-              <p className="mb-2 text-sm font-semibold text-neutral-900">Edit Tools</p>
-              <ul className="space-y-1.5 text-xs text-neutral-500">
-                <li><Link href="/erase-and-replace-ai" className="font-medium text-blue-600 hover:text-blue-700">⚡ Erase & Replace AI</Link></li>
-                <li><Link href="/filter-remover" className="hover:text-neutral-900">AI Filter Remover</Link></li>
-                <li><Link href="/remove-object-from-photo" className="hover:text-neutral-900">Remove Objects</Link></li>
-                <li><Link href="/background-remover" className="hover:text-neutral-900">Background Remover</Link></li>
-                <li><Link href="/edit-text-in-image" className="hover:text-neutral-900">Edit Text in Image</Link></li>
-                <li><Link href="/photo-text-editor" className="hover:text-neutral-900">Photo Text Editor</Link></li>
-              </ul>
-            </div>
-            <div>
-              <p className="mb-2 text-sm font-semibold text-neutral-900">Enhance Tools</p>
-              <ul className="space-y-1.5 text-xs text-neutral-500">
-                <li><Link href="/4k-image-upscaler" className="hover:text-neutral-900">4K Image Upscaler</Link></li>
-                <li><Link href="/unblur-image" className="hover:text-neutral-900">Unblur Image</Link></li>
-                <li><Link href="/photo-restoration" className="hover:text-neutral-900">Photo Restoration</Link></li>
-                <li><Link href="/ai-photo-enhancer" className="hover:text-neutral-900">AI Photo Enhancer</Link></li>
-              </ul>
-            </div>
-            <div>
-              <p className="mb-2 text-sm font-semibold text-neutral-900">Watermark</p>
-              <ul className="space-y-1.5 text-xs text-neutral-500">
-                <li><Link href="/gemini-watermark-remover" className="hover:text-neutral-900">Gemini Watermark</Link></li>
-                <li><Link href="/remove-person-from-photo" className="hover:text-neutral-900">Remove Person</Link></li>
-                <li><Link href="/ai-photo-to-real" className="hover:text-neutral-900">AI Photo to Real</Link></li>
-              </ul>
-            </div>
-            <div>
-              <p className="mb-2 text-sm font-semibold text-neutral-900">Generate Tools</p>
-              <ul className="space-y-1.5 text-xs text-neutral-500">
-                <li><Link href="/text-to-image" className="hover:text-neutral-900">Text to Image</Link></li>
-                <li><Link href="/ai-photo-generator" className="hover:text-neutral-900">AI Photo Generator</Link></li>
-                <li><Link href="/ai-portrait-generator" className="hover:text-neutral-900">AI Portrait Generator</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-neutral-200 py-4 text-center text-xs text-neutral-400">
-            <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 sm:flex-row">
-              <p>© {new Date().getFullYear()} SeedPix. All rights reserved.</p>
-              <div className="flex space-x-4">
-                <Link href="/about" className="hover:text-neutral-600">About</Link>
-                <Link href="/blog" className="hover:text-neutral-600">Blog</Link>
-                <Link href="/privacy" className="hover:text-neutral-600">Privacy Policy</Link>
-                <Link href="/terms" className="hover:text-neutral-600">Terms of Service</Link>
-                <Link href="/pricing" className="hover:text-neutral-600">Pricing</Link>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <SiteFooter />
       </body>
     </html>
   );

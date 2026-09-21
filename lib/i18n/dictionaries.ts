@@ -30,10 +30,33 @@ export const dictionaries: Record<Locale, Dictionary> = {
       editor: "AI Photo Editor",
       tools: "Tools",
       pricing: "Pricing",
+      blog: "Blog & Guides",
       signIn: "Sign In",
       signOut: "Sign out",
       getCredits: "Get 5 Free Credits",
     },
+    faqs: [
+      {
+        q: "Do I need to sign up to use the SeedPix AI photo editor?",
+        a: "No. You can open the editor and try several edits without creating an account. Signing up simply unlocks your free daily credits and lets you save your work.",
+      },
+      {
+        q: "What file formats does the AI photo editor accept?",
+        a: "SeedPix accepts JPG, PNG, and WebP files up to 20 MB. PNG is best when you need a transparent background.",
+      },
+      {
+        q: "Will my edited photo have a watermark?",
+        a: "No. Every image you download from SeedPix is free of watermarks and can be used commercially, so you can use the results in products, listings, and marketing.",
+      },
+      {
+        q: "Can I remove an object from a photo without Photoshop?",
+        a: "Yes - that is one of the most popular SeedPix tools. Upload the photo, click Remove objects, and the AI erases the unwanted element and fills the gap with realistic background.",
+      },
+      {
+        q: "How is SeedPix different from other AI photo editors?",
+        a: "SeedPix combines a free-form text editor with dedicated one-click tools in a single place, so you can remove objects, remove backgrounds, restore old photos, upscale to 4K, and remove AI filters without switching apps or paying multiple subscriptions.",
+      },
+    ],
     hero: {
       trendBadge: "🔥 2026 Trending • Zero Sign Up • No Watermark • 4K Output",
       titleMain: "Free AI Photo Editor Online —",
@@ -100,10 +123,33 @@ export const dictionaries: Record<Locale, Dictionary> = {
       editor: "Editor de Fotos IA",
       tools: "Herramientas",
       pricing: "Precios",
+      blog: "Blog y Guías",
       signIn: "Iniciar sesión",
       signOut: "Cerrar sesión",
       getCredits: "5 Créditos Gratis",
     },
+    faqs: [
+      {
+        q: "¿Necesito registrarme para usar el editor de fotos con IA de SeedPix?",
+        a: "No. Puedes abrir el editor y probar varias ediciones sin crear una cuenta. Registrarte solo desbloquea tus créditos diarios gratuitos y te permite guardar tu historial.",
+      },
+      {
+        q: "¿Qué formatos de archivo admite el editor de fotos con IA?",
+        a: "SeedPix admite archivos JPG, PNG y WebP de hasta 20 MB. PNG es ideal si necesitas un fondo transparente.",
+      },
+      {
+        q: "¿Mi foto editada tendrá alguna marca de agua?",
+        a: "No. Todas las imágenes que descargas de SeedPix están 100% libres de marcas de agua y pueden usarse comercialmente en productos, tiendas y marketing.",
+      },
+      {
+        q: "¿Puedo eliminar objetos de una foto sin saber Photoshop?",
+        a: "Sí, es una de las funciones más populares. Sube la foto, describe o selecciona el elemento no deseado y la IA lo borrará rellenando el fondo de forma realista.",
+      },
+      {
+        q: "¿En qué se diferencia SeedPix de otros editores de fotos con IA?",
+        a: "SeedPix combina un editor conversacional por texto con más de 100 herramientas dedicadas en un solo lugar, permitiéndote borrar objetos, quitar fondos, restaurar fotos y escalar a 4K sin suscripciones forzadas.",
+      },
+    ],
     hero: {
       trendBadge: "🔥 Tendencia 2026 • Sin Registro • Sin Marca de Agua • Salida 4K",
       titleMain: "Editor de Fotos IA Gratis Online —",
@@ -170,10 +216,33 @@ export const dictionaries: Record<Locale, Dictionary> = {
       editor: "Editor de Fotos IA",
       tools: "Ferramentas",
       pricing: "Preços",
+      blog: "Blog e Guias",
       signIn: "Entrar",
       signOut: "Sair",
       getCredits: "Ganhar 5 Créditos Grátis",
     },
+    faqs: [
+      {
+        q: "Preciso me cadastrar para usar o editor de fotos IA do SeedPix?",
+        a: "Não. Você pode abrir o editor e testar várias edições imediatamente sem criar uma conta. O cadastro serve apenas para desbloquear seus créditos diários gratuitos e salvar seus trabalhos.",
+      },
+      {
+        q: "Quais formatos de arquivo são suportados?",
+        a: "O SeedPix suporta arquivos JPG, PNG e WebP de até 20 MB. O formato PNG é o mais indicado quando você precisa de fundo transparente.",
+      },
+      {
+        q: "Minhas fotos editadas terão marca d'água?",
+        a: "Não. Todas as imagens baixadas do SeedPix são 100% livres de marcas d'água e podem ser usadas comercialmente em anúncios, lojas virtuais e redes sociais.",
+      },
+      {
+        q: "Posso remover objetos de fotos sem entender de Photoshop?",
+        a: "Sim, essa é uma das ferramentas mais populares do SeedPix. Basta carregar a imagem e a IA remove o elemento indesejado preenchendo o fundo de forma natural.",
+      },
+      {
+        q: "Qual é o diferencial do SeedPix em relação a outros editores de IA?",
+        a: "O SeedPix reúne um editor por comandos em linguagem natural e centenas de ferramentas dedicadas em um só lugar, permitindo remover objetos, restaurar fotos e fazer upscale para 4K sem mensalidades caras.",
+      },
+    ],
     hero: {
       trendBadge: "🔥 Tendência 2026 • Sem Cadastro • Sem Marca d'Água • 4K",
       titleMain: "Editor de Fotos com IA Grátis Online —",
@@ -240,10 +309,33 @@ export const dictionaries: Record<Locale, Dictionary> = {
       editor: "AI写真編集",
       tools: "ツール一覧",
       pricing: "料金プラン",
+      blog: "ブログ・ガイド",
       signIn: "ログイン",
       signOut: "ログアウト",
       getCredits: "無料5クレジット獲得",
     },
+    faqs: [
+      {
+        q: "SeedPixのAI写真編集ツールを使うのに会員登録は必要ですか？",
+        a: "いいえ、会員登録は不要です。ブラウザ上でエディターを開いて、アカウントを作成することなくすぐに写真の編集・生成をお試しいただけます。",
+      },
+      {
+        q: "対応している画像ファイル形式と最大サイズは？",
+        a: "最大20MBまでのJPG、PNG、WebP形式に対応しています。透過背景が必要な画像にはPNG形式をおすすめします。",
+      },
+      {
+        q: "編集・ダウンロードした写真に透かし（ウォーターマーク）は入りますか？",
+        a: "いいえ。SeedPixで編集・ダウンロードしたすべての画像は完全透かしなしです。商用利用も可能で、広告やECサイト、SNSにも安心してご利用いただけます。",
+      },
+      {
+        q: "Photoshopなどの専門知識がなくても不要なものを消せますか？",
+        a: "はい、最も人気のある機能の一つです。写真をアップロードして消したい対象を指定するだけで、AIが背景を自然に補完しながらきれいに消去します。",
+      },
+      {
+        q: "SeedPixが他のAI写真編集ツールと異なる点は何ですか？",
+        a: "自然な言葉で指示できる自由編集機能に加え、不要物消去、背景透過、写真修復、4K超解像度化など100以上の専用ツールを1箇所に集約。高額なサブスクなしでお使いいただけます。",
+      },
+    ],
     hero: {
       trendBadge: "🔥 2026年最新トレンド • 登録不要 • 透かしなし • 4K出力",
       titleMain: "無料オンラインAI写真編集 —",
@@ -311,10 +403,33 @@ export const dictionaries: Record<Locale, Dictionary> = {
       editor: "AI照片编辑",
       tools: "功能工具箱",
       pricing: "价格方案",
+      blog: "博客与指南",
       signIn: "登录",
       signOut: "退出登录",
       getCredits: "免费领取 5 点数",
     },
+    faqs: [
+      {
+        q: "使用 SeedPix AI 照片编辑器需要注册账号吗？",
+        a: "完全不需要。您可以直接在浏览器中打开编辑器并立即开始修图，无需注册或绑定任何个人信息。注册仅用于保存历史记录及领取每日赠送点数。",
+      },
+      {
+        q: "支持上传哪些图片格式和多大体积？",
+        a: "支持最大 20MB 的 JPG、PNG 和 WebP 格式。需要透明背景时建议优先使用 PNG 格式导出。",
+      },
+      {
+        q: "下载的处理后图片会有水印吗？支持商用吗？",
+        a: "绝无任何水印。通过 SeedPix 编辑或生成的所有图像均归您所有，100% 支持商业用途，可直接用于电商上架、社交媒体或广告宣传。",
+      },
+      {
+        q: "零 Photoshop 基础也可以一键消除照片路人吗？",
+        a: "是的，这是最受欢迎的核心功能。只需上传照片并涂抹或文字说明消除对象，AI 扩散模型即可在几秒钟内无痕移除并逼真重绘背景。",
+      },
+      {
+        q: "SeedPix 与其他 AI 修图软件相比有什么优势？",
+        a: "SeedPix 将自然语言对话修图与 100+ 专属一键式功能矩阵深度整合，无需在多个软件间来回切换，更无强制性自动续费订阅陷阱，随用随修。",
+      },
+    ],
     hero: {
       trendBadge: "🔥 2026 最新爆款 • 免注册登录 • 无水印导出 • 4K超高清",
       titleMain: "免费在线 AI 照片编辑器 —",

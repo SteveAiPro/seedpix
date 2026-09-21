@@ -6,7 +6,9 @@ const dict = getDictionary("ja");
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://seedpix.org";
 
 export const metadata: Metadata = {
-  title: dict.seo.title,
+  title: {
+    absolute: dict.seo.title,
+  },
   description: dict.seo.description,
   keywords: dict.seo.keywords,
   alternates: {

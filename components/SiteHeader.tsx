@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { getDictionary } from "@/lib/i18n/dictionaries";
+import type { Locale } from "@/lib/i18n/types";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -13,6 +15,19 @@ const configured =
 
 export default function SiteHeader() {
   const router = useRouter();
+  const pathname = usePathname() || "/";
+
+  // 检测当前语言
+  const currentLocale: Locale = (function () {
+    const segments = pathname.split("/").filter(Boolean);
+    const first = segments[0];
+    if (first && (first === "es" || first === "pt" || first === "ja" || first === "zh")) {
+      return first;
+    }
+    return "en";
+  })();
+
+  const dict = getDictionary(currentLocale);
   const [email, setEmail] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [credits, setCredits] = useState<number | null>(null);
@@ -93,23 +108,23 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
         <Link
-          href="/"
+          href={currentLocale === "en" ? "/" : `/${currentLocale}`}
           className="flex items-center gap-1.5 text-lg font-bold text-neutral-900"
         >
           <span className="text-blue-600">✦</span> SeedPix
         </Link>
         <nav className="hidden items-center gap-5 text-sm text-neutral-600 md:flex">
-          <Link href="/" className="hover:text-neutral-900">
-            AI Photo Editor
+          <Link href={currentLocale === "en" ? "/" : `/${currentLocale}`} className="hover:text-neutral-900">
+            {dict.nav.editor}
           </Link>
           <Link href="/ai-photo-tools" className="hover:text-neutral-900">
-            Tools
+            {dict.nav.tools}
           </Link>
           <Link href="/pricing" className="hover:text-neutral-900">
-            Pricing
+            {dict.nav.pricing}
           </Link>
           <Link href="/blog" className="hover:text-neutral-900">
-            Blog
+            {dict.nav.blog}
           </Link>
           {isAdmin && (
             <Link
@@ -140,7 +155,7 @@ export default function SiteHeader() {
                 disabled={signingOut}
                 className="rounded-lg px-3 py-1.5 text-neutral-700 hover:bg-neutral-100 disabled:opacity-50"
               >
-                {signingOut ? "Signing out..." : "Sign out"}
+                {signingOut ? "..." : dict.nav.signOut}
               </button>
             </>
           ) : (
@@ -149,13 +164,13 @@ export default function SiteHeader() {
                 href="/sign-in"
                 className="rounded-lg px-3 py-1.5 text-neutral-700 hover:bg-neutral-100"
               >
-                Sign In
+                {dict.nav.signIn}
               </Link>
               <Link
                 href="/sign-up"
                 className="rounded-lg bg-blue-600 px-3 py-1.5 font-medium text-white hover:bg-blue-700"
               >
-                Get 5 Free Credits
+                {dict.nav.getCredits}
               </Link>
             </>
           )}

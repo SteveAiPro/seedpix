@@ -55,7 +55,7 @@ export default function LocalizedHome({ locale = "en" }: LocalizedHomeProps) {
     },
   };
 
-  const homeFaqs = [
+  const homeFaqs = dict.faqs || [
     {
       q: "Do I need to sign up to use the SeedPix AI photo editor?",
       a: "No. You can open the editor and try several edits without creating an account. Signing up simply unlocks your free daily credits and lets you save your work.",

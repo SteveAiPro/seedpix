@@ -18,10 +18,12 @@ export interface Dictionary {
     editor: string;
     tools: string;
     pricing: string;
+    blog: string;
     signIn: string;
     signOut: string;
     getCredits: string;
   };
+  faqs?: { q: string; a: string }[];
   hero: {
     trendBadge: string;
     titleMain: string;
