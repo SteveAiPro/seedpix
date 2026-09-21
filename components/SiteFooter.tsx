@@ -108,6 +108,11 @@ export default function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/remove-text-from-photo" className="hover:text-neutral-900">
+                Remove Text from Photo
+              </Link>
+            </li>
+            <li>
               <Link href="/remove-object-from-photo" className="hover:text-neutral-900">
                 Remove Object
               </Link>
@@ -175,6 +180,16 @@ export default function SiteFooter() {
             <li>
               <Link href="/remove-person-from-photo" className="hover:text-neutral-900">
                 Remove Person
+              </Link>
+            </li>
+            <li>
+              <Link href="/remove-shadow-from-photo" className="hover:text-neutral-900">
+                Remove Shadow
+              </Link>
+            </li>
+            <li>
+              <Link href="/remove-emoji-from-photo" className="hover:text-neutral-900">
+                Remove Emoji
               </Link>
             </li>
             <li>

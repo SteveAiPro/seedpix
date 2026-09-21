@@ -1099,6 +1099,172 @@ export const tools: ToolPageData[] = [
       },
     ],
   },
+  {
+    slug: "remove-text-from-photo",
+    title: "Remove Text from Photo Free - AI Text Eraser Online",
+    description:
+      "Remove text, watermarks, timestamps, captions, and logos from photos online free with AI. Inpaint clean, natural background seamlessly with no signup.",
+    shortDescription: "Erase text, captions & timestamps from photos",
+    category: "remove",
+    credits: 10,
+    systemPrompt:
+      "You are an AI text removal and inpainting engine. Detect all text, letters, numbers, timestamps, captions, watermarks, and logos in the image. Erase them completely and reconstruct the original texture, surface, and background underneath with photographic realism. Keep all other visual elements, colors, lighting, and composition unchanged.",
+    examplePrompt: "Remove all text and captions from this photo cleanly",
+    keywords: [
+      "remove text from photo",
+      "remove text from image",
+      "ai text remover",
+      "erase text from photo online free",
+      "delete text on picture",
+      "text eraser ai",
+      "remove letters from photo",
+      "clean text off image",
+    ],
+    faqs: [
+      {
+        question: "How do I remove text from a photo online for free?",
+        answer:
+          "Upload your photo into SeedPix and click Remove Text. The AI automatically detects text, subtitles, and timestamps, erases them, and reconstructs the realistic background underneath in about 20 seconds.",
+      },
+      {
+        question: "Will the background look blurry after removing text?",
+        answer:
+          "No. Unlike basic clone stamp tools that smudge pixels, our diffusion model reconstructs the natural texture, lighting, and grain of the underlying surface.",
+      },
+      {
+        question: "Can I remove text without creating an account?",
+        answer:
+          "Yes. SeedPix lets you test and download watermark-free images immediately without signing up or entering payment info.",
+      },
+      {
+        question: "What image formats and file sizes are supported?",
+        answer: "We support JPG, PNG, and WebP images up to 20MB in full original resolution.",
+      },
+    ],
+    steps: [
+      {
+        title: "Upload your photo",
+        description: "Drop your photo with unwanted text, timestamps, or captions into the editor.",
+      },
+      {
+        title: "Click Remove Text",
+        description: "One click does it all. The AI locates all typography and inpaint the background.",
+      },
+      {
+        title: "Download clean image",
+        description: "Export in full native resolution with zero watermarks.",
+      },
+    ],
+  },
+  {
+    slug: "remove-shadow-from-photo",
+    title: "Remove Shadow from Photo Free - AI Shadow Remover Online",
+    description:
+      "Remove harsh shadows from photos online free with AI. Eliminate facial shadows, phone drop shadows, and uneven lighting with one click. No signup needed.",
+    shortDescription: "Eliminate harsh shadows & balance lighting",
+    category: "remove",
+    credits: 10,
+    systemPrompt:
+      "You are an AI shadow removal and illumination balancing engine. Detect unwanted harsh drop shadows, facial shadows, phone casting shadows, and uneven dark patches in the photo. Smooth out the lighting across the shaded area to match the surrounding ambient exposure and color temperature while preserving underlying textures, facial features, and details.",
+    examplePrompt: "Remove the harsh drop shadow from this photo",
+    keywords: [
+      "remove shadow from photo",
+      "ai shadow remover",
+      "remove shadow from face photo free",
+      "fix shadow in picture online",
+      "remove drop shadow from image",
+      "eliminate shadows on photos",
+      "shadow eraser online",
+    ],
+    faqs: [
+      {
+        question: "How do I remove shadows from a photo online?",
+        answer:
+          "Drop your photo into the SeedPix Shadow Remover and click Generate. The neural network detects harsh shadow boundaries and equalizes ambient lighting across the affected area without destroying surface details.",
+      },
+      {
+        question: "Can I remove shadows cast by a phone or camera on documents and food?",
+        answer:
+          "Yes! Removing overhead phone shadows from documents, receipts, flat lays, and food photography is one of the most effective use cases for this tool.",
+      },
+      {
+        question: "Does it work on facial shadows in portraits?",
+        answer:
+          "Yes. It softens and lifts harsh sun shadows under noses, eyes, and chins while preserving natural skin tones and facial bone structure.",
+      },
+      {
+        question: "Is it free without registration?",
+        answer:
+          "Yes, new visitors receive free starter credits to test the tool directly in the browser with no sign-up or credit card required.",
+      },
+    ],
+    steps: [
+      {
+        title: "Upload shaded image",
+        description: "Upload any portrait, product, or document photo with harsh cast shadows.",
+      },
+      {
+        title: "Run Shadow Remover",
+        description: "The AI isolates shadow falloff and balances luminance across the scene.",
+      },
+      {
+        title: "Download balanced photo",
+        description: "Save a clean, evenly lit photo in original resolution.",
+      },
+    ],
+  },
+  {
+    slug: "remove-emoji-from-photo",
+    title: "Remove Emoji from Photo Free - AI Emoji Remover Online",
+    description:
+      "Remove emojis, stickers, and reaction icons from photos free with AI. Reconstruct faces and background seamlessly with no sign-up. 100% watermark-free.",
+    shortDescription: "Erase emojis & stickers, restore faces underneath",
+    category: "remove",
+    credits: 10,
+    systemPrompt:
+      "You are an AI emoji and sticker removal engine. Detect emojis, digital stickers, snapchat stickers, reaction icons, and cartoon overlays placed on top of photos. Erase the emoji completely and reconstruct the realistic human face, skin, hair, clothing, or background underneath with photographic fidelity and anatomical accuracy.",
+    examplePrompt: "Remove the emoji covering the face and restore natural features",
+    keywords: [
+      "remove emoji from photo",
+      "ai emoji remover",
+      "remove stickers from pictures",
+      "remove emoji from face photo free",
+      "erase emoji on picture",
+      "emoji remover online",
+      "uncover emoji photo",
+    ],
+    faqs: [
+      {
+        question: "Can AI really remove an emoji covering a face?",
+        answer:
+          "Yes. Generative diffusion models have learned human facial anatomy and skin textures from millions of portraits. The AI erases the emoji overlay and inpaint realistic eyes, nose, lips, and skin consistent with the visible parts of the face.",
+      },
+      {
+        question: "Can I remove WhatsApp, Instagram, or Snapchat stickers?",
+        answer:
+          "Yes. The tool works on all digital stickers, emojis, timestamps, and doodles overlaid on social media screenshots and photos.",
+      },
+      {
+        question: "Is SeedPix Emoji Remover free without login?",
+        answer:
+          "Yes. You can test the tool immediately in your browser with no account creation or watermark on downloads.",
+      },
+    ],
+    steps: [
+      {
+        title: "Upload screenshot or photo",
+        description: "Upload the picture with emoji or sticker covering the subject.",
+      },
+      {
+        title: "Click Remove Emoji",
+        description: "The AI eliminates the graphic and regenerates the realistic pixels underneath.",
+      },
+      {
+        title: "Download restored photo",
+        description: "Export full-resolution watermark-free photo in seconds.",
+      },
+    ],
+  },
 ];
 
 export function getToolBySlug(slug: string): ToolPageData | undefined {
