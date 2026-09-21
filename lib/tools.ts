@@ -368,6 +368,65 @@ export const tools: ToolPageData[] = [
     ],
   },
   {
+    slug: "erase-and-replace-ai",
+    title: "Erase and Replace AI Free Online (No Sign Up) | SeedPix",
+    description:
+      "Erase and replace anything in photos with AI online for free. Inpaint, swap objects, and regenerate backgrounds by typing. No sign up required.",
+    shortDescription: "Erase any element and replace it with AI",
+    category: "edit",
+    credits: 10,
+    systemPrompt:
+      "You are an advanced AI erase and replace inpainting engine. Erase the specified object, region, or background in the photo and replace it with whatever new object, texture, or element the user describes. Ensure seamless blending, lighting, shadows, and perspective matching so the replacement looks 100% photorealistic.",
+    examplePrompt: "Erase the coffee cup and replace it with a vintage camera",
+    keywords: [
+      "erase and replace ai",
+      "ai erase and replace",
+      "erase and replace",
+      "erase and replace online free",
+      "replace object in photo ai",
+      "ai inpainting online free",
+      "swap object in photo ai",
+      "erase object and replace with ai",
+      "free ai erase and replace",
+    ],
+    faqs: [
+      {
+        question: "How does Erase and Replace AI work?",
+        answer:
+          "Upload your photo, describe what you want to erase and what you want to replace it with (or use the brush to highlight the area), and our AI inpainting models seamlessly regenerate the new object with matching lighting and perspective.",
+      },
+      {
+        question: "Is Erase and Replace AI completely free without sign up?",
+        answer:
+          "Yes! You can try our AI photo editor directly in your browser with no mandatory sign up and zero watermarks on your downloaded results.",
+      },
+      {
+        question: "Can I replace people, backgrounds, or specific clothing?",
+        answer:
+          "Yes. You can swap backgrounds, change outfits, replace furniture, erase clutter, and insert custom objects naturally.",
+      },
+      {
+        question: "What image formats and file sizes are supported?",
+        answer:
+          "SeedPix supports PNG, JPG, JPEG, and WebP images up to 20MB with high-definition resolution preservation.",
+      },
+      {
+        question: "Can I use the edited photos for commercial projects?",
+        answer:
+          "Yes. All exported images come with full commercial rights for your e-commerce listings, client work, marketing, and social media.",
+      },
+    ],
+    demos: [
+      {
+        title: "Erase object and replace seamlessly",
+        description: "Swap unwanted elements with creative new objects naturally.",
+        beforeImage: "/demos/before-remove-objects-generic.webp",
+        afterImage: "/demos/after-remove-objects-generic.webp",
+      },
+    ],
+    updatedAt: "2026-09-21",
+  },
+  {
     slug: "gemini-watermark-remover",
     title: "Gemini Watermark Remover - Remove It Free",
     description:
@@ -801,9 +860,9 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "photo-text-editor",
-    title: "Photo Text Editor - Edit Text on Photos Free",
+    title: "Free Photo Text Editor Online (No Sign Up & Keep Font) | SeedPix",
     description:
-      "Edit text on photos online free with AI. Add, change, or remove text in any image while keeping the original font and style. No Photoshop, no downloads.",
+      "Edit text on photos online free with AI. Add, change, or erase text in any image while keeping original font and style. No sign up, no Photoshop.",
     shortDescription: "Edit text on photos keeping the font",
     category: "edit",
     credits: 10,
@@ -982,9 +1041,9 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "ai-portrait-generator",
-    title: "AI Portrait Generator - Create Stunning Portraits",
+    title: "Free AI Portrait Generator Online (No Sign Up & HD) | SeedPix",
     description:
-      "Generate stunning AI portraits online - professional headshots, artistic portraits, and avatars from a text description. Free, no Photoshop needed.",
+      "Generate professional AI portraits, headshots & avatars from text online for free. Studio lighting, realistic skin with no sign up or watermarks.",
     shortDescription: "Generate portraits & headshots with AI",
     category: "generate",
     credits: 10,

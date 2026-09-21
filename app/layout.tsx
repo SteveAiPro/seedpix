@@ -143,6 +143,7 @@ export default function RootLayout({
             <div>
               <p className="mb-2 text-sm font-semibold text-neutral-900">Edit Tools</p>
               <ul className="space-y-1.5 text-xs text-neutral-500">
+                <li><Link href="/erase-and-replace-ai" className="font-medium text-blue-600 hover:text-blue-700">⚡ Erase & Replace AI</Link></li>
                 <li><Link href="/filter-remover" className="hover:text-neutral-900">AI Filter Remover</Link></li>
                 <li><Link href="/remove-object-from-photo" className="hover:text-neutral-900">Remove Objects</Link></li>
                 <li><Link href="/background-remover" className="hover:text-neutral-900">Background Remover</Link></li>
