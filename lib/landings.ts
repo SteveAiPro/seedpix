@@ -23,11 +23,13 @@ export interface KeywordLandingData {
 export const landings: KeywordLandingData[] = [
   {
     slug: "ai-image-generator",
-    title: "AI Image Generator - Create Images from Text Free",
+    title: "AI Image Generator Free No Sign Up - Fast & Unlimited",
     description:
-      "Turn words into images with the SeedPix AI image generator. Create art, realistic photos, illustrations, and designs from text in seconds. Free to start.",
+      "Generate stunning AI photos and art online free with no sign up and no watermark. Turn words into realistic images in seconds. Zero registration required.",
     keywords: [
       "ai image generator",
+      "ai image generator free no sign up",
+      "image generator no sign up",
       "ai photo generator",
       "text to image",
       "ai art generator",
@@ -35,6 +37,8 @@ export const landings: KeywordLandingData[] = [
       "ai image generator free",
       "text to image ai",
       "create image with ai",
+      "free ai image generator no watermark",
+      "ai image generator no restrictions",
     ],
     toolSlugs: [
       "text-to-image",
@@ -95,7 +99,7 @@ export const landings: KeywordLandingData[] = [
           "One generation costs 10 credits. Signup gives you 10 free credits plus 1 daily credit, and credit packs start at $9.99 for 350 credits.",
       },
     ],
-    updatedAt: "2026-09-19",
+    updatedAt: "2026-09-23",
   },
   {
     slug: "ai-photo-editor-free",

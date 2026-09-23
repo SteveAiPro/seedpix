@@ -8,16 +8,14 @@ import { Wand2, ArrowRight, Layers } from "lucide-react";
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://seedpix.org";
 
 export const metadata: Metadata = {
-  title: "100+ AI Photo Tools",
-  // 注意：不要用撇号（SeedPix's）—— Next.js 会把 ' 转义成 &#x27; 出现在 HTML 里。
-  // 长度控制在 160 字符以内，避免 SERP 截断。
+  title: "Free AI Photo Tools Online - No Sign Up (All-in-One)",
   description:
-    "Explore the full SeedPix collection of AI photo tools: remove objects and backgrounds, restore old photos, upscale to 4K, remove watermarks, edit text, and more.",
+    "Explore the complete suite of free AI photo tools online with no sign up: remove objects & text, erase watermarks, upscale to 4K, restore old pictures, and unblur instantly.",
   alternates: { canonical: "/ai-photo-tools" },
   openGraph: {
-    title: "100+ AI Photo Tools | SeedPix",
+    title: "Free AI Photo Tools Online - No Sign Up (All-in-One) | SeedPix",
     description:
-      "Explore the full SeedPix collection of AI photo tools: remove objects and backgrounds, restore old photos, upscale to 4K, remove watermarks, edit text, and more.",
+      "Explore the complete suite of free AI photo tools online with no sign up: remove objects & text, erase watermarks, upscale to 4K, restore old pictures, and unblur instantly.",
     type: "website",
     url: "/ai-photo-tools",
     siteName: "SeedPix",
@@ -26,9 +24,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "100+ AI Photo Tools | SeedPix",
+    title: "Free AI Photo Tools Online - No Sign Up (All-in-One) | SeedPix",
     description:
-      "Explore the full SeedPix collection of AI photo tools: remove objects and backgrounds, restore old photos, upscale to 4K, remove watermarks, edit text, and more.",
+      "Explore the complete suite of free AI photo tools online with no sign up: remove objects & text, erase watermarks, upscale to 4K, restore old pictures, and unblur instantly.",
     images: ["/og-image.png"],
   },
 };
@@ -135,11 +133,11 @@ export default function ToolsPage() {
 
       <div className="mb-10 text-center">
         <h1 className="text-3xl font-bold text-neutral-900 md:text-4xl">
-          100+ AI Photo Tools
+          Free AI Photo Tools Online — No Sign Up
         </h1>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-neutral-600 md:text-base">
-          Everything you can do to any photo — restore, enhance, clean up,
-          restyle, and generate. All tools in one place, all free to start.
+          Everything you can do to any photo: restore, enhance, clean up,
+          restyle, and generate. All tools in one place, 100% free to start with zero watermarks.
         </p>
       </div>
 

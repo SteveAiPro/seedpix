@@ -921,9 +921,9 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "text-to-image",
-    title: "AI Image Generator - Text to Image Free",
+    title: "Free Text to Image AI Generator - No Sign Up Online",
     description:
-      "Create stunning images from text with AI. Generate art, illustrations, product mockups, and realistic photos in seconds. Free, no Photoshop needed.",
+      "Generate realistic photos, art, and illustrations from text free online with AI. No sign up required, zero watermarks, and instant full-resolution download.",
     shortDescription: "Turn text prompts into images",
     category: "generate",
     credits: 10,
@@ -932,12 +932,15 @@ export const tools: ToolPageData[] = [
     examplePrompt: "A photorealistic golden retriever puppy sitting in a sunlit meadow",
     keywords: [
       "text to image",
+      "free ai image generator from text",
+      "text to image no sign up",
       "ai image generator",
       "text to image ai",
       "ai art generator",
       "generate image from text",
       "ai image generator free",
-      "text to image generator",
+      "image generator no sign up",
+      "free text to image generator online",
       "create image from text",
     ],
     faqs: [
@@ -978,6 +981,7 @@ export const tools: ToolPageData[] = [
         image: "/demos/after-relight-scene.webp",
       },
     ],
+    updatedAt: "2026-09-23",
   },
   {
     slug: "ai-photo-generator",
