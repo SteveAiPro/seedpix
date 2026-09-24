@@ -6,9 +6,11 @@
 
 export const MODELS = {
   "gpt-image-2": { id: "gpt-image-2", name: "GPT Image 2", resolution: "1K" },
+  "gpt-image-2.5": { id: "gpt-image-2", name: "GPT Image 2.5", resolution: "1K" },
   "nanobanana-2": { id: "nanobanana2", name: "NanoBanana 2", resolution: "1K" },
   "nanobanana-pro": { id: "nanobananapro", name: "NanoBanana Pro", resolution: "1K" },
   "seedream-5": { id: "doubao-seedream-5-0-260128", name: "Seedream 5.0", resolution: "1K" },
+  "seedream-5-lite": { id: "doubao-seedream-5-0-260128", name: "Seedream 5.0 Lite", resolution: "1K" },
   "qwen3-image": { id: "qwen3-image", name: "Qwen Image 3.0", resolution: "1K" },
   "grok-imagine": { id: "grok-imagine-image", name: "Grok Imagine", resolution: "1K" },
 } as const;

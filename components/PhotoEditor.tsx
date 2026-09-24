@@ -1,15 +1,17 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { ImagePlus, Sparkles, Wand2, Upload, X } from "lucide-react";
 import { useAuth, getAccessToken } from "@/lib/auth-client";
 
 const MODELS = [
+  { id: "gpt-image-2.5", name: "GPT Image 2.5", badge: "New" },
   { id: "gpt-image-2", name: "GPT Image 2", badge: "Best overall" },
-  { id: "nanobanana-2", name: "NanoBanana 2", badge: "4K editing" },
+  { id: "nanobanana-pro", name: "NanoBanana Pro", badge: "Pro" },
+  { id: "nanobanana-2", name: "NanoBanana 2", badge: "4K" },
   { id: "seedream-5", name: "Seedream 5.0", badge: "Fast" },
-  { id: "grok-imagine", name: "Grok Imagine", badge: "High-res" },
+  { id: "grok-imagine", name: "Grok Imagine", badge: "Creative" },
 ];
 
 const PRESET_PROMPTS = [
@@ -31,6 +33,31 @@ export default function PhotoEditor() {
   const [credits, setCredits] = useState<number | null>(null);
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    // 监听全局模型选择事件或 URL 参数
+    function handleSelectModel(e: any) {
+      const selected = e.detail;
+      if (selected) {
+        if (selected === "seedream-5-lite") setModel("seedream-5");
+        else if (selected === "seedpix-free") setModel("gpt-image-2");
+        else setModel(selected);
+      }
+    }
+    window.addEventListener("select-model", handleSelectModel);
+
+    // 检查 URL 搜索参数中的 ?model=
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const urlModel = params.get("model");
+      if (urlModel) {
+        if (urlModel === "seedream-5-lite") setModel("seedream-5");
+        else setModel(urlModel);
+      }
+    }
+
+    return () => window.removeEventListener("select-model", handleSelectModel);
+  }, []);
 
   const { user, loading: authLoading, configured: authConfigured } = useAuth();
 
@@ -109,7 +136,7 @@ export default function PhotoEditor() {
   }
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <div id="editor-section" className="mx-auto max-w-4xl scroll-mt-24">
       {/* Upload + Prompt + Model */}
       <div
         className="overflow-hidden rounded-2xl shadow-[0_0_50px_-10px_rgba(255,229,37,0.25)] backdrop-blur-xl"
