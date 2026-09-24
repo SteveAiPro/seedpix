@@ -71,7 +71,9 @@ export async function createImageTask(
     body.image_url = params.imageUrl;
   }
 
-  if (params.aspectRatio) body.aspect_ratio = params.aspectRatio;
+  if (params.aspectRatio && params.aspectRatio.toLowerCase() !== "auto") {
+    body.aspect_ratio = params.aspectRatio;
+  }
   if (params.resolution) body.resolution = params.resolution;
   if (params.outputFormat) body.output_format = params.outputFormat;
   if (params.callbackUrl) body.callback_url = params.callbackUrl;

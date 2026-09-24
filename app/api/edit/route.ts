@@ -27,12 +27,6 @@ export async function POST(req: Request) {
     if (!prompt || typeof prompt !== "string" || prompt.trim().length < 2) {
       return NextResponse.json({ error: "Prompt is required" }, { status: 400 });
     }
-    if (!imageBase64) {
-      return NextResponse.json(
-        { error: "Image is required (imageBase64)" },
-        { status: 400 }
-      );
-    }
     if (!(model in MODELS)) {
       return NextResponse.json({ error: `Unsupported model: ${model}` }, { status: 400 });
     }
@@ -49,12 +43,25 @@ export async function POST(req: Request) {
     // 4. 调用 APIMODELS 生成
     const modelId = MODELS[model as ModelId].id;
     let resultUrls: string[] | null = null;
+    let base64Data: string | undefined = undefined;
+    let mimeType = imageMimeType || "image/jpeg";
+
+    if (imageBase64) {
+      base64Data = imageBase64;
+      if (imageBase64.startsWith("data:")) {
+        const parts = imageBase64.split(",");
+        base64Data = parts[1];
+        const match = parts[0].match(/data:(.*?);/);
+        if (match) mimeType = match[1];
+      }
+    }
+
     try {
       resultUrls = await generateImage({
         model: modelId,
         prompt,
-        imageBase64,
-        imageMimeType,
+        imageBase64: base64Data,
+        imageMimeType: mimeType,
         aspectRatio,
         resolution: resolution || MODELS[model as ModelId]?.resolution || "1K",
       });
