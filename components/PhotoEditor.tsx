@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { ImagePlus, Sparkles, Wand2, Upload, X } from "lucide-react";
+import { ImagePlus, Sparkles, Wand2, Upload, X, ChevronDown, Check } from "lucide-react";
 import { useAuth, getAccessToken } from "@/lib/auth-client";
 
 const MODELS = [
@@ -12,6 +12,12 @@ const MODELS = [
   { id: "nanobanana-2", name: "NanoBanana 2", badge: "4K" },
   { id: "seedream-5", name: "Seedream 5.0", badge: "Fast" },
   { id: "grok-imagine", name: "Grok Imagine", badge: "Creative" },
+];
+
+const RESOLUTIONS = [
+  { id: "1K", name: "1K Standard", desc: "1024×1024 · Fast inference" },
+  { id: "2K", name: "2K HD", desc: "2048×2048 · Balanced clarity (Default)" },
+  { id: "4K", name: "4K Ultra-HD", desc: "4096×4096 · Crystal clear detail" },
 ];
 
 const PRESET_PROMPTS = [
@@ -27,12 +33,32 @@ export default function PhotoEditor() {
   const [fileName, setFileName] = useState("");
   const [prompt, setPrompt] = useState("");
   const [model, setModel] = useState("gpt-image-2");
+  const [resolution, setResolution] = useState("2K");
+  const [modelOpen, setModelOpen] = useState(false);
+  const [resOpen, setResOpen] = useState(false);
   const [processing, setProcessing] = useState(false);
   const [result, setResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [credits, setCredits] = useState<number | null>(null);
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const modelRef = useRef<HTMLDivElement>(null);
+  const resRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (modelRef.current && !modelRef.current.contains(event.target as Node)) {
+        setModelOpen(false);
+      }
+      if (resRef.current && !resRef.current.contains(event.target as Node)) {
+        setResOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     // 监听全局模型选择事件或 URL 参数
@@ -92,6 +118,7 @@ export default function PhotoEditor() {
           prompt: prompt.trim(),
           imageBase64: image,
           model,
+          resolution,
         }),
       });
 
@@ -134,6 +161,9 @@ export default function PhotoEditor() {
       setProcessing(false);
     }
   }
+
+  const currentModel = MODELS.find((m) => m.id === model) || MODELS[1];
+  const currentRes = RESOLUTIONS.find((r) => r.id === resolution) || RESOLUTIONS[1];
 
   return (
     <div id="editor-section" className="mx-auto max-w-4xl scroll-mt-24">
@@ -207,33 +237,136 @@ export default function PhotoEditor() {
 
         {/* Prompt + Model */}
         <div className="space-y-2.5 p-3 sm:p-4">
-          {/* Model selector */}
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-white/40 mr-1">
-              Model:
-            </span>
-            {MODELS.map((m) => (
+          {/* Model & Quality / Resolution Dropdowns (sparkpix.ai style) */}
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Model Dropdown */}
+            <div className="relative" ref={modelRef}>
               <button
-                key={m.id}
-                onClick={() => setModel(m.id)}
-                className={`flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-medium transition ${
-                  model === m.id
-                    ? "border border-[#FFE525]/60 bg-[#FFE525]/15 text-[#FFE525] shadow-[0_0_10px_rgba(255,229,37,0.2)]"
-                    : "border border-white/10 bg-white/5 text-white/70 hover:border-white/20 hover:text-white"
+                type="button"
+                onClick={() => {
+                  setModelOpen((v) => !v);
+                  setResOpen(false);
+                }}
+                className={`group flex items-center gap-1.5 rounded-xl border px-2.5 py-1 text-xs font-semibold transition ${
+                  modelOpen
+                    ? "border-[#FFE525] bg-[#FFE525]/15 text-[#FFE525] shadow-[0_0_15px_rgba(255,229,37,0.2)]"
+                    : "border-white/10 bg-[#0F0F1A] text-white/80 hover:border-[#FFE525]/50 hover:bg-[#FFE525]/5 hover:text-white"
                 }`}
               >
-                {m.name}
-                {m.badge && (
-                  <span
-                    className={`rounded-full px-1.5 py-0.2 text-[8px] font-bold ${
-                      model === m.id ? "bg-[#FFE525] text-black" : "bg-white/10 text-white/60"
-                    }`}
-                  >
-                    {m.badge}
+                <span className="text-[10px] font-medium uppercase tracking-wider text-white/40">Model:</span>
+                <span className="font-bold text-white">{currentModel.name}</span>
+                {currentModel.badge && (
+                  <span className="rounded-full border border-[#FFE525]/40 bg-[#FFE525]/20 px-1.5 py-0.2 text-[8px] font-bold text-[#FFE525]">
+                    {currentModel.badge}
                   </span>
                 )}
+                <ChevronDown
+                  className={`h-3 w-3 text-white/50 transition-transform duration-200 ${
+                    modelOpen ? "rotate-180 text-[#FFE525]" : "group-hover:text-white"
+                  }`}
+                />
               </button>
-            ))}
+
+              {modelOpen && (
+                <div className="absolute left-0 top-full z-40 mt-1.5 w-60 rounded-2xl border border-white/10 bg-[#16161F] p-1.5 shadow-2xl backdrop-blur-2xl">
+                  <div className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white/40">
+                    Select AI Model
+                  </div>
+                  <div className="space-y-0.5">
+                    {MODELS.map((m) => {
+                      const isSelected = model === m.id;
+                      return (
+                        <button
+                          key={m.id}
+                          type="button"
+                          onClick={() => {
+                            setModel(m.id);
+                            setModelOpen(false);
+                          }}
+                          className={`flex w-full items-center justify-between rounded-xl px-2.5 py-1.5 text-left text-xs transition ${
+                            isSelected
+                              ? "bg-[#FFE525]/15 font-bold text-[#FFE525]"
+                              : "text-white/80 hover:bg-white/5 hover:text-white"
+                          }`}
+                        >
+                          <div className="flex items-center gap-2">
+                            <span>{m.name}</span>
+                            {m.badge && (
+                              <span
+                                className={`rounded-full px-1.5 py-0.2 text-[8px] font-bold ${
+                                  isSelected ? "bg-[#FFE525] text-black" : "bg-white/10 text-white/60"
+                                }`}
+                              >
+                                {m.badge}
+                              </span>
+                            )}
+                          </div>
+                          {isSelected && <Check className="h-3.5 w-3.5 text-[#FFE525]" />}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Resolution / Quality Dropdown */}
+            <div className="relative" ref={resRef}>
+              <button
+                type="button"
+                onClick={() => {
+                  setResOpen((v) => !v);
+                  setModelOpen(false);
+                }}
+                className={`group flex items-center gap-1.5 rounded-xl border px-2.5 py-1 text-xs font-semibold transition ${
+                  resOpen
+                    ? "border-[#42FF41] bg-[#42FF41]/15 text-[#42FF41] shadow-[0_0_15px_rgba(66,255,65,0.2)]"
+                    : "border-white/10 bg-[#0F0F1A] text-white/80 hover:border-[#42FF41]/50 hover:bg-[#42FF41]/5 hover:text-white"
+                }`}
+              >
+                <span className="text-[10px] font-medium uppercase tracking-wider text-white/40">Quality:</span>
+                <span className="font-bold text-white">{currentRes.name}</span>
+                <ChevronDown
+                  className={`h-3 w-3 text-white/50 transition-transform duration-200 ${
+                    resOpen ? "rotate-180 text-[#42FF41]" : "group-hover:text-white"
+                  }`}
+                />
+              </button>
+
+              {resOpen && (
+                <div className="absolute left-0 top-full z-40 mt-1.5 w-64 rounded-2xl border border-white/10 bg-[#16161F] p-1.5 shadow-2xl backdrop-blur-2xl">
+                  <div className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white/40">
+                    Output Resolution
+                  </div>
+                  <div className="space-y-0.5">
+                    {RESOLUTIONS.map((r) => {
+                      const isSelected = resolution === r.id;
+                      return (
+                        <button
+                          key={r.id}
+                          type="button"
+                          onClick={() => {
+                            setResolution(r.id);
+                            setResOpen(false);
+                          }}
+                          className={`flex w-full items-center justify-between rounded-xl px-2.5 py-2 text-left text-xs transition ${
+                            isSelected
+                              ? "bg-[#42FF41]/15 font-bold text-[#42FF41]"
+                              : "text-white/80 hover:bg-white/5 hover:text-white"
+                          }`}
+                        >
+                          <div>
+                            <div className="font-semibold">{r.name}</div>
+                            <div className="text-[10px] font-normal text-white/40">{r.desc}</div>
+                          </div>
+                          {isSelected && <Check className="h-3.5 w-3.5 text-[#42FF41]" />}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Prompt input */}

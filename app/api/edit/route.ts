@@ -22,7 +22,7 @@ export async function POST(req: Request) {
 
     // 2. 解析请求体
     const body = await req.json();
-    const { prompt, imageBase64, imageMimeType, model = "gpt-image-2", aspectRatio } = body;
+    const { prompt, imageBase64, imageMimeType, model = "gpt-image-2", aspectRatio, resolution } = body;
 
     if (!prompt || typeof prompt !== "string" || prompt.trim().length < 2) {
       return NextResponse.json({ error: "Prompt is required" }, { status: 400 });
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
         imageBase64,
         imageMimeType,
         aspectRatio,
-        resolution: MODELS[model as ModelId].resolution,
+        resolution: resolution || MODELS[model as ModelId]?.resolution || "1K",
       });
     } catch (genErr) {
       // 生成失败不扣费（官方保证）
