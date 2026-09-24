@@ -42,6 +42,13 @@ export interface BlogPost {
   }[];
 }
 
+import { howToFixBlurryPhotos } from "./posts/howToFixBlurryPhotos";
+import { removeWatermark } from "./posts/removeWatermark";
+import { removeBackground } from "./posts/removeBackground";
+import { removeUnwantedPerson } from "./posts/removeUnwantedPerson";
+import { turnPhotoIntoAnime } from "./posts/turnPhotoIntoAnime";
+import { aiImagePromptsGuide } from "./posts/aiImagePromptsGuide";
+
 export const blogPosts: BlogPost[] = [
   {
     slug: "erase-and-replace-ai-guide",
@@ -374,6 +381,12 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  howToFixBlurryPhotos,
+  removeWatermark,
+  removeBackground,
+  removeUnwantedPerson,
+  turnPhotoIntoAnime,
+  aiImagePromptsGuide,
 ];
 
 export function getAllPosts(): BlogPost[] {
