@@ -549,54 +549,52 @@ export const tools: ToolPageData[] = [
   },
   {
     slug: "4k-image-upscaler",
-    title: "4K Image Upscaler - Upscale Photos Free",
+    title: "4K Quality AI - Free 4K Image Upscaler & Photo Enhancer",
     description:
-      "Upscale images to 4K resolution online free with AI. Enhance image quality, sharpness, and detail without losing quality. No Photoshop needed.",
-    shortDescription: "Upscale any image to 4K quality",
+      "Convert any image into 4K quality online free. AI 4K photo enhancer reconstructs details, sharpens blurry pictures to 4K resolution with no watermark.",
+    shortDescription: "Upscale any image to true 4K quality",
     category: "enhance",
     credits: 10,
     systemPrompt:
       "You are an AI image upscaling engine. Upscale the image to 4K resolution, enhancing sharpness and detail. Reconstruct fine textures naturally without introducing artifacts or plastic-looking results.",
-    examplePrompt: "Upscale this photo to 4K resolution",
+    examplePrompt: "Upscale this photo to true 4K quality and sharpness",
     keywords: [
+      "4k quality",
       "4k image upscaler",
+      "enhance photo 4k",
+      "image en 4k",
+      "image enhancer 4k",
       "4k enhancer",
+      "4k photo enhancer",
+      "convert image to 4k quality",
       "upscale image to 4k",
       "image upscaler 4k free",
-      "4k photo enhancer",
-      "enhance image to 4k",
-      "photo in 4k",
-      "4k resolution",
     ],
+    updatedAt: "2026-09-24",
     faqs: [
       {
-        question: "How do I upscale an image to 4K online for free?",
+        question: "How do I upscale an image to 4K quality online for free?",
         answer:
-          "Upload your image and click one button. The AI upscales it to 4K resolution while enhancing detail and sharpness.",
+          "Upload your image and click one button. The AI upscales it to 4K resolution (3840x2160 or 4x scale) while enhancing real details and sharpness.",
       },
       {
-        question: "Will upscaling reduce quality?",
+        question: "Does this convert blurry photos to real 4K quality?",
         answer:
-          "No. AI upscaling reconstructs missing detail instead of just stretching pixels, so the result looks sharper, not blurrier.",
+          "Yes. Unlike traditional bicubic interpolation that blurs edges, our neural model reconstructs missing pixel details, textures, and edges so the output looks genuinely high-resolution.",
       },
       {
-        question: "Can I upscale photos for printing?",
+        question: "Will upscaling add watermarks or cost money?",
         answer:
-          "Yes. Our 4K upscaler is perfect for preparing images for large-format printing.",
+          "No watermarks are added to your downloads. New users get 10 free credits plus 1 daily credit to upscale images completely free with no signup required.",
       },
       {
-        question: "What formats are supported?",
-        answer: "JPG, PNG, and WebP files up to 20MB.",
+        question: "Can I upscale photos for large-format printing?",
+        answer:
+          "Yes. Our 4K upscaler is designed specifically for large-format printing, wallpapers, e-commerce product photos, and digital displays.",
       },
       {
-        question: "How much does upscaling cost?",
-        answer:
-          "4K upscaling costs 10 credits per image. Free credits on signup + daily credit included.",
-      },
-      {
-        question: "Is 4K upscaling really free?",
-        answer:
-          "You get 10 free credits on signup plus 1 daily credit to try it out. Credit packs start at $9.99.",
+        question: "What formats and file sizes are supported?",
+        answer: "JPG, PNG, and WebP files up to 20MB are supported.",
       },
     ],
     demos: [
@@ -605,6 +603,161 @@ export const tools: ToolPageData[] = [
         description: "Detail is reconstructed, not stretched. Results stay natural.",
         beforeImage: "/demos/restoration-old-photo-low-resolution.webp",
         afterImage: "/demos/photo-restoration.webp",
+      },
+    ],
+  },
+  {
+    slug: "ai-image-humanizer",
+    title: "AI Image Humanizer - Make AI Photos Realistic Free Online",
+    description:
+      "Free AI image humanizer online. Turn AI-generated images into realistic photos, remove plastic skin, fix unnatural textures and lighting with zero sign-up.",
+    shortDescription: "Humanize AI images and make photos realistic",
+    category: "edit",
+    credits: 10,
+    systemPrompt:
+      "You are an AI image humanizer. Transform the AI-generated image into a realistic photograph: fix plastic-looking skin, add natural skin pores and realistic micro-textures, correct artificial lighting and glossy reflections, soften overly sharp edges, and eliminate the signature AI generation look. Keep the person's identity, facial expression, pose, and background intact.",
+    examplePrompt: "Humanize this AI image and make it look like a real photo taken on an iPhone",
+    keywords: [
+      "ai image humanizer",
+      "humanize ai",
+      "humanize ai image",
+      "make ai photo realistic",
+      "realistic ai",
+      "make ai image look real",
+      "ai photo humanizer",
+      "turn ai into real photo",
+      "ai to real photo converter",
+    ],
+    updatedAt: "2026-09-24",
+    faqs: [
+      {
+        question: "What is an AI image humanizer?",
+        answer:
+          "An AI image humanizer takes synthetic AI-generated images (from Midjourney, Flux, Stable Diffusion, or ChatGPT) and removes the telltale signs of AI generation—such as waxy skin, plastic sheen, and surreal lighting—replacing them with natural photographic textures.",
+      },
+      {
+        question: "How do I humanize an AI image for free?",
+        answer:
+          "Upload your AI image to SeedPix and click one button. The AI humanizer analyzes the image, reconstructs natural skin pores, realistic hair strands, and camera lighting, and delivers a realistic photo in seconds with zero sign-up.",
+      },
+      {
+        question: "Can this make AI portraits look photographed?",
+        answer:
+          "Yes. AI portraits are the #1 use case. It specifically fixes the over-smoothed porcelain skin, plastic eyes, and flat lighting so headshots look like real studio or smartphone photography.",
+      },
+      {
+        question: "Does it keep the person's original identity and clothing?",
+        answer:
+          "Yes. The underlying subject, facial features, pose, clothing, and background are strictly preserved. Only artificial textures and lighting are refined.",
+      },
+    ],
+    demos: [
+      {
+        title: "Plastic AI face → realistic photo",
+        description: "Reconstructs natural skin pores, realistic light bounce, and believable depth.",
+        beforeImage: "/demos/before-linkedin-headshot.webp",
+        afterImage: "/demos/after-linkedin-headshot.webp",
+      },
+    ],
+  },
+  {
+    slug: "remove-ai-look",
+    title: "Remove AI Look from Photos - Make Images Look Less AI Free",
+    description:
+      "Make images not look like AI free online. Remove plastic skin, waxy textures, and AI artifacts to make photos look natural and photographed with no watermark.",
+    shortDescription: "Make photos look less like AI and more realistic",
+    category: "edit",
+    credits: 10,
+    systemPrompt:
+      "You are an AI artifact remover. Remove the AI-generated look from this image so it looks completely natural and photographed with a real camera: eliminate overly smooth plastic skin, remove glossy waxy sheen, fix surreal lighting, and add subtle photographic film grain. Preserve the original composition and subject.",
+    examplePrompt: "Make this image look less like AI and more natural",
+    keywords: [
+      "make image not look like ai",
+      "make image look less ai",
+      "remove ai look",
+      "remove ai look from photo",
+      "un ai photo",
+      "make picture look less ai",
+      "remove ai feel from photo",
+      "make it look less ai",
+    ],
+    updatedAt: "2026-09-24",
+    faqs: [
+      {
+        question: "How do I make an image not look like AI?",
+        answer:
+          "Upload your image to the SeedPix Remove AI Look tool. The engine automatically replaces plastic skin tones and artificial lighting with camera grain, natural skin micro-texture, and balanced contrast.",
+      },
+      {
+        question: "Why do AI images look fake or plastic?",
+        answer:
+          "Diffusion models frequently over-smooth surfaces, resulting in 'porcelain skin', overly uniform highlights, and surreal edge sharpness. Removing the AI look restores natural photographic imperfections like pores, subtle film noise, and realistic light falloff.",
+      },
+      {
+        question: "Is there any watermark on downloaded photos?",
+        answer:
+          "No. All processed images can be downloaded at full resolution completely watermark-free.",
+      },
+    ],
+    demos: [
+      {
+        title: "AI look → natural photo",
+        description: "Restores photographic realism and subtle camera texture without changing the subject.",
+        beforeImage: "/demos/before-change-pose.webp",
+        afterImage: "/demos/after-change-pose.webp",
+      },
+    ],
+  },
+  {
+    slug: "remove-tattoo-from-photo",
+    title: "AI Tattoo Removal from Photo - Erase Tattoos Free Online",
+    description:
+      "Remove tattoos from photos online free with AI inpainting. Cleanly erase tattoo ink from skin while restoring natural skin texture, lighting, and pores with no signup.",
+    shortDescription: "Erase tattoos from photos and restore clean skin",
+    category: "edit",
+    credits: 10,
+    systemPrompt:
+      "You are an AI photo restoration engine specializing in tattoo removal. Cleanly remove all tattoos or ink from the subject's skin in the photo, seamlessly reconstructing natural skin texture, color variations, and natural pores without any blurry patches, scars, or discoloration. Keep everything else in the photo untouched.",
+    examplePrompt: "Remove the tattoo from my skin and restore clean, natural skin texture",
+    keywords: [
+      "remove tattoo from photo",
+      "ai tattoo removal",
+      "tattoo remover online free",
+      "erase tattoo from picture",
+      "tattoo removal photo editor",
+      "remove tattoo wedding photo",
+      "ai remove tattoo",
+      "tattoo remover app free",
+    ],
+    updatedAt: "2026-09-24",
+    faqs: [
+      {
+        question: "How do I remove a tattoo from a photo online for free?",
+        answer:
+          "Upload your photo, select or brush over the tattoo area, and click Remove. The AI inpainting model removes the tattoo ink and reconstructs natural skin texture in seconds.",
+      },
+      {
+        question: "Will the skin look blurry or smudged after tattoo removal?",
+        answer:
+          "No. SeedPix uses contextual skin diffusion that reconstructs real skin pores, tones, and highlights matching the surrounding area rather than simply blurring or smudging.",
+      },
+      {
+        question: "Can I use this for professional headshots, wedding photos, or job applications?",
+        answer:
+          "Yes. Many users remove tattoos from LinkedIn photos, passport headshots, formal wedding portraits, and family albums where a tattoo-free appearance is preferred.",
+      },
+      {
+        question: "Can I preview what I look like before laser tattoo removal?",
+        answer:
+          "Yes. This tool is widely used as a digital simulation tool to preview how your skin will look once a tattoo is removed before undergoing laser treatments.",
+      },
+    ],
+    demos: [
+      {
+        title: "Tattoo on skin → clean natural skin",
+        description: "Seamlessly replaces tattoo ink with realistic skin tones and natural texture.",
+        beforeImage: "/demos/before-remove-objects-generic.webp",
+        afterImage: "/demos/after-remove-objects-generic.webp",
       },
     ],
   },
@@ -629,6 +782,7 @@ export const tools: ToolPageData[] = [
       "humanize ai image",
       "remove ai detection from image",
     ],
+    updatedAt: "2026-09-24",
     faqs: [
       {
         question: "How do I turn an AI image into a realistic photo?",

@@ -118,6 +118,11 @@ export default function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/remove-tattoo-from-photo" className="hover:text-neutral-900">
+                Remove Tattoo
+              </Link>
+            </li>
+            <li>
               <Link href="/background-remover" className="hover:text-neutral-900">
                 Background Remover
               </Link>
@@ -143,8 +148,13 @@ export default function SiteFooter() {
           <p className="mb-2 text-sm font-semibold text-neutral-900">{dict.footer.enhanceTools}</p>
           <ul className="space-y-1.5 text-xs text-neutral-500">
             <li>
-              <Link href="/how-to-fix-grainy-photos" className="hover:text-neutral-900">
-                Fix Grainy Photos
+              <Link href="/ai-image-humanizer" className="hover:text-neutral-900">
+                AI Image Humanizer
+              </Link>
+            </li>
+            <li>
+              <Link href="/remove-ai-look" className="hover:text-neutral-900">
+                Remove AI Look
               </Link>
             </li>
             <li>
