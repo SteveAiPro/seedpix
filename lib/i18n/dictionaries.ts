@@ -58,17 +58,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     ],
     hero: {
-      trendBadge: "🔥 2026 Trending • Zero Sign Up • No Watermark • 4K Output",
-      titleMain: "Free AI Photo Editor Online —",
-      titleGradient: "Edit Photos by Typing",
+      trendBadge: "✦ Over 800k+ Creators • 10M+ Photos Edited • ~2s Instant Generation",
+      titleMain: "AI Photo Editor — Edit Photos Online Free",
+      titleGradient: "Show the World Your Best Self",
       subtitle:
-        "Instant photo editing with zero friction. Remove unwanted objects, erase watermarks, restore old portraits, and upscale to 4K — completely free, no account needed.",
+        "Edit photos seamlessly just by typing — no Photoshop skills needed. Give your images a fresh new look with zero friction.",
       badges: {
-        free: "100% Free to Try",
-        noSignUp: "No Sign Up Required",
-        noWatermark: "No Watermark",
-        hd4k: "4K Ultra-HD Upscale",
-        credits: "5 Free Credits to Start",
+        free: "No Watermark",
+        noSignUp: "2s Generation",
+        noWatermark: "Seamless Edit",
+        hd4k: "800k+ Users",
+        credits: "10M+ Images",
       },
       popularLabel: "Popular:",
       popularTags: [
@@ -86,13 +86,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
       tryWorkflow: "Try this workflow →",
     },
     featuresSection: {
-      title: "Hot Features — the tools people reach for most",
-      subtitle: "Pick one to start editing. 100+ AI tools, all in one place.",
-      moreFeatures: "More features",
+      title: "Hot Features",
+      subtitle: "The capabilities people reach for most — pick one to start editing.",
+      moreFeatures: "More features →",
     },
     sliderSection: {
-      title: "See the difference — drag to compare",
-      subtitle: "Real SeedPix edits. Slide the handle to see each photo before and after the AI does its work.",
+      title: "Magic Powerful Photo Editor",
+      subtitle:
+        "One sentence. Any structural change. Swap background, change pose, relight the scene, add or remove anything.",
     },
     footer: {
       tagline: "100% Free AI photo editor online. Edit photos by typing — no Photoshop skills needed.",

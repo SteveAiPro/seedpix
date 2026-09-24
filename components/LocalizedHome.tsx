@@ -111,8 +111,8 @@ export default function LocalizedHome({ locale = "en" }: LocalizedHomeProps) {
           </div>
 
           <h1 className="mx-auto max-w-4xl text-3xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-            {dict.hero.titleMain}{" "}
-            <span className="bg-gradient-to-r from-[#FFE525] via-[#42FF41] to-[#FFE525] bg-clip-text text-transparent">
+            <span className="block text-white">{dict.hero.titleMain}</span>
+            <span className="block mt-2 bg-gradient-to-r from-[#FFE525] to-[#42FF41] bg-clip-text text-transparent">
               {dict.hero.titleGradient}
             </span>
           </h1>
@@ -121,21 +121,21 @@ export default function LocalizedHome({ locale = "en" }: LocalizedHomeProps) {
           </p>
 
           {/* 信任承诺背书 */}
-          <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-2.5 text-xs font-medium text-white/80">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-emerald-300">
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" /> {dict.hero.badges.free}
+          <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-2.5 text-xs font-semibold text-white/90">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
+              <Zap className="h-3.5 w-3.5 text-[#FFE525]" /> {dict.hero.badges.free}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#FFE525]/30 bg-[#FFE525]/10 px-3.5 py-1 text-[#FFE525]">
-              <Sparkles className="h-3.5 w-3.5 text-[#FFE525]" /> {dict.hero.badges.noSignUp}
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
+              <Sparkles className="h-3.5 w-3.5 text-[#42FF41]" /> {dict.hero.badges.noSignUp}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1 text-purple-300">
-              <Zap className="h-3.5 w-3.5 text-purple-400" /> {dict.hero.badges.noWatermark}
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
+              <ShieldCheck className="h-3.5 w-3.5 text-[#FFE525]" /> {dict.hero.badges.noWatermark}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1 text-amber-300">
-              <Wand2 className="h-3.5 w-3.5 text-amber-400" /> {dict.hero.badges.hd4k}
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
+              <Wand2 className="h-3.5 w-3.5 text-[#42FF41]" /> {dict.hero.badges.hd4k}
             </span>
-            <span className="hidden sm:inline-flex rounded-full border border-white/10 bg-white/5 px-3.5 py-1 text-white/60">
-              {dict.hero.badges.credits}
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
+              ✦ {dict.hero.badges.credits}
             </span>
           </div>
 
@@ -162,20 +162,91 @@ export default function LocalizedHome({ locale = "en" }: LocalizedHomeProps) {
         </div>
       </section>
 
-      {/* Models strip */}
-      <section className="border-y border-white/5 bg-[#0C0C12]">
-        <div className="mx-auto max-w-6xl px-4 py-6">
-          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-wider text-white/40">
-            Leading generators in one editor — switch with the model picker above
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-white/60">
-            <span className="font-semibold text-white">GPT Image 2</span>
-            <span>NanoBanana 2</span>
-            <span>NanoBanana Pro</span>
-            <span>Seedream 5.0</span>
-            <span>Flux</span>
-            <span className="text-white/20">|</span>
-            <span className="text-white/40">Powered by leading AI models</span>
+      {/* Create Stunning Images with the Latest AI Models */}
+      <section id="models" className="border-y border-white/5 bg-[#0C0C12] py-14">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Create Stunning Images with the Latest AI Models
+            </h2>
+            <p className="text-sm md:text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
+              Leading generators in one editor — switch with the Model picker above, or select a model to see what it does best.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+            {[
+              {
+                id: "gpt-image-2.5",
+                name: "GPT Image 2.5",
+                desc: "Change one part of a photo and the rest stays put. Real transparent PNG.",
+                badge: "New",
+              },
+              {
+                id: "gpt-image-2",
+                name: "GPT Image 2",
+                desc: "Create high-quality images, text-rich visuals, and product photography.",
+                badge: "Hot",
+              },
+              {
+                id: "nanobanana-pro",
+                name: "NanoBanana Pro",
+                desc: "Gemini 3 Pro Image — top-tier photorealism detail and accurate in-image text.",
+                badge: "Pro",
+              },
+              {
+                id: "nanobanana-2",
+                name: "NanoBanana 2",
+                desc: "Google's next-gen multimodal vision model for instant professional creativity.",
+                badge: "Fast",
+              },
+              {
+                id: "seedream-5-pro",
+                name: "Seedream 5.0 Pro",
+                desc: "Edit a photo with one sentence, or generate photorealistic art from scratch.",
+                badge: "Ultra",
+              },
+              {
+                id: "seedream-5-lite",
+                name: "Seedream 5.0 Lite",
+                desc: "The 4K tier — half the credits of Pro, twice the resolution.",
+                badge: "4K",
+              },
+              {
+                id: "grok-imagine",
+                name: "Grok Imagine",
+                desc: "Create high-resolution images from text with xAI's Aurora creative engine.",
+                badge: "Creative",
+              },
+              {
+                id: "seedpix-free",
+                name: "SeedPix Free",
+                desc: "Free text-to-image generation — zero credits, zero sign-up to try.",
+                badge: "Free",
+              },
+            ].map((m) => (
+              <div
+                key={m.id}
+                className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-[#13131A] p-4.5 transition duration-200 hover:-translate-y-1 hover:border-[#FFE525]/50 hover:shadow-[0_0_25px_rgba(255,229,37,0.12)]"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <span className="text-sm font-bold text-white group-hover:text-[#FFE525] transition-colors">
+                      {m.name}
+                    </span>
+                    <span className="rounded-md bg-[#FFE525]/15 px-2 py-0.5 text-[10px] font-bold text-[#FFE525] uppercase tracking-wide">
+                      {m.badge}
+                    </span>
+                  </div>
+                  <p className="text-xs leading-relaxed text-white/60">
+                    {m.desc}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-[#FFE525]">
+                  <span>Try in Editor</span>
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

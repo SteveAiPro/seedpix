@@ -111,7 +111,14 @@ export default function PhotoEditor() {
   return (
     <div className="mx-auto max-w-4xl">
       {/* Upload + Prompt + Model */}
-      <div className="overflow-hidden rounded-2xl border border-[#FFE525]/30 bg-[#16161F] shadow-[0_0_50px_-10px_rgba(255,229,37,0.15)] backdrop-blur-xl">
+      <div
+        className="overflow-hidden rounded-2xl shadow-[0_0_50px_-10px_rgba(255,229,37,0.25)] backdrop-blur-xl"
+        style={{
+          border: "2px solid transparent",
+          background: "linear-gradient(#16161F, #16161F) padding-box, linear-gradient(135deg, rgba(255,229,37,0.35), rgba(66,255,65,0.35)) border-box",
+          borderRadius: "16px",
+        }}
+      >
         {/* Upload area */}
         {!image ? (
           <div

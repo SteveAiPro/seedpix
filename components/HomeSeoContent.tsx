@@ -132,32 +132,178 @@ export default function HomeSeoContent({
           watermark, and is free for commercial use.
         </p>
 
-        <h2 className="mt-14 text-2xl font-bold tracking-tight text-white">
-          Who uses a free AI photo editor online?
-        </h2>
-        <p className="mt-4 text-sm leading-relaxed text-white/70">
-          SeedPix is built for anyone who works with images but does not want to spend
-          hours learning professional software. Here are the people who get the most
-          value from editing photos with AI:
-        </p>
-        <ul className="mt-4 list-disc space-y-2 pl-6 text-sm leading-relaxed text-white/70">
-          <li>
-            <strong className="text-white">Online sellers and shop owners</strong> remove backgrounds and objects
-            from product photos to build clean, consistent listings that convert better.
-          </li>
-          <li>
-            <strong className="text-white">Social media creators</strong> clean up selfies, remove photobombers,
-            and upscale thumbnails so every post looks polished.
-          </li>
-          <li>
-            <strong className="text-white">Small businesses and marketers</strong> restore and enhance brand
-            imagery without hiring a designer or paying for expensive subscriptions.
-          </li>
-          <li>
-            <strong className="text-white">Anyone restoring memories</strong> repairs old, damaged family
-            photographs that would otherwise be lost.
-          </li>
-        </ul>
+        {/* Real photo editing examples */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold tracking-tight text-white text-center">
+            Real Photo Editing Examples
+          </h2>
+          <p className="mt-2 text-sm text-white/60 text-center">
+            See how simple text instructions turn everyday photos into polished masterpieces.
+          </p>
+          <div className="mt-8 space-y-4">
+            <div className="rounded-2xl border border-white/10 bg-[#16161F]/70 p-6 backdrop-blur-xl">
+              <h3 className="text-lg font-bold text-white mb-2">Restore an old family photo</h3>
+              <div className="space-y-1.5 text-xs sm:text-sm">
+                <p className="text-white/70">
+                  <span className="text-white/40 font-medium">Input:</span> A scanned 1970s print with scratches, creases, and faded color.
+                </p>
+                <p className="text-white/70">
+                  <span className="text-white/40 font-medium">You type:</span>{" "}
+                  <span className="font-mono text-[#42FF41]">&quot;restore this old photo and fix the scratches&quot;</span>
+                </p>
+                <p className="text-white/70">
+                  <span className="text-white/40 font-medium">Result:</span> A clean, sharp photo with damage removed and natural colors recovered.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-[#16161F]/70 p-6 backdrop-blur-xl">
+              <h3 className="text-lg font-bold text-white mb-2">Remove tourists from a travel photo</h3>
+              <div className="space-y-1.5 text-xs sm:text-sm">
+                <p className="text-white/70">
+                  <span className="text-white/40 font-medium">Input:</span> A vacation shot with strangers walking through the background.
+                </p>
+                <p className="text-white/70">
+                  <span className="text-white/40 font-medium">You type:</span>{" "}
+                  <span className="font-mono text-[#42FF41]">&quot;remove the people in the background&quot;</span>
+                </p>
+                <p className="text-white/70">
+                  <span className="text-white/40 font-medium">Result:</span> The same scene with the background cleared and naturally filled in.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-[#16161F]/70 p-6 backdrop-blur-xl">
+              <h3 className="text-lg font-bold text-white mb-2">Turn a portrait into anime or Ghibli art</h3>
+              <div className="space-y-1.5 text-xs sm:text-sm">
+                <p className="text-white/70">
+                  <span className="text-white/40 font-medium">Input:</span> A standard phone portrait photo.
+                </p>
+                <p className="text-white/70">
+                  <span className="text-white/40 font-medium">You type:</span>{" "}
+                  <span className="font-mono text-[#42FF41]">&quot;turn this into anime style, soft cinematic lighting&quot;</span>
+                </p>
+                <p className="text-white/70">
+                  <span className="text-white/40 font-medium">Result:</span> An anime-style illustration that keeps the subject recognizable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="mt-16 rounded-2xl border border-white/10 bg-[#16161F]/60 p-8 backdrop-blur-xl">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+            <div>
+              <div className="text-3xl font-extrabold bg-gradient-to-r from-[#FFE525] to-[#42FF41] bg-clip-text text-transparent">
+                800k+
+              </div>
+              <div className="mt-1 text-xs text-white/60">Users worldwide</div>
+            </div>
+            <div>
+              <div className="text-3xl font-extrabold bg-gradient-to-r from-[#FFE525] to-[#42FF41] bg-clip-text text-transparent">
+                10M+
+              </div>
+              <div className="mt-1 text-xs text-white/60">Photos edited</div>
+            </div>
+            <div>
+              <div className="text-3xl font-extrabold bg-gradient-to-r from-[#FFE525] to-[#42FF41] bg-clip-text text-transparent">
+                ~2s
+              </div>
+              <div className="mt-1 text-xs text-white/60">Average per edit</div>
+            </div>
+            <div>
+              <div className="text-3xl font-extrabold bg-gradient-to-r from-[#FFE525] to-[#42FF41] bg-clip-text text-transparent">
+                100+
+              </div>
+              <div className="mt-1 text-xs text-white/60">AI photo tools</div>
+            </div>
+            <div>
+              <div className="text-3xl font-extrabold bg-gradient-to-r from-[#FFE525] to-[#42FF41] bg-clip-text text-transparent">
+                100% Free
+              </div>
+              <div className="mt-1 text-xs text-white/60">To try, no account needed</div>
+            </div>
+            <div>
+              <div className="text-3xl font-extrabold bg-gradient-to-r from-[#FFE525] to-[#42FF41] bg-clip-text text-transparent">
+                $9.99
+              </div>
+              <div className="mt-1 text-xs text-white/60">Starting price, no subscription</div>
+            </div>
+          </div>
+        </div>
+
+        {/* 3 Steps */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold tracking-tight text-white text-center">
+            How to Edit a Photo in 3 Simple Steps
+          </h2>
+          <p className="mt-2 text-sm text-white/60 text-center">
+            Three steps, about 30 seconds, no sign-up required to start.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-[#13131A] p-6 text-center">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFE525]/15 text-sm font-black text-[#FFE525]">
+                1
+              </div>
+              <h3 className="text-base font-bold text-white">Upload your photo</h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">
+                JPG, PNG, or WebP up to 20 MB. Drag and drop or browse.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#13131A] p-6 text-center">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFE525]/15 text-sm font-black text-[#FFE525]">
+                2
+              </div>
+              <h3 className="text-base font-bold text-white">Describe your edit</h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">
+                Type what you want changed in plain text, or pick a preset tool.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#13131A] p-6 text-center">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFE525]/15 text-sm font-black text-[#FFE525]">
+                3
+              </div>
+              <h3 className="text-base font-bold text-white">Download the result</h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">
+                Your edited photo is ready in seconds. Full resolution, zero watermark.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Who uses SeedPix */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold tracking-tight text-white text-center">
+            Who Uses SeedPix?
+          </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-[#13131A] p-5">
+              <h3 className="text-base font-bold text-white">Everyday users</h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">
+                Fix, restore, and beautify personal and family photos for sharing and printing without complex software.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#13131A] p-5">
+              <h3 className="text-base font-bold text-white">Photographers & Retouchers</h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">
+                Accelerate post-processing by removing power lines, distractions, and photobombers in seconds.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#13131A] p-5">
+              <h3 className="text-base font-bold text-white">E-commerce sellers</h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">
+                Produce clean product photos and remove backgrounds at scale for Shopify, Amazon, and Etsy marketplaces.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#13131A] p-5">
+              <h3 className="text-base font-bold text-white">Content creators</h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">
+                Restyle photos for YouTube thumbnails, Instagram posts, and ad creatives in seconds.
+              </p>
+            </div>
+          </div>
+        </div>
 
         <h2 className="mt-14 text-2xl font-bold tracking-tight text-white">
           AI photo editor vs Photoshop — why free AI editing wins for quick fixes
