@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "submit:sitemap": "python3 /Users/crazy/X/SEOAGENT/.agents/skills/4-index-submitter/scripts/submit-indexnow.py --host seedpix.org --sitemap https://seedpix.org/sitemap.xml --key b0eab65a4812417e85697d303303f6f0"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.4",
