@@ -190,36 +190,36 @@ export default function PricingCards() {
           return (
             <div
               key={plan.name}
-              className={`relative flex flex-col rounded-2xl border p-6 transition-all duration-200 ${
+              className={`relative flex flex-col rounded-3xl border p-6 transition-all duration-300 ${
                 plan.highlighted
-                  ? "border-blue-500 bg-white shadow-lg ring-2 ring-blue-500/20"
-                  : "border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-sm"
+                  ? "border-[#FFE525]/60 bg-[#16161F] shadow-[0_0_35px_-5px_rgba(255,229,37,0.25)] ring-1 ring-[#FFE525]/40"
+                  : "border-white/10 bg-[#13131A] hover:border-white/20 hover:shadow-lg"
               }`}
             >
               {plan.highlighted && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white shadow-xs">
+                  <span className="rounded-full bg-[#FFE525] px-3.5 py-1 text-[11px] font-black uppercase tracking-wider text-black shadow-lg">
                     Most Popular
                   </span>
                 </div>
               )}
 
               <div className="mb-4">
-                <p className="text-base font-bold text-neutral-900">{plan.name}</p>
+                <p className="text-base font-bold text-white">{plan.name}</p>
                 <div className="mt-2 flex items-baseline gap-1">
-                  <span className="text-3xl font-extrabold tracking-tight text-neutral-900">
+                  <span className="text-3xl font-extrabold tracking-tight text-white">
                     {plan.price}
                   </span>
-                  <span className="text-xs text-neutral-400">USD</span>
+                  <span className="text-xs text-white/40">USD</span>
                 </div>
-                <p className="mt-1 text-xs font-medium text-blue-600">{plan.unit}</p>
-                <p className="mt-2 text-xs text-neutral-500">{plan.desc}</p>
+                <p className="mt-1 text-xs font-bold text-[#FFE525]">{plan.unit}</p>
+                <p className="mt-2 text-xs text-white/60">{plan.desc}</p>
               </div>
 
-              <ul className="mb-6 flex-1 space-y-2.5 border-t border-neutral-100 pt-4 text-xs text-neutral-600">
+              <ul className="mb-6 flex-1 space-y-2.5 border-t border-white/5 pt-4 text-xs text-white/70">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-center gap-2">
-                    <Check className="h-3.5 w-3.5 shrink-0 text-blue-600" />
+                    <Check className="h-3.5 w-3.5 shrink-0 text-[#FFE525]" />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -228,7 +228,7 @@ export default function PricingCards() {
               {plan.id === "free" ? (
                 <Link
                   href="/sign-up"
-                  className="block w-full rounded-xl border border-neutral-300 bg-white py-2.5 text-center text-xs font-semibold text-neutral-800 transition hover:bg-neutral-50"
+                  className="block w-full rounded-xl border border-white/10 bg-white/5 py-2.5 text-center text-xs font-semibold text-white/80 transition hover:bg-white/10 hover:text-white"
                 >
                   {plan.cta}
                 </Link>
@@ -237,10 +237,10 @@ export default function PricingCards() {
                   type="button"
                   onClick={() => handleBuy(plan.id)}
                   disabled={isLoading}
-                  className={`flex w-full items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-semibold transition cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed ${
+                  className={`flex w-full items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-bold transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
                     plan.highlighted
-                      ? "bg-blue-600 text-white shadow-xs hover:bg-blue-700"
-                      : "bg-neutral-900 text-white hover:bg-neutral-800"
+                      ? "sparkpix-btn text-black"
+                      : "border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:border-white/20"
                   }`}
                 >
                   {isLoading ? (

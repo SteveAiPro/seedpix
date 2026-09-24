@@ -105,47 +105,50 @@ export default function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
+    <header className="sticky top-0 z-50 border-b border-white/5 bg-[#0A0A0F]/80 backdrop-blur-2xl">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link
           href={currentLocale === "en" ? "/" : `/${currentLocale}`}
-          className="flex items-center gap-1.5 text-lg font-bold text-neutral-900"
+          className="flex items-center gap-2 text-lg font-extrabold tracking-tight text-white"
         >
-          <span className="text-blue-600">✦</span> SeedPix
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#FFE525]/15 text-[#FFE525] font-black text-sm shadow-[0_0_12px_rgba(255,229,37,0.3)]">
+            ✦
+          </span>
+          <span>SeedPix</span>
         </Link>
-        <nav className="hidden items-center gap-5 text-sm text-neutral-600 md:flex">
-          <Link href={currentLocale === "en" ? "/" : `/${currentLocale}`} className="hover:text-neutral-900">
+        <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
+          <Link href={currentLocale === "en" ? "/" : `/${currentLocale}`} className="transition hover:text-white">
             {dict.nav.editor}
           </Link>
-          <Link href="/ai-photo-tools" className="hover:text-neutral-900">
+          <Link href="/ai-photo-tools" className="transition hover:text-white">
             {dict.nav.tools}
           </Link>
-          <Link href="/pricing" className="hover:text-neutral-900">
+          <Link href="/pricing" className="transition hover:text-white">
             {dict.nav.pricing}
           </Link>
-          <Link href="/blog" className="hover:text-neutral-900">
+          <Link href="/blog" className="transition hover:text-white">
             {dict.nav.blog}
           </Link>
           {isAdmin && (
             <Link
               href="/admin"
-              className="rounded bg-purple-100 px-2 py-0.5 text-xs font-medium text-purple-700 hover:bg-purple-200"
+              className="rounded-md border border-purple-800/60 bg-purple-950/60 px-2 py-0.5 text-xs font-semibold text-purple-300 hover:bg-purple-900/80"
             >
               Admin
             </Link>
           )}
         </nav>
 
-        <div className="flex items-center gap-2 text-sm">
+        <div className="flex items-center gap-3 text-sm">
           <LanguageSwitcher />
           {loading ? (
-            <span className="px-3 py-1.5 text-neutral-400">…</span>
+            <span className="px-3 py-1.5 text-white/40">…</span>
           ) : email ? (
             <>
-              <span className="hidden text-xs text-neutral-500 sm:inline">
+              <span className="hidden text-xs text-white/60 sm:inline">
                 {email.split("@")[0]}
                 {typeof credits === "number" && (
-                  <span className="ml-2 rounded bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-700">
+                  <span className="ml-2 rounded-full border border-[#FFE525]/30 bg-[#FFE525]/15 px-2.5 py-0.5 text-[11px] font-bold text-[#FFE525]">
                     {credits} credits
                   </span>
                 )}
@@ -153,7 +156,7 @@ export default function SiteHeader() {
               <button
                 onClick={handleSignOut}
                 disabled={signingOut}
-                className="rounded-lg px-3 py-1.5 text-neutral-700 hover:bg-neutral-100 disabled:opacity-50"
+                className="rounded-xl border border-white/10 px-3 py-1.5 text-xs text-white/70 hover:bg-white/10 hover:text-white transition disabled:opacity-50"
               >
                 {signingOut ? "..." : dict.nav.signOut}
               </button>
@@ -162,15 +165,18 @@ export default function SiteHeader() {
             <>
               <Link
                 href="/sign-in"
-                className="rounded-lg px-3 py-1.5 text-neutral-700 hover:bg-neutral-100"
+                className="rounded-xl border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
               >
                 {dict.nav.signIn}
               </Link>
               <Link
                 href="/sign-up"
-                className="rounded-lg bg-blue-600 px-3 py-1.5 font-medium text-white hover:bg-blue-700"
+                className="sparkpix-btn rounded-xl px-3.5 py-1.5 text-xs font-bold text-black flex items-center gap-1.5"
               >
-                {dict.nav.getCredits}
+                <span>{dict.nav.getCredits}</span>
+                <span className="rounded-full bg-black/20 px-1 py-0.2 text-[9px] font-black uppercase">
+                  FREE
+                </span>
               </Link>
             </>
           )}

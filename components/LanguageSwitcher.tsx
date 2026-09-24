@@ -52,17 +52,17 @@ export default function LanguageSwitcher() {
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 rounded-lg border border-neutral-200/80 bg-white px-2.5 py-1.5 text-xs font-medium text-neutral-700 shadow-2xs transition hover:border-neutral-300 hover:bg-neutral-50 focus:outline-none"
+        className="flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs font-medium text-white/80 transition hover:border-white/20 hover:bg-white/10 focus:outline-none"
         aria-label="Switch Language"
       >
-        <Globe className="h-3.5 w-3.5 text-neutral-500" />
+        <Globe className="h-3.5 w-3.5 text-white/60" />
         <span className="hidden sm:inline-block">{currentInfo.nativeName}</span>
         <span className="sm:hidden">{currentInfo.flag}</span>
-        <ChevronDown className={`h-3 w-3 text-neutral-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown className={`h-3 w-3 text-white/50 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 z-50 mt-1.5 w-40 origin-top-right rounded-xl border border-neutral-200 bg-white p-1.5 shadow-lg ring-1 ring-black/5 focus:outline-none animate-in fade-in zoom-in-95 duration-100">
+        <div className="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded-xl border border-white/10 bg-[#16161F] p-1.5 shadow-2xl backdrop-blur-xl ring-1 ring-white/10 focus:outline-none animate-in fade-in zoom-in-95 duration-100">
           <div className="space-y-0.5">
             {LOCALES.map((locale) => {
               const active = locale.code === currentLocale;
@@ -72,15 +72,15 @@ export default function LanguageSwitcher() {
                   onClick={() => handleSelect(locale.code)}
                   className={`flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-left text-xs transition ${
                     active
-                      ? "bg-blue-50 font-semibold text-blue-700"
-                      : "text-neutral-700 hover:bg-neutral-50"
+                      ? "bg-[#FFE525]/15 font-bold text-[#FFE525]"
+                      : "text-white/80 hover:bg-white/5 hover:text-white"
                   }`}
                 >
                   <span className="flex items-center gap-2">
                     <span className="text-sm">{locale.flag}</span>
                     <span>{locale.nativeName}</span>
                   </span>
-                  {active && <Check className="h-3.5 w-3.5 text-blue-600" />}
+                  {active && <Check className="h-3.5 w-3.5 text-[#FFE525]" />}
                 </button>
               );
             })}

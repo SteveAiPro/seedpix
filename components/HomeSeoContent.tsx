@@ -71,12 +71,12 @@ export default function HomeSeoContent({
   faqs: { q: string; a: string }[];
 }) {
   return (
-    <section className="border-t border-neutral-100 bg-white">
+    <section className="border-t border-white/5 bg-[#0A0A0F] text-white">
       <div className="mx-auto max-w-4xl px-4 py-16">
-        <h2 className="text-2xl font-bold text-neutral-900">
+        <h2 className="text-3xl font-extrabold tracking-tight text-white">
           The Free AI Photo Editor That Understands What You Say
         </h2>
-        <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+        <p className="mt-4 text-base leading-relaxed text-white/70">
           An AI photo editor is a tool that edits pictures automatically from a simple
           description — no brushes, layers, or masking tools to learn. SeedPix takes this
           one step further by combining a text-based editing studio with dozens of
@@ -86,35 +86,35 @@ export default function HomeSeoContent({
           AI handles the rest.
         </p>
 
-        <h3 className="mt-8 text-xl font-semibold text-neutral-900">
+        <h3 className="mt-10 text-2xl font-bold tracking-tight text-white">
           What can you actually do with SeedPix?
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+        <p className="mt-3 text-sm leading-relaxed text-white/70">
           Most people first come to an AI photo editor for one specific fix, then stay
           because they discover how many other jobs it can handle. Below are the edits
           SeedPix users make most often, each with its own dedicated tool:
         </p>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {features.map((f) => (
             <div
               key={f.href}
-              className="rounded-xl border border-neutral-200 bg-neutral-50/50 p-5"
+              className="rounded-2xl border border-white/10 bg-[#13131A] p-5 transition hover:border-[#FFE525]/40 hover:shadow-[0_0_20px_rgba(255,229,37,0.08)]"
             >
               <Link
                 href={f.href}
-                className="text-base font-semibold text-blue-700 hover:text-blue-800"
+                className="text-base font-bold text-[#FFE525] hover:underline"
               >
-                {f.title}
+                {f.title} →
               </Link>
-              <p className="mt-1.5 text-sm leading-relaxed text-neutral-600">{f.text}</p>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">{f.text}</p>
             </div>
           ))}
         </div>
 
-        <h2 className="mt-12 text-2xl font-bold text-neutral-900">
+        <h2 className="mt-14 text-2xl font-bold tracking-tight text-white">
           Edit photos by typing — how the editor works
         </h2>
-        <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+        <p className="mt-4 text-sm leading-relaxed text-white/70">
           The core of SeedPix is a conversational photo editor. You upload a JPG, PNG, or
           WebP file, then type a plain-English instruction such as &ldquo;remove the
           cup on the table&rdquo;, &ldquo;make the sky brighter&rdquo;, or
@@ -124,7 +124,7 @@ export default function HomeSeoContent({
           one session — remove an object, then upscale the result, then remove the
           background — all without re-uploading.
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+        <p className="mt-3 text-sm leading-relaxed text-white/70">
           If you prefer a guided workflow, every popular edit also exists as a dedicated
           AI tool with its own prompt template. This is useful when you know exactly what
           you want to change and want a repeatable, predictable result. Whether you use
@@ -132,37 +132,37 @@ export default function HomeSeoContent({
           watermark, and is free for commercial use.
         </p>
 
-        <h2 className="mt-12 text-2xl font-bold text-neutral-900">
+        <h2 className="mt-14 text-2xl font-bold tracking-tight text-white">
           Who uses a free AI photo editor online?
         </h2>
-        <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+        <p className="mt-4 text-sm leading-relaxed text-white/70">
           SeedPix is built for anyone who works with images but does not want to spend
           hours learning professional software. Here are the people who get the most
           value from editing photos with AI:
         </p>
-        <ul className="mt-4 list-disc space-y-2 pl-6 text-sm leading-relaxed text-neutral-600">
+        <ul className="mt-4 list-disc space-y-2 pl-6 text-sm leading-relaxed text-white/70">
           <li>
-            <strong>Online sellers and shop owners</strong> remove backgrounds and objects
+            <strong className="text-white">Online sellers and shop owners</strong> remove backgrounds and objects
             from product photos to build clean, consistent listings that convert better.
           </li>
           <li>
-            <strong>Social media creators</strong> clean up selfies, remove photobombers,
+            <strong className="text-white">Social media creators</strong> clean up selfies, remove photobombers,
             and upscale thumbnails so every post looks polished.
           </li>
           <li>
-            <strong>Small businesses and marketers</strong> restore and enhance brand
+            <strong className="text-white">Small businesses and marketers</strong> restore and enhance brand
             imagery without hiring a designer or paying for expensive subscriptions.
           </li>
           <li>
-            <strong>Anyone restoring memories</strong> repairs old, damaged family
+            <strong className="text-white">Anyone restoring memories</strong> repairs old, damaged family
             photographs that would otherwise be lost.
           </li>
         </ul>
 
-        <h2 className="mt-12 text-2xl font-bold text-neutral-900">
+        <h2 className="mt-14 text-2xl font-bold tracking-tight text-white">
           AI photo editor vs Photoshop — why free AI editing wins for quick fixes
         </h2>
-        <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+        <p className="mt-4 text-sm leading-relaxed text-white/70">
           Traditional editors like Photoshop give you total control, but that control
           comes at a cost: a steep learning curve, a subscription fee, and a lot of time
           spent on every edit. For the majority of everyday jobs — removing an object,
@@ -170,67 +170,67 @@ export default function HomeSeoContent({
           an AI photo editor online is faster and far easier to use. You describe the
           result you want instead of manipulating pixels by hand.
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+        <p className="mt-3 text-sm leading-relaxed text-white/70">
           That is not to say the two never overlap. Designers often use SeedPix to
           prepare a base image in seconds, then finish it in Photoshop when they need
           surgical, pixel-level control. For everyone else, SeedPix is enough on its own
           — no install, no signup required to try it, and results in about a minute.
         </p>
 
-        <div className="mt-6 overflow-hidden rounded-xl border border-neutral-200">
+        <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-[#13131A]">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-900">
+            <thead className="border-b border-white/10 bg-[#16161F] text-white">
               <tr>
                 <th className="px-4 py-3 font-semibold">Task</th>
-                <th className="px-4 py-3 font-semibold">SeedPix AI editor</th>
-                <th className="px-4 py-3 font-semibold">Photoshop</th>
+                <th className="px-4 py-3 font-semibold text-[#FFE525]">SeedPix AI editor</th>
+                <th className="px-4 py-3 font-semibold text-white/70">Photoshop</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-100 text-neutral-600">
-              <tr>
-                <td className="px-4 py-3">Remove an object</td>
-                <td className="px-4 py-3">Type it, done in seconds</td>
+            <tbody className="divide-y divide-white/5 text-white/70">
+              <tr className="hover:bg-white/[0.02]">
+                <td className="px-4 py-3 font-medium text-white">Remove an object</td>
+                <td className="px-4 py-3 text-[#FFE525]">Type it, done in seconds</td>
                 <td className="px-4 py-3">Clone stamp, 10-20 min</td>
               </tr>
-              <tr>
-                <td className="px-4 py-3">Remove a background</td>
-                <td className="px-4 py-3">One click</td>
+              <tr className="hover:bg-white/[0.02]">
+                <td className="px-4 py-3 font-medium text-white">Remove a background</td>
+                <td className="px-4 py-3 text-[#FFE525]">One click</td>
                 <td className="px-4 py-3">Lasso + refine edges</td>
               </tr>
-              <tr>
-                <td className="px-4 py-3">Restore an old photo</td>
-                <td className="px-4 py-3">Automatic repair</td>
+              <tr className="hover:bg-white/[0.02]">
+                <td className="px-4 py-3 font-medium text-white">Restore an old photo</td>
+                <td className="px-4 py-3 text-[#FFE525]">Automatic repair</td>
                 <td className="px-4 py-3">Manual retouch, hours</td>
               </tr>
-              <tr>
-                <td className="px-4 py-3">Skill level needed</td>
-                <td className="px-4 py-3">None — plain English</td>
+              <tr className="hover:bg-white/[0.02]">
+                <td className="px-4 py-3 font-medium text-white">Skill level needed</td>
+                <td className="px-4 py-3 text-[#FFE525]">None — plain English</td>
                 <td className="px-4 py-3">Steep learning curve</td>
               </tr>
-              <tr>
-                <td className="px-4 py-3">Price to start</td>
-                <td className="px-4 py-3">Free, 10 credits included</td>
-                <td className="px-4 py-3">Subscription</td>
+              <tr className="hover:bg-white/[0.02]">
+                <td className="px-4 py-3 font-medium text-white">Price to start</td>
+                <td className="px-4 py-3 text-[#FFE525]">Free, 10 credits included</td>
+                <td className="px-4 py-3">Subscription ($20+/mo)</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs leading-relaxed text-neutral-400">
+        <p className="mt-3 text-xs leading-relaxed text-white/40">
           For daily photo fixes, a conversational AI photo editor gets the job done in a
           fraction of the time — with none of the software overhead.
         </p>
 
-        <h2 className="mt-12 text-2xl font-bold text-neutral-900">
+        <h2 className="mt-14 text-2xl font-bold tracking-tight text-white">
           Is an AI photo editor free? Is it safe to use?
         </h2>
-        <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+        <p className="mt-4 text-sm leading-relaxed text-white/70">
           Yes — SeedPix is free to start. New users receive 10 free credits on signup plus
           1 free credit every day, and you can try the editor immediately without an
           account. When you run out, credit packs start at a low price, far below what
           most AI art tools charge. Your photos are processed for the edit and not used
           to train shared models, and every output is delivered without a watermark.
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+        <p className="mt-3 text-sm leading-relaxed text-white/70">
           Because SeedPix runs in the browser on any device, there is nothing to download
           and no desktop software to maintain. You can edit a photo from a laptop during
           the day and finish a batch on your tablet at night — your results download
@@ -240,22 +240,22 @@ export default function HomeSeoContent({
           them into a monthly plan.
         </p>
 
-        <h2 className="mt-12 text-2xl font-bold text-neutral-900">
+        <h2 className="mt-14 text-2xl font-bold tracking-tight text-white">
           Frequently Asked Questions about SeedPix
         </h2>
-        <div className="mt-5 space-y-3" id="home-faq">
+        <div className="mt-6 space-y-3" id="home-faq">
           {faqs.map((f) => (
             <details
               key={f.q}
-              className="group rounded-xl border border-neutral-200 bg-neutral-50/50"
+              className="group rounded-2xl border border-white/10 bg-[#13131A] transition hover:border-white/20"
             >
-              <summary className="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-medium text-neutral-900">
+              <summary className="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-semibold text-white transition hover:text-[#FFE525]">
                 {f.q}
-                <span className="ml-2 text-neutral-400 transition group-open:rotate-45">
+                <span className="ml-2 text-white/40 transition group-open:rotate-45">
                   +
                 </span>
               </summary>
-              <p className="border-t border-neutral-100 px-5 py-4 text-sm leading-relaxed text-neutral-600">
+              <p className="border-t border-white/5 px-5 py-4 text-sm leading-relaxed text-white/70">
                 {f.a}
               </p>
             </details>

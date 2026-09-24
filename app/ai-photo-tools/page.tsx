@@ -104,7 +104,7 @@ export default function ToolsPage() {
   };
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12">
+    <div className="mx-auto max-w-6xl px-4 py-12 text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -115,34 +115,34 @@ export default function ToolsPage() {
       />
 
       {/* 可见面包屑（与上面的 BreadcrumbList JSON-LD 一致） */}
-      <nav aria-label="Breadcrumb" className="mb-2">
-        <ol className="flex flex-wrap items-center gap-1.5 text-xs text-neutral-500">
+      <nav aria-label="Breadcrumb" className="mb-4">
+        <ol className="flex flex-wrap items-center gap-1.5 text-xs text-white/50">
           <li>
-            <Link href="/" className="hover:text-neutral-900">
+            <Link href="/" className="hover:text-white transition-colors">
               Home
             </Link>
           </li>
-          <li aria-hidden="true" className="text-neutral-300">
+          <li aria-hidden="true" className="text-white/20">
             /
           </li>
-          <li aria-current="page" className="font-medium text-neutral-700">
+          <li aria-current="page" className="font-semibold text-[#FFE525]">
             AI Photo Tools
           </li>
         </ol>
       </nav>
 
       <div className="mb-10 text-center">
-        <h1 className="text-3xl font-bold text-neutral-900 md:text-4xl">
+        <h1 className="text-3xl font-extrabold text-white md:text-5xl tracking-tight">
           Free AI Photo Tools Online — No Sign Up
         </h1>
-        <p className="mx-auto mt-3 max-w-2xl text-sm text-neutral-600 md:text-base">
+        <p className="mx-auto mt-4 max-w-2xl text-base text-white/70">
           Everything you can do to any photo: restore, enhance, clean up,
           restyle, and generate. All tools in one place, 100% free to start with zero watermarks.
         </p>
       </div>
 
-      {/* Intro：给这一页补足正文（原本只有一句，是站内最薄的一页） */}
-      <div className="mx-auto mb-12 max-w-3xl space-y-3 text-sm leading-relaxed text-neutral-600">
+      {/* Intro */}
+      <div className="mx-auto mb-12 max-w-3xl space-y-3 text-sm leading-relaxed text-white/70">
         <p>
           The list below is the full SeedPix tool set, grouped by what you are
           trying to do rather than by how the model works. Every tool runs in
@@ -167,30 +167,32 @@ export default function ToolsPage() {
       </div>
 
       {/* Keyword landing entrances */}
-      <section className="mb-12">
-        <div className="mb-4 flex items-center gap-2">
-          <Layers className="h-4 w-4 text-blue-600" />
-          <h2 className="text-lg font-bold text-neutral-900">
+      <section className="mb-14">
+        <div className="mb-5 flex items-center gap-2.5">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#FFE525]/15 text-[#FFE525]">
+            <Layers className="h-4 w-4" />
+          </span>
+          <h2 className="text-xl font-bold tracking-tight text-white">
             Popular ways to create
           </h2>
         </div>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-3">
           {landings.map((l) => (
             <Link
               key={l.slug}
               href={`/${l.slug}`}
-              className="group flex flex-col justify-between rounded-xl border border-neutral-200 bg-white p-5 transition hover:border-blue-300 hover:shadow-sm"
+              className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-[#13131A] p-5 transition hover:border-[#FFE525]/50 hover:shadow-[0_0_20px_rgba(255,229,37,0.1)]"
             >
               <div>
-                <p className="text-sm font-semibold leading-snug text-neutral-900 group-hover:text-blue-700">
+                <p className="text-sm font-bold leading-snug text-white group-hover:text-[#FFE525]">
                   {l.title.split(" - ")[0]}
                 </p>
-                <p className="mt-1 line-clamp-2 text-xs text-neutral-500">
+                <p className="mt-1.5 line-clamp-2 text-xs text-white/60">
                   {l.keywords[0]}
                 </p>
               </div>
-              <p className="mt-3 flex items-center gap-1 text-xs font-medium text-blue-600">
-                Explore <ArrowRight className="h-3 w-3" />
+              <p className="mt-4 flex items-center gap-1 text-xs font-semibold text-[#FFE525]">
+                Explore <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
               </p>
             </Link>
           ))}
@@ -198,35 +200,35 @@ export default function ToolsPage() {
       </section>
 
       {categories.map((cat) => (
-        <section key={cat} className="mb-12">
-          <h2 className="mb-2 text-xl font-bold capitalize text-neutral-900">
+        <section key={cat} className="mb-14">
+          <h2 className="mb-2 text-2xl font-bold capitalize text-white">
             {cat} Tools
           </h2>
           {categoryBlurb[cat] && (
-            <p className="mb-4 max-w-3xl text-sm leading-relaxed text-neutral-600">
+            <p className="mb-5 max-w-3xl text-sm leading-relaxed text-white/70">
               {categoryBlurb[cat]}
             </p>
           )}
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {tools
               .filter((t) => t.category === cat)
               .map((tool) => (
                 <Link
                   key={tool.slug}
                   href={`/${tool.slug}`}
-                  className="group flex flex-col rounded-xl border border-neutral-200 bg-white p-5 transition hover:border-blue-300 hover:shadow-sm"
+                  className="group flex flex-col rounded-2xl border border-white/10 bg-[#13131A] p-5 transition hover:border-[#FFE525]/50 hover:shadow-[0_0_20px_rgba(255,229,37,0.1)]"
                 >
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50">
-                    <Wand2 className="h-5 w-5 text-blue-600" />
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFE525]/10">
+                    <Wand2 className="h-5 w-5 text-[#FFE525]" />
                   </div>
-                  <p className="text-sm font-semibold leading-snug text-neutral-900 group-hover:text-blue-700">
+                  <p className="text-sm font-bold leading-snug text-white group-hover:text-[#FFE525]">
                     {tool.title.split(" - ")[0]}
                   </p>
-                  <p className="mt-1 line-clamp-2 flex-1 text-xs text-neutral-500">
+                  <p className="mt-1.5 line-clamp-2 flex-1 text-xs text-white/60">
                     {tool.shortDescription}
                   </p>
-                  <p className="mt-3 flex items-center gap-1 text-xs font-medium text-blue-600">
-                    Use tool <ArrowRight className="h-3 w-3" />
+                  <p className="mt-4 flex items-center gap-1 text-xs font-semibold text-[#FFE525]">
+                    Use tool <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                   </p>
                 </Link>
               ))}
@@ -234,24 +236,24 @@ export default function ToolsPage() {
         </section>
       ))}
 
-      {/* FAQ（可见区块，与上面的 FAQPage JSON-LD 同源） */}
-      <section className="mt-4 border-t border-neutral-100 pt-10">
-        <h2 className="text-xl font-bold text-neutral-900">
+      {/* FAQ */}
+      <section className="mt-6 border-t border-white/5 pt-12">
+        <h2 className="text-2xl font-bold tracking-tight text-white">
           Frequently Asked Questions
         </h2>
-        <div className="mt-4 space-y-3">
+        <div className="mt-5 space-y-3">
           {toolsFaqs.map((faq, i) => (
             <details
               key={i}
-              className="group rounded-xl border border-neutral-200 bg-white"
+              className="group rounded-2xl border border-white/10 bg-[#13131A] transition hover:border-white/20"
             >
-              <summary className="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-medium text-neutral-900">
+              <summary className="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-semibold text-white hover:text-[#FFE525] transition-colors">
                 {faq.question}
-                <span className="ml-2 text-neutral-400 transition group-open:rotate-45">
+                <span className="ml-2 text-white/40 transition group-open:rotate-45">
                   +
                 </span>
               </summary>
-              <p className="border-t border-neutral-100 px-5 py-4 text-sm leading-relaxed text-neutral-600">
+              <p className="border-t border-white/5 px-5 py-4 text-sm leading-relaxed text-white/70">
                 {faq.answer}
               </p>
             </details>

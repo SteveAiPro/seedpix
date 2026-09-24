@@ -62,17 +62,17 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="mx-auto flex min-h-[60vh] max-w-md flex-col items-center justify-center px-4 py-16">
-      <div className="w-full rounded-2xl border border-neutral-200 bg-white p-8">
-        <h1 className="text-center text-2xl font-bold text-neutral-900">
-          Get 5 Free Credits
+    <div className="mx-auto flex min-h-[70vh] max-w-md flex-col items-center justify-center px-4 py-16 text-white">
+      <div className="w-full rounded-3xl border border-white/10 bg-[#13131A] p-8 shadow-[0_0_50px_-10px_rgba(0,0,0,0.5)]">
+        <h1 className="text-center text-3xl font-extrabold text-white tracking-tight">
+          Get 10 Free Credits
         </h1>
-        <p className="mt-2 text-center text-sm text-neutral-500">
+        <p className="mt-2 text-center text-sm text-white/60">
           Plus 1 free credit every day. No credit card needed.
         </p>
 
         {done ? (
-          <div className="mt-6 rounded-xl bg-green-50 px-4 py-4 text-center text-sm text-green-800">
+          <div className="mt-6 rounded-2xl border border-emerald-500/30 bg-emerald-950/40 px-4 py-4 text-center text-sm text-emerald-300">
             Account created! Check your email to confirm, then sign in to get
             your 10 free credits.
           </div>
@@ -81,7 +81,7 @@ export default function SignUpPage() {
             <button
               onClick={handleGoogleSignUp}
               disabled={loading}
-              className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg border border-neutral-300 bg-white py-2.5 text-sm font-medium text-neutral-700 hover:bg-neutral-50 disabled:opacity-50"
+              className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 py-2.5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition disabled:opacity-50"
             >
               <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
                 <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
@@ -92,18 +92,18 @@ export default function SignUpPage() {
               Sign up with Google
             </button>
 
-            <div className="my-4 flex items-center gap-3 text-xs text-neutral-400">
-              <div className="h-px flex-1 bg-neutral-200" /> or <div className="h-px flex-1 bg-neutral-200" />
+            <div className="my-5 flex items-center gap-3 text-xs text-white/40">
+              <div className="h-px flex-1 bg-white/10" /> or <div className="h-px flex-1 bg-white/10" />
             </div>
 
-            <form onSubmit={handleSignUp} className="space-y-3">
+            <form onSubmit={handleSignUp} className="space-y-3.5">
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
-                className="w-full rounded-lg border border-neutral-300 px-4 py-2.5 text-sm outline-none focus:border-blue-500"
+                className="w-full rounded-xl border border-white/10 bg-[#0F0F1A] px-4 py-2.5 text-sm text-white outline-none focus:border-[#FFE525]/60 transition"
               />
               <input
                 type="password"
@@ -112,25 +112,25 @@ export default function SignUpPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password (min 6 characters)"
-                className="w-full rounded-lg border border-neutral-300 px-4 py-2.5 text-sm outline-none focus:border-blue-500"
+                className="w-full rounded-xl border border-white/10 bg-[#0F0F1A] px-4 py-2.5 text-sm text-white outline-none focus:border-[#FFE525]/60 transition"
               />
-              {error && <p className="text-xs text-red-600">{error}</p>}
+              {error && <p className="text-xs text-red-400">{error}</p>}
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-lg bg-blue-600 py-2.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+                className="sparkpix-btn w-full rounded-xl py-2.5 text-sm font-bold text-black disabled:opacity-50"
               >
-                {loading ? "Creating account..." : "Sign Up & Get 5 Credits"}
+                {loading ? "Creating account..." : "Sign Up & Get 10 Credits"}
               </button>
             </form>
           </>
         )}
 
-        <p className="mt-6 text-center text-xs text-neutral-400">
+        <p className="mt-6 text-center text-xs text-white/40">
           {configured ? (
             <>
               Already have an account?{" "}
-              <a href="/sign-in" className="text-blue-600 hover:underline">
+              <a href="/sign-in" className="text-[#FFE525] hover:underline font-semibold">
                 Sign in
               </a>
             </>

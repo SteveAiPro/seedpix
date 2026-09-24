@@ -111,7 +111,7 @@ export default function PhotoEditor() {
   return (
     <div className="mx-auto max-w-4xl">
       {/* Upload + Prompt + Model */}
-      <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-[#FFE525]/30 bg-[#16161F] shadow-[0_0_50px_-10px_rgba(255,229,37,0.15)] backdrop-blur-xl">
         {/* Upload area */}
         {!image ? (
           <div
@@ -126,18 +126,18 @@ export default function PhotoEditor() {
               setDragOver(false);
               handleFile(e.dataTransfer.files?.[0]);
             }}
-            className={`flex cursor-pointer flex-col items-center justify-center gap-3 border-b border-dashed border-neutral-200 px-6 py-14 text-center transition ${
-              dragOver ? "bg-blue-50" : "hover:bg-neutral-50"
+            className={`flex cursor-pointer flex-col items-center justify-center gap-3.5 border-b border-dashed border-white/10 bg-[#0F0F1A] px-6 py-14 text-center transition ${
+              dragOver ? "border-[#FFE525] bg-[#FFE525]/5" : "hover:border-[#FFE525]/50 hover:bg-white/[0.02]"
             }`}
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100">
-              <ImagePlus className="h-7 w-7 text-blue-600" />
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FFE525]/10 text-[#FFE525] shadow-[0_0_20px_rgba(255,229,37,0.25)] transition group-hover:scale-105">
+              <ImagePlus className="h-7 w-7" />
             </div>
             <div>
-              <p className="text-sm font-medium text-neutral-900">
-                Drop your photo here or click to browse
+              <p className="text-base font-semibold text-white">
+                Drop your photo here or <span className="text-[#FFE525] underline underline-offset-2">click to browse</span>
               </p>
-              <p className="mt-1 text-xs text-neutral-500">
+              <p className="mt-1 text-xs text-white/50">
                 JPG, PNG, WebP up to 20MB · No watermark · 2s generation
               </p>
             </div>
@@ -150,12 +150,12 @@ export default function PhotoEditor() {
             />
           </div>
         ) : (
-          <div className="relative border-b border-neutral-200 bg-neutral-50">
+          <div className="relative border-b border-white/10 bg-[#0A0A0F]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={image}
               alt="Uploaded"
-              className="mx-auto max-h-72 w-full object-contain"
+              className="mx-auto max-h-80 w-full object-contain"
             />
             <button
               onClick={() => {
@@ -163,7 +163,7 @@ export default function PhotoEditor() {
                 setFileName("");
                 setResult(null);
               }}
-              className="absolute right-3 top-3 rounded-full bg-black/60 p-1.5 text-white hover:bg-black/80"
+              className="absolute right-3 top-3 rounded-full bg-black/70 p-1.5 text-white/80 hover:bg-black hover:text-white transition"
               aria-label="Remove image"
             >
               <X className="h-4 w-4" />
@@ -172,24 +172,27 @@ export default function PhotoEditor() {
         )}
 
         {/* Prompt + Model */}
-        <div className="space-y-3 p-4">
+        <div className="space-y-4 p-5">
           {/* Model selector */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs font-semibold uppercase tracking-wider text-white/40 mr-1">
+              Model:
+            </span>
             {MODELS.map((m) => (
               <button
                 key={m.id}
                 onClick={() => setModel(m.id)}
-                className={`flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition ${
+                className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition ${
                   model === m.id
-                    ? "border-blue-600 bg-blue-50 text-blue-700"
-                    : "border-neutral-200 text-neutral-600 hover:border-neutral-300"
+                    ? "border border-[#FFE525]/60 bg-[#FFE525]/15 text-[#FFE525] shadow-[0_0_12px_rgba(255,229,37,0.2)]"
+                    : "border border-white/10 bg-white/5 text-white/70 hover:border-white/20 hover:text-white"
                 }`}
               >
                 {m.name}
                 {m.badge && (
                   <span
-                    className={`rounded px-1 py-0.5 text-[10px] ${
-                      model === m.id ? "bg-blue-600 text-white" : "bg-neutral-100 text-neutral-500"
+                    className={`rounded-full px-1.5 py-0.2 text-[9px] font-bold ${
+                      model === m.id ? "bg-[#FFE525] text-black" : "bg-white/10 text-white/60"
                     }`}
                   >
                     {m.badge}
@@ -200,23 +203,23 @@ export default function PhotoEditor() {
           </div>
 
           {/* Prompt input */}
-          <div className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-1.5 focus-within:border-blue-500">
-            <Wand2 className="ml-2 h-4 w-4 shrink-0 text-neutral-400" />
+          <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-[#0F0F1A] p-2 focus-within:border-[#FFE525]/60 focus-within:ring-1 focus-within:ring-[#FFE525]/30 transition">
+            <Wand2 className="ml-2.5 h-4 w-4 shrink-0 text-[#FFE525]" />
             <input
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleProcess()}
-              placeholder="Describe the edit... e.g. 'remove the background'"
-              className="w-full bg-transparent py-2 text-sm outline-none placeholder:text-neutral-400"
+              placeholder="Describe the edit... e.g. 'remove the background' or 'restore faces'"
+              className="w-full bg-transparent py-2 text-sm text-white outline-none placeholder:text-white/40"
             />
             <button
               onClick={handleProcess}
               disabled={!image || !prompt.trim() || processing}
-              className="flex shrink-0 items-center gap-1.5 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+              className="sparkpix-btn flex shrink-0 items-center gap-1.5 rounded-xl px-5 py-2.5 text-sm font-bold text-black disabled:cursor-not-allowed disabled:opacity-40"
             >
               {processing ? (
                 <>
-                  <Sparkles className="h-4 w-4 animate-pulse" />
+                  <Sparkles className="h-4 w-4 animate-spin" />
                   Processing...
                 </>
               ) : (
@@ -229,12 +232,13 @@ export default function PhotoEditor() {
           </div>
 
           {/* Preset prompts */}
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-xs text-white/40 mr-1">Presets:</span>
             {PRESET_PROMPTS.map((p) => (
               <button
                 key={p}
                 onClick={() => setPrompt(p)}
-                className="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-500 transition hover:border-blue-300 hover:text-blue-600"
+                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 transition hover:border-[#FFE525]/40 hover:text-[#FFE525] hover:bg-white/[0.08]"
               >
                 {p}
               </button>
@@ -243,16 +247,16 @@ export default function PhotoEditor() {
 
           {/* Auth notice */}
           {!authLoading && !user && (
-            <div className="flex items-center justify-between rounded-lg bg-amber-50 px-4 py-2.5 text-xs text-amber-800">
+            <div className="flex items-center justify-between rounded-xl border border-[#FFE525]/20 bg-[#FFE525]/10 px-4 py-2.5 text-xs text-[#FFE525]">
               <span>
                 {authConfigured
-                  ? "Sign in to get 10 free credits - enough for your first edit"
+                  ? "⚡ Sign in to get 10 free credits — enough for your first edit"
                   : "Auth not configured yet - backend coming soon"}
               </span>
               {authConfigured && (
                 <Link
                   href="/sign-up"
-                  className="ml-3 shrink-0 rounded-md bg-amber-600 px-3 py-1 font-medium text-white hover:bg-amber-700"
+                  className="ml-3 shrink-0 rounded-lg bg-[#FFE525] px-3 py-1 font-bold text-black hover:opacity-90 transition"
                 >
                   Sign Up Free
                 </Link>
@@ -262,12 +266,12 @@ export default function PhotoEditor() {
 
           {/* Error */}
           {error && (
-            <div className="flex items-center justify-between rounded-lg bg-red-50 px-4 py-2.5 text-xs text-red-700">
+            <div className="flex items-center justify-between rounded-xl border border-red-800/60 bg-red-950/40 px-4 py-2.5 text-xs text-red-300">
               <span>{error}</span>
               {error.includes("credits") && (
                 <Link
                   href="/pricing"
-                  className="ml-3 shrink-0 rounded-md bg-red-600 px-3 py-1 font-medium text-white hover:bg-red-700"
+                  className="ml-3 shrink-0 rounded-lg bg-red-600 px-3 py-1 font-bold text-white hover:bg-red-700"
                 >
                   Get Credits
                 </Link>
@@ -277,21 +281,21 @@ export default function PhotoEditor() {
 
           {/* Result */}
           {result && (
-            <div className="mt-2 space-y-3">
-              <div className="overflow-hidden rounded-xl border border-green-200">
+            <div className="mt-3 space-y-3">
+              <div className="overflow-hidden rounded-xl border border-emerald-500/40 bg-black">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={result}
                   alt="Edited result"
-                  className="w-full object-contain"
+                  className="mx-auto max-h-96 w-full object-contain"
                 />
               </div>
-              <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-green-50 px-4 py-3">
-                <div className="flex items-center gap-2 text-sm text-green-800">
-                  <Sparkles className="h-4 w-4" />
+              <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/30 px-4 py-3">
+                <div className="flex items-center gap-2 text-sm text-emerald-300">
+                  <Sparkles className="h-4 w-4 text-[#FFE525]" />
                   Your edited photo is ready
                   {credits !== null && (
-                    <span className="rounded bg-green-100 px-1.5 py-0.5 text-[10px] font-medium">
+                    <span className="rounded-full border border-emerald-500/40 bg-emerald-900/60 px-2 py-0.5 text-[10px] font-bold text-emerald-200">
                       {credits} credits left
                     </span>
                   )}
@@ -305,13 +309,13 @@ export default function PhotoEditor() {
                       a.rel = "noopener";
                       a.click();
                     }}
-                    className="rounded-lg bg-green-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-green-700"
+                    className="sparkpix-btn rounded-lg px-3.5 py-1.5 text-xs font-bold text-black"
                   >
                     Open Full Size
                   </button>
                   <button
                     onClick={() => setResult(null)}
-                    className="rounded-lg border border-green-300 px-3 py-1.5 text-xs text-green-700 hover:bg-green-100"
+                    className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
                   >
                     Edit again
                   </button>
@@ -321,8 +325,8 @@ export default function PhotoEditor() {
           )}
 
           {image && (
-            <p className="flex items-center gap-1 text-xs text-neutral-400">
-              <Upload className="h-3 w-3" />
+            <p className="flex items-center gap-1.5 text-xs text-white/40 pt-1">
+              <Upload className="h-3 w-3 text-[#FFE525]" />
               {fileName || "image uploaded"} · Cost: 10 credits
             </p>
           )}

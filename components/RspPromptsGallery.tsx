@@ -86,13 +86,13 @@ export default function RspPromptsGallery() {
     <div className="my-10">
       <div className="mb-6 flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
         <div>
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-purple-200 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
-            <Sparkles className="h-3 w-3" /> Viral RSP Editing Prompts Library
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-[#FFE525]/30 bg-[#FFE525]/10 px-3 py-1 text-xs font-semibold text-[#FFE525]">
+            <Sparkles className="h-3 w-3 text-[#FFE525]" /> Viral RSP Editing Prompts Library
           </div>
-          <h2 className="mt-2 text-2xl font-bold text-neutral-900">
+          <h2 className="mt-2 text-2xl font-bold text-white">
             Trending TikTok & Instagram AI Prompts (With Visual Previews)
           </h2>
-          <p className="mt-1 text-sm text-neutral-500">
+          <p className="mt-1 text-sm text-white/60">
             Click to copy any viral prompt, or apply it directly to your photo in SeedPix with one click.
           </p>
         </div>
@@ -102,60 +102,60 @@ export default function RspPromptsGallery() {
         {VIRAL_PROMPTS.map((item) => (
           <div
             key={item.id}
-            className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-neutral-200/90 bg-white shadow-xs transition duration-200 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg"
+            className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#13131A] shadow-lg transition duration-200 hover:-translate-y-1 hover:border-[#FFE525]/50 hover:shadow-[0_0_30px_-5px_rgba(255,229,37,0.15)]"
           >
             {/* 效果展示封面图 */}
-            <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0A0A0F]">
               <img
                 src={item.image}
                 alt={item.title}
                 loading="lazy"
                 className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#13131A] via-transparent to-transparent" />
               <div className="absolute top-3 left-3 flex items-center gap-1.5">
-                <span className="rounded-md bg-black/60 backdrop-blur-md px-2.5 py-0.5 text-[11px] font-medium text-white shadow-xs">
+                <span className="rounded-md bg-black/70 backdrop-blur-md px-2.5 py-0.5 text-[11px] font-medium text-white border border-white/10">
                   {item.category}
                 </span>
               </div>
               <div className="absolute top-3 right-3">
-                <span className="rounded-md bg-blue-600/90 backdrop-blur-md px-2.5 py-0.5 text-[11px] font-semibold text-white shadow-xs">
+                <span className="rounded-md bg-[#FFE525] px-2.5 py-0.5 text-[11px] font-bold text-black shadow-xs">
                   {item.badge}
                 </span>
               </div>
               <div className="absolute bottom-3 left-3 right-3">
-                <p className="text-xs font-medium text-white/90 line-clamp-1 drop-shadow-xs">
+                <p className="text-xs font-medium text-[#FFE525] line-clamp-1 drop-shadow-xs">
                   ✨ SeedPix Generated Preview
                 </p>
               </div>
             </div>
 
             <div className="flex flex-1 flex-col p-4.5">
-              <h3 className="text-base font-bold text-neutral-900 transition group-hover:text-blue-600">
+              <h3 className="text-base font-bold text-white transition group-hover:text-[#FFE525]">
                 {item.title}
               </h3>
-              <div className="mt-3 rounded-lg bg-neutral-50 p-3 font-mono text-xs leading-relaxed text-neutral-700 select-all border border-neutral-100">
+              <div className="mt-3 rounded-lg bg-[#0F0F1A] p-3 font-mono text-xs leading-relaxed text-white/80 select-all border border-white/5">
                 {item.prompt}
               </div>
 
-              <div className="mt-4 flex items-center gap-2 pt-3 border-t border-neutral-100">
+              <div className="mt-4 flex items-center gap-2 pt-3 border-t border-white/10">
                 <button
                   onClick={() => handleCopy(item.id, item.prompt)}
-                  className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-2 text-xs font-medium text-neutral-700 transition hover:bg-neutral-50 hover:border-neutral-300 shadow-2xs"
+                  className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
                 >
                   {copiedId === item.id ? (
                     <>
-                      <Check className="h-3.5 w-3.5 text-green-600" /> Copied!
+                      <Check className="h-3.5 w-3.5 text-[#42FF41]" /> Copied!
                     </>
                   ) : (
                     <>
-                      <Copy className="h-3.5 w-3.5 text-neutral-500" /> Copy Prompt
+                      <Copy className="h-3.5 w-3.5 text-white/40" /> Copy Prompt
                     </>
                   )}
                 </button>
                 <button
                   onClick={() => handleUse(item.prompt)}
-                  className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-blue-600 px-3 py-2 text-xs font-medium text-white shadow-xs transition hover:bg-blue-700"
+                  className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-[#FFE525] to-[#42FF41] px-3 py-2 text-xs font-bold text-black shadow-xs transition hover:opacity-90"
                 >
                   <Wand2 className="h-3.5 w-3.5" /> Try in Editor
                 </button>

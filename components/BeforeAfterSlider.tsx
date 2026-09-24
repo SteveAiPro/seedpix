@@ -94,10 +94,10 @@ export default function BeforeAfterSlider({
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white">
+    <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#13131A] shadow-md transition hover:border-[#FFE525]/40">
       <div className="p-4">
-        <h3 className="text-sm font-semibold text-neutral-900">{title}</h3>
-        <p className="mt-0.5 text-xs text-neutral-500">{description}</p>
+        <h3 className="text-sm font-bold text-white">{title}</h3>
+        <p className="mt-0.5 text-xs text-white/60">{description}</p>
       </div>
 
       <div
@@ -139,16 +139,16 @@ export default function BeforeAfterSlider({
 
         {/* Divider handle */}
         <div
-          className="absolute inset-y-0 z-10 w-0.5 bg-white shadow-[0_0_6px_rgba(0,0,0,0.4)]"
+          className="absolute inset-y-0 z-10 w-0.5 bg-white shadow-[0_0_8px_rgba(255,229,37,0.5)]"
           style={{ left: `${pos}%` }}
         >
-          <div className="absolute left-1/2 top-1/2 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md">
+          <div className="absolute left-1/2 top-1/2 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-lg">
             <svg
               width="14"
               height="14"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#171717"
+              stroke="#0A0A0F"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -160,10 +160,10 @@ export default function BeforeAfterSlider({
         </div>
 
         {/* Labels */}
-        <span className="absolute left-3 top-3 rounded bg-black/60 px-2 py-0.5 text-[11px] font-medium text-white">
+        <span className="absolute left-3 top-3 rounded-md bg-black/80 px-2 py-0.5 text-[10px] font-bold text-white uppercase tracking-wider backdrop-blur-sm border border-white/10">
           {beforeLabel}
         </span>
-        <span className="absolute right-3 top-3 rounded bg-blue-600/90 px-2 py-0.5 text-[11px] font-medium text-white">
+        <span className="absolute right-3 top-3 rounded-md bg-[#FFE525] px-2 py-0.5 text-[10px] font-black text-black uppercase tracking-wider shadow-sm">
           {afterLabel}
         </span>
       </div>
