@@ -106,7 +106,7 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-[#0A0A0F]/80 backdrop-blur-2xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
         <Link
           href={currentLocale === "en" ? "/" : `/${currentLocale}`}
           className="flex items-center gap-2 text-lg font-extrabold tracking-tight text-white"

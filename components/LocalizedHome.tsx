@@ -104,52 +104,45 @@ export default function LocalizedHome({ locale = "en" }: LocalizedHomeProps) {
       <section className="relative overflow-hidden bg-[#0A0A0F]">
         <div className="pointer-events-none absolute -top-36 left-1/2 -z-10 h-[520px] w-[850px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-[#FFE525]/15 via-[#42FF41]/8 to-transparent blur-3xl" />
 
-        <div className="mx-auto max-w-6xl px-4 pt-12 pb-8 text-center md:pt-16">
+        <div className="mx-auto max-w-5xl px-4 pt-4 pb-3 sm:pt-6 sm:pb-4 text-center">
           {/* 趋势胶囊徽章 */}
-          <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-[#FFE525]/30 bg-[#FFE525]/10 px-4 py-1 text-xs font-semibold text-[#FFE525] shadow-[0_0_15px_rgba(255,229,37,0.15)]">
-            <span className="flex h-2 w-2 rounded-full bg-[#FFE525] animate-pulse" />
+          <div className="mx-auto mb-2 inline-flex items-center gap-1.5 rounded-full border border-[#FFE525]/30 bg-[#FFE525]/10 px-3 py-0.5 text-[11px] font-semibold text-[#FFE525] shadow-[0_0_12px_rgba(255,229,37,0.15)]">
+            <span className="flex h-1.5 w-1.5 rounded-full bg-[#FFE525] animate-pulse" />
             <span>{dict.hero.trendBadge}</span>
           </div>
 
-          <h1 className="mx-auto max-w-4xl text-3xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-            <span className="block text-white">{dict.hero.titleMain}</span>
-            <span className="block mt-2 bg-gradient-to-r from-[#FFE525] to-[#42FF41] bg-clip-text text-transparent">
+          <h1 className="mx-auto max-w-4xl text-2xl font-extrabold tracking-tight text-white sm:text-3xl md:text-4xl leading-tight">
+            <span>{dict.hero.titleMain}</span>{" "}
+            <span className="bg-gradient-to-r from-[#FFE525] to-[#42FF41] bg-clip-text text-transparent">
               {dict.hero.titleGradient}
             </span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+          <p className="mx-auto mt-1 max-w-xl text-xs sm:text-sm text-white/70 leading-snug">
             {dict.hero.subtitle}
           </p>
 
-          {/* 信任承诺背书 */}
-          <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-2.5 text-xs font-semibold text-white/90">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
-              <Zap className="h-3.5 w-3.5 text-[#FFE525]" /> {dict.hero.badges.free}
+          {/* 信任承诺背书与热门标签精简整合 */}
+          <div className="mx-auto mt-2.5 flex max-w-2xl flex-wrap items-center justify-center gap-1.5 text-[11px] font-medium text-white/80">
+            <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-white/80">
+              <Zap className="h-3 w-3 text-[#FFE525]" /> {dict.hero.badges.free}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
-              <Sparkles className="h-3.5 w-3.5 text-[#42FF41]" /> {dict.hero.badges.noSignUp}
+            <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-white/80">
+              <Sparkles className="h-3 w-3 text-[#42FF41]" /> {dict.hero.badges.noSignUp}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
-              <ShieldCheck className="h-3.5 w-3.5 text-[#FFE525]" /> {dict.hero.badges.noWatermark}
+            <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-white/80">
+              <ShieldCheck className="h-3 w-3 text-[#FFE525]" /> {dict.hero.badges.noWatermark}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
-              <Wand2 className="h-3.5 w-3.5 text-[#42FF41]" /> {dict.hero.badges.hd4k}
+            <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-white/80">
+              <Wand2 className="h-3 w-3 text-[#42FF41]" /> {dict.hero.badges.hd4k}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
+            <span className="hidden sm:inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-white/70">
               ✦ {dict.hero.badges.credits}
             </span>
-          </div>
-
-          {/* 热门长尾功能快速直达条 */}
-          <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-2 text-xs">
-            <span className="font-semibold text-white/40 uppercase tracking-wider text-[10px]">
-              {dict.hero.popularLabel}
-            </span>
-            {dict.hero.popularTags.map((tag) => (
+            {dict.hero.popularTags.slice(0, 3).map((tag) => (
               <Link
                 key={tag.href}
                 href={tag.href}
-                className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-white/70 transition hover:border-[#FFE525]/50 hover:bg-[#FFE525]/10 hover:text-[#FFE525]"
+                className="hidden md:inline-flex rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-white/60 transition hover:border-[#FFE525]/50 hover:text-[#FFE525]"
               >
                 {tag.label}
               </Link>
@@ -158,7 +151,7 @@ export default function LocalizedHome({ locale = "en" }: LocalizedHomeProps) {
         </div>
 
         {/* Editor */}
-        <div className="mx-auto max-w-6xl px-4 pb-16">
+        <div className="mx-auto max-w-4xl px-4 pb-8 sm:pb-12">
           <PhotoEditor />
         </div>
       </section>
