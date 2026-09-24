@@ -173,6 +173,16 @@ export default function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/fix-creased-photos" className="hover:text-neutral-900">
+                Fix Creased Photos
+              </Link>
+            </li>
+            <li>
+              <Link href="/gfpgan-face-enhancement" className="hover:text-neutral-900">
+                GFPGAN Face Enhancer
+              </Link>
+            </li>
+            <li>
               <Link href="/ai-photo-enhancer" className="hover:text-neutral-900">
                 AI Photo Enhancer
               </Link>

@@ -748,6 +748,96 @@ export const toolExtraContent: Record<string, ToolExtraContent> = {
     ],
   },
 
+  "fix-creased-photos": {
+    whyUse:
+      "Old paper photographs stored in wallets, albums, or boxes inevitably develop physical fold lines, white fracture cracks, and scanner seams. Unlike general blurriness, physical paper creases cut through continuous facial features and clothing textures. SeedPix Fix Creased Photos is fine-tuned to trace mechanical folds, remove scanner crack artifacts, and bridge broken lines with contextual texture synthesis that honors the original vintage photograph.",
+    useCases: [
+      {
+        title: "Heal quad-fold lines in wallet-sized vintage photos",
+        text: "Photos folded in half or quarters develop deep white cracks. The AI detects the linear fracture and re-synthesizes continuous skin and background.",
+      },
+      {
+        title: "Clean scanner glass crease artifacts",
+        text: "Document scanners exaggerate folds by casting harsh shadow lines along creases. The model removes both the light glare and shadow trench.",
+      },
+      {
+        title: "Rescue archival prints and family heirlooms",
+        text: "Eliminate tears and crease marks from fragile family photographs before framing or creating digital archives.",
+      },
+    ],
+    steps: [
+      {
+        title: "Upload the creased photo scan",
+        description: "Upload your high-res scan or clear smartphone photo of the folded picture.",
+      },
+      {
+        title: "One-click crease removal",
+        description: "The AI automatically isolates fold fissures and repairs missing photographic pixels.",
+      },
+      {
+        title: "Download restored keepsake",
+        description: "Get a crease-free, full-resolution digital photo with zero watermarks.",
+      },
+    ],
+    extraFaqs: [
+      {
+        question: "How does the AI handle creases going through faces and eyes?",
+        answer:
+          "The engine leverages anatomical symmetry and historical photographic priors to seamlessly reconstruct eyebrows, eyes, and lip lines that are interrupted by paper folds.",
+      },
+      {
+        question: "Can I combine crease repair with photo colorization?",
+        answer:
+          "Yes. Once creases are healed, you can run the image through our photo restoration or enhancer tools to add natural color or boost resolution.",
+      },
+    ],
+  },
+
+  "gfpgan-face-enhancement": {
+    whyUse:
+      "GFPGAN (Generative Facial Prior GAN) revolutionized facial restoration by using pre-trained face GAN priors to hallucinate realistic, high-fidelity facial details from degraded, low-resolution inputs. Instead of guessing blurry pixels blindly, SeedPix's GFPGAN engine reconstructs realistic eyes, iris reflections, teeth, skin pores, and hair strands while strictly preserving personal facial identity.",
+    useCases: [
+      {
+        title: "Restore heavily pixelated and blurry family portraits",
+        text: "Recover sharp facial features in vintage portraits where faces have decayed into blurry blocks.",
+      },
+      {
+        title: "Enhance cropped faces from group photos",
+        text: "When cropping a person's face out of a wide shot, GFPGAN restores facial sharpness to make it suitable for avatars or headshots.",
+      },
+      {
+        title: "Online alternative to Python/Colab GFPGAN repos",
+        text: "Enjoy instant GFPGAN restoration directly in your web browser with no GitHub clones, Python setups, or GPU hardware needed.",
+      },
+    ],
+    steps: [
+      {
+        title: "Upload the portrait or face image",
+        description: "Upload any portrait with blurry, low-resolution, or degraded facial features.",
+      },
+      {
+        title: "GFPGAN facial synthesis",
+        description: "The neural network synthesizes realistic facial priors to sharpen eyes, skin, and hair.",
+      },
+      {
+        title: "Download sharp portrait",
+        description: "Save your crystal-clear face photo at full resolution.",
+      },
+    ],
+    extraFaqs: [
+      {
+        question: "Is SeedPix GFPGAN identical to the open-source GFPGAN?",
+        answer:
+          "Yes, we utilize the GFPGAN facial prior architecture optimized for web deployment, ensuring fast cloud processing without local GPU requirements.",
+      },
+      {
+        question: "Will GFPGAN make everyone look like a generic model?",
+        answer:
+          "No. GFPGAN prioritizes identity preservation. It reconstructs authentic micro-details guided by the original facial geometry rather than replacing the face.",
+      },
+    ],
+  },
+
   "ai-photo-enhancer": {
     whyUse:
       "Enhancement is not one adjustment — it is several that have to agree. Brighten a photo and you also lift noise; add contrast and shadows crush; increase clarity and skin turns coarse. SeedPix evaluates the image and applies corrections that work together, so you get better light and definition without the side effects that usually come with a manual pass.",

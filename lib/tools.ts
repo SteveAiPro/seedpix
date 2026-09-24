@@ -952,6 +952,111 @@ export const tools: ToolPageData[] = [
     ],
   },
   {
+    slug: "fix-creased-photos",
+    title: "Fix Creased Photos AI - Remove Fold Lines & Cracks Free",
+    description:
+      "Fix creased photos online free with AI. Remove fold lines, cracks, tears, and scratches from old scanned pictures with zero sign-up.",
+    shortDescription: "Remove fold lines, creases & cracks from old photos",
+    category: "enhance",
+    credits: 10,
+    systemPrompt:
+      "You are an AI old photo restoration engine specializing in crease and fold removal. Detect and eliminate all paper fold lines, creases, physical cracks, tears, and scan artifacts across the image. Reconstruct seamless underlying facial details, clothing textures, and backgrounds without altering the original historical character, lighting, or face shapes.",
+    examplePrompt: "Fix the creases, cracks, and fold lines in this scanned old photo",
+    keywords: [
+      "fix creased photos",
+      "remove fold lines from scanned image ai",
+      "creased photo repair online",
+      "fix creases in old photos",
+      "remove creases from photo online free",
+      "fold line remover photo",
+      "restore creased photo",
+      "old photo crease removal",
+    ],
+    updatedAt: "2026-09-24",
+    faqs: [
+      {
+        question: "How do I remove creases and fold lines from scanned photos for free?",
+        answer:
+          "Upload your scanned or photographed vintage photo. The AI crease remover automatically scans for fold lines, cracks, and tears, and reconstructs the missing pixels in seconds with no signup.",
+      },
+      {
+        question: "Can it fix deep creases that run across someone's face?",
+        answer:
+          "Yes. Our neural inpainting model analyzes facial symmetry and surrounding skin tones to seamlessly bridge deep cracks and fold lines across faces, eyes, and clothing.",
+      },
+      {
+        question: "Will the paper texture and vintage feel be preserved?",
+        answer:
+          "Yes. It eliminates destructive white cracks and physical creases while preserving the natural vintage warmth, grain, and authentic details of the original photograph.",
+      },
+      {
+        question: "Is there any watermark on the restored photo?",
+        answer: "No. All downloads are 100% watermark-free at full resolution.",
+      },
+    ],
+    demos: [
+      {
+        title: "Fold lines & creases → seamless restoration",
+        description: "Paper cracks and scanner fold lines are detected and healed automatically.",
+        beforeImage: "/demos/scrathed-photo.webp",
+        afterImage: "/demos/photo-restoration.webp",
+      },
+    ],
+  },
+  {
+    slug: "gfpgan-face-enhancement",
+    title: "GFPGAN Face Enhancement Online Free - Restore Blurry Faces",
+    description:
+      "GFPGAN face restoration online free with AI. Enhance blurry, low-resolution faces, restore realistic eyes, teeth, and hair details with zero sign-up.",
+    shortDescription: "Restore blurry and low-res faces with GFPGAN AI",
+    category: "enhance",
+    credits: 10,
+    systemPrompt:
+      "You are a GFPGAN face restoration engine. Enhance and restore facial details in blurry, degraded, or low-resolution portraits: reconstruct realistic eyes, irises, skin texture, lips, and hair strands. Eliminate pixelation and compression artifacts while maintaining high fidelity to the original facial identity.",
+    examplePrompt: "Enhance facial details and unblur this portrait using GFPGAN restoration",
+    keywords: [
+      "gfpgan",
+      "gfpgan online",
+      "gfpgan face restoration",
+      "gfpgan free online",
+      "gfpgan ai",
+      "restore blurry face gfpgan",
+      "gfpgan online demo",
+      "face restoration ai free",
+    ],
+    updatedAt: "2026-09-24",
+    faqs: [
+      {
+        question: "What is GFPGAN face enhancement?",
+        answer:
+          "GFPGAN (Generative Facial Prior GAN) is a state-of-the-art AI architecture designed to restore degraded, blurry, or low-resolution human faces by synthesizing realistic facial priors like sharp eyes, detailed skin, and hair.",
+      },
+      {
+        question: "Can I use GFPGAN online without Python or Colab?",
+        answer:
+          "Yes. SeedPix provides a zero-install online GFPGAN web tool. Simply drop your image to restore faces in your browser without configuring Python, GPUs, or Google Colab.",
+      },
+      {
+        question: "Does GFPGAN alter the person's identity?",
+        answer:
+          "No. GFPGAN preserves facial geometry, bone structure, and distinctive personal features while restoring clarity and sharpness to blurry eyes, teeth, and skin.",
+      },
+      {
+        question: "Is GFPGAN face restoration free on SeedPix?",
+        answer:
+          "Yes. You receive free credits to restore faces immediately with no watermark and no mandatory registration.",
+      },
+    ],
+    demos: [
+      {
+        title: "Blurry face → sharp GFPGAN detail",
+        description: "Reconstructs lifelike facial details, clear eyes, and defined hair texture.",
+        beforeImage: "/demos/unblur-oldphoto.webp",
+        afterImage: "/demos/photo-restoration.webp",
+      },
+    ],
+  },
+  {
     slug: "ai-photo-enhancer",
     title: "AI Photo Enhancer - Enhance Quality Free",
     description:
