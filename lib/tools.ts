@@ -1532,6 +1532,234 @@ export const tools: ToolPageData[] = [
       },
     ],
   },
+
+  {
+    slug: "type-to-edit",
+    title: "Type to Edit Photos - Natural Language AI Photo Editor",
+    description: "Edit photos by typing instructions in plain text. Change clothes, swap backgrounds, remove objects, and enhance faces with natural language commands.",
+    shortDescription: "Edit photos by typing plain English instructions",
+    category: "edit",
+    credits: 5,
+    systemPrompt: "You are an instruction-based AI photo editor. Follow the user's natural language command precisely while preserving overall identity, composition, and realistic lighting.",
+    examplePrompt: "Change background to a modern minimalist office with soft bokeh",
+    keywords: ["type to edit", "prompt to edit photo", "natural language photo editor", "ai photo editing by prompt"],
+    faqs: [
+      { question: "What is Type to Edit?", answer: "Type to Edit lets you describe desired image changes in natural English sentences without needing Photoshop or complex manual selections." },
+      { question: "Is Type to Edit free?", answer: "Yes, new users receive 5 free credits to test Type to Edit with zero watermark." }
+    ],
+    demos: [{
+      title: "Type to Edit in action",
+      beforeImage: "/showcase/before-try-new-look.webp",
+      afterImage: "/showcase/after-try-new-look.webp",
+      prompt: "Change casual clothes into a tailored black suit"
+    }]
+  },
+  {
+    slug: "ai-photo-editor",
+    title: "AI Photo Editor - Edit Photos Online Free Without Watermark",
+    description: "Online AI photo editor to enhance, retouch, upscale, and edit photos by typing. 100% free with no watermark or credit card required.",
+    shortDescription: "All-in-one free online AI photo editing suite",
+    category: "edit",
+    credits: 5,
+    systemPrompt: "Professional AI photo editing suite. Perform seamless retouching, lighting correction, and detail enhancement.",
+    examplePrompt: "Enhance overall lighting, brighten eyes, and smooth skin naturally",
+    keywords: ["ai photo editor", "free ai photo editor online", "ai picture editor", "photo editor ai free"],
+    faqs: [
+      { question: "Is this AI photo editor free?", answer: "Yes, SeedPix provides free daily credits and requires no credit card." }
+    ],
+    demos: [{
+      title: "Studio Retouching",
+      beforeImage: "/showcase/before-linkedin-headshot.webp",
+      afterImage: "/showcase/after-linkedin-headshot.webp",
+      prompt: "Studio lighting, high-end professional portrait"
+    }]
+  },
+  {
+    slug: "ai-image-editor",
+    title: "AI Image Editor - Edit Images with Neural Precision",
+    description: "Transform and manipulate images with neural AI tools. Erase objects, change backgrounds, and upscale to 4K in seconds.",
+    shortDescription: "Edit images with neural AI in your browser",
+    category: "edit",
+    credits: 5,
+    systemPrompt: "High-precision neural image manipulation engine.",
+    examplePrompt: "Remove unwanted background clutter and enhance image contrast",
+    keywords: ["ai image editor", "edit images ai", "neural photo editor"],
+    faqs: [{ question: "What formats are supported?", answer: "JPG, PNG, and WebP up to 20MB." }]
+  },
+  {
+    slug: "free-ai-image-generator",
+    title: "Free AI Image Generator - Create Stunning Art from Text",
+    description: "Generate realistic photos, art, and illustrations from text prompts free online. Powered by GPT Image 2.5 and Nanobanana Pro.",
+    shortDescription: "Generate stunning photorealistic images from text",
+    category: "generate",
+    credits: 5,
+    systemPrompt: "High-fidelity text to image generation model.",
+    examplePrompt: "A majestic snow leopard resting on Himalayan peaks at sunrise, 8k photography",
+    keywords: ["free ai image generator", "text to image free", "ai picture generator"],
+    faqs: [{ question: "Can I use generated images commercially?", answer: "Yes, you own 100% commercial rights to images generated on SeedPix." }]
+  },
+  {
+    slug: "ai-headshot-generator",
+    title: "AI Headshot Generator - Create Professional Studio Portraits",
+    description: "Turn any casual selfie into a studio-grade professional business headshot. Perfect for resumes, company websites, and profiles.",
+    shortDescription: "Turn casual selfies into studio business headshots",
+    category: "generate",
+    credits: 5,
+    systemPrompt: "Generate a studio corporate headshot with flattering studio lighting, sharp eyes, and tailored attire.",
+    examplePrompt: "Professional corporate headshot, dark suit jacket, soft gray studio backdrop, 85mm lens",
+    keywords: ["ai headshot generator", "professional headshots ai", "ai portrait generator", "business headshot ai"],
+    faqs: [{ question: "How many photos do I need to upload?", answer: "Just one clear selfie or photo is enough for our AI to generate a studio portrait." }],
+    demos: [{
+      title: "Headshot Generation",
+      beforeImage: "/showcase/before-linkedin-headshot.webp",
+      afterImage: "/showcase/after-linkedin-headshot.webp",
+      prompt: "Corporate studio headshot with dark blazer"
+    }]
+  },
+  {
+    slug: "ai-linkedin-headshot-generator",
+    title: "AI LinkedIn Headshot Generator - Elevate Your Profile Photo",
+    description: "Generate polished, trustworthy LinkedIn profile pictures in seconds. Stand out to recruiters with executive studio headshots.",
+    shortDescription: "Create executive LinkedIn profile photos from selfies",
+    category: "generate",
+    credits: 5,
+    systemPrompt: "Generate an executive LinkedIn profile picture with confident smile and corporate attire.",
+    examplePrompt: "LinkedIn executive headshot, friendly smile, crisp corporate blazer, modern office background",
+    keywords: ["ai linkedin headshot generator", "linkedin profile picture ai", "executive headshot ai"],
+    faqs: [{ question: "Will recruiters know it is AI?", answer: "Our models generate realistic skin textures and lighting indistinguishable from real photography." }]
+  },
+  {
+    slug: "dating-profile-photo",
+    title: "AI Dating Profile Photos - Get More Matches on Tinder & Hinge",
+    description: "Transform ordinary selfies into attractive, candid, and high-converting dating photos for Tinder, Bumble, and Hinge.",
+    shortDescription: "Generate attractive candid dating profile pictures",
+    category: "generate",
+    credits: 5,
+    systemPrompt: "Generate attractive, natural-looking dating profile portraits with warm lighting and authentic smile.",
+    examplePrompt: "Casual outdoor lifestyle photo, golden hour sunlight, relaxed candid smile, cozy sweater",
+    keywords: ["dating profile photos ai", "tinder photos ai", "hinge profile pictures", "bumble photo enhancer"],
+    faqs: [{ question: "Do these photos look genuine?", answer: "Yes, we focus on candid, authentic lifestyle poses rather than stiff artificial headshots." }],
+    demos: [{
+      title: "Dating Photo Enhancer",
+      beforeImage: "/showcase/before-profile-dating-female.webp",
+      afterImage: "/showcase/after-profile-dating-female.webp",
+      prompt: "Golden hour aesthetic outdoor lifestyle photo"
+    }]
+  },
+  {
+    slug: "passport-photo-maker",
+    title: "AI Passport Photo Maker - Official 2x2 & Biometric Photos Free",
+    description: "Create official passport, visa, and ID photos from home. Automatic background whitening, biometric compliance, and standard sizing.",
+    shortDescription: "Create compliant passport and ID photos instantly",
+    category: "edit",
+    credits: 5,
+    systemPrompt: "Create a compliant passport photo with pure white background, balanced lighting, and correct proportions.",
+    examplePrompt: "Compliant passport photo, pure white background, neutral expression, centered face",
+    keywords: ["passport photo maker", "ai passport photo", "visa photo online", "id photo maker"],
+    faqs: [{ question: "Are these photos officially compliant?", answer: "Yes, the tool removes background shadows, centers the face, and formats for standard 2x2 inch requirements." }],
+    demos: [{
+      title: "Passport Photo Formatting",
+      beforeImage: "/showcase/before-passport-photo.webp",
+      afterImage: "/showcase/after-passport-photo.webp",
+      prompt: "Official white background passport photo"
+    }]
+  },
+  {
+    slug: "open-closed-eyes-ai",
+    title: "Open Closed Eyes in Photo AI - Fix Blinking Eyes Free",
+    description: "Fix ruined group photos and selfies where someone blinked. Open closed eyes naturally with matching iris color and gaze direction.",
+    shortDescription: "Fix blinked photos by naturally opening closed eyes",
+    category: "restore",
+    credits: 5,
+    systemPrompt: "Detect closed or blinking eyes and reconstruct realistic open eyes that match iris color, shape, and gaze.",
+    examplePrompt: "Open closed eyes naturally, matching original eye color and lighting",
+    keywords: ["open closed eyes in photo", "fix blinking photo ai", "ai open eyes", "fix closed eyes in picture"],
+    faqs: [{ question: "How does the AI know my eye color?", answer: "It analyzes subtle cues in skin and other facial features, or you can specify eye color in the prompt." }],
+    demos: [{
+      title: "Blink Fixer",
+      beforeImage: "/showcase/before-save-blink-photo.webp",
+      afterImage: "/showcase/after-save-blink-photo.webp",
+      prompt: "Open closed eyes naturally with sharp iris"
+    }]
+  },
+  {
+    slug: "change-outfit-ai",
+    title: "Change Outfit AI - Virtual Clothes & Attire Try-On",
+    description: "Swap outfits and try on clothes virtually with AI. Change casual clothes to suits, dresses, uniforms, or streetwear in seconds.",
+    shortDescription: "Change clothes and try on new outfits virtually",
+    category: "edit",
+    credits: 5,
+    systemPrompt: "Replace the subject clothing with the requested garment while preserving body pose and natural shadows.",
+    examplePrompt: "Change outfit to a tailored navy blazer and white collared shirt",
+    keywords: ["change outfit ai", "ai clothes changer", "virtual clothing try on", "change clothes in photo"],
+    faqs: [{ question: "Can I choose specific clothing styles?", answer: "Yes, simply type whatever outfit you want in the prompt box." }],
+    demos: [{
+      title: "Virtual Wardrobe",
+      beforeImage: "/showcase/before-try-new-look.webp",
+      afterImage: "/showcase/after-try-new-look.webp",
+      prompt: "Change clothes into stylish black leather jacket"
+    }]
+  },
+  {
+    slug: "change-background-ai",
+    title: "Change Background AI - Replace Photo Backgrounds Instantly",
+    description: "Replace boring backgrounds with stunning studios, luxury interiors, nature landscapes, or transparent backdrops with one click.",
+    shortDescription: "Swap photo backgrounds with AI in seconds",
+    category: "edit",
+    credits: 5,
+    systemPrompt: "Segment foreground subject cleanly and replace background with requested environment.",
+    examplePrompt: "Replace background with modern Scandinavian living room with soft sunlight",
+    keywords: ["change background ai", "replace photo background", "ai background changer"],
+    faqs: [{ question: "Does it handle fine hair strands?", answer: "Yes, our neural segmentation handles wispy hair and complex edges with perfection." }]
+  },
+  {
+    slug: "ai-hairstyle-changer",
+    title: "AI Hairstyle Changer - Try Virtual Hairstyles & Hair Colors",
+    description: "Test out new haircuts, hairstyles, and hair colors before going to the salon. Try buzz cuts, curls, bobs, blond, or neon dyes.",
+    shortDescription: "Test new haircuts and hair colors virtually with AI",
+    category: "edit",
+    credits: 5,
+    systemPrompt: "Change subject hair length, style, and color seamlessly while matching scalp and face shape.",
+    examplePrompt: "Change hairstyle to modern textured wavy bob with caramel highlights",
+    keywords: ["ai hairstyle changer", "virtual haircut try on", "hair color simulator ai"],
+    faqs: [{ question: "Does it work for both men and women?", answer: "Yes, it supports all hair textures, lengths, and facial hair styles." }]
+  },
+  {
+    slug: "photo-enhancer",
+    title: "AI Photo Enhancer - Auto Enhance Quality, Color & Sharpness",
+    description: "One-click AI photo enhancer. Automatically balance exposure, boost colors, remove grain, and enhance facial clarity.",
+    shortDescription: "One-click automatic photo quality enhancer",
+    category: "enhance",
+    credits: 5,
+    systemPrompt: "Automatically enhance photo clarity, color grading, dynamic range, and edge sharpness.",
+    examplePrompt: "Auto enhance photo quality, vibrant colors, clear skin, 4K crispness",
+    keywords: ["photo enhancer", "ai photo enhancer", "enhance photo quality free", "image quality improver"],
+    faqs: [{ question: "Is it free?", answer: "Yes, test our photo enhancer free with zero watermark." }]
+  },
+  {
+    slug: "game-screenshot-to-real-photo",
+    title: "Game Screenshot to Real Photo AI - Convert Gaming into Reality",
+    description: "Turn gaming screenshots from GTA, Cyberpunk, Skyrim, or Minecraft into realistic real-world DSLR photographs.",
+    shortDescription: "Turn video game screenshots into realistic DSLR photos",
+    category: "generate",
+    credits: 5,
+    systemPrompt: "Convert video game rendering into authentic real-life photography with real skin textures and camera lens bokeh.",
+    examplePrompt: "Transform video game screenshot into real life 35mm photograph",
+    keywords: ["game screenshot to real photo", "turn game to real life ai", "gaming screenshot enhancer"],
+    faqs: [{ question: "Which games work best?", answer: "Any game screenshot with recognizable characters, landscapes, or vehicles works beautifully." }]
+  },
+  {
+    slug: "remove-matcha-filter",
+    title: "Remove Matcha Filter AI - Restore True Photo Colors",
+    description: "Remove the viral TikTok matcha green filter from your photos. Reconstruct realistic warm skin tones and true original colors.",
+    shortDescription: "Remove green matcha filter and restore natural colors",
+    category: "restore",
+    credits: 5,
+    systemPrompt: "Detect and remove heavy green/matcha tint, restore natural skin colors, white balance, and contrast.",
+    examplePrompt: "Remove matcha green filter and restore realistic skin tones",
+    keywords: ["remove matcha filter", "tiktok matcha filter remover", "remove green filter from photo"],
+    faqs: [{ question: "Can it restore natural skin tones?", answer: "Yes, the model specializes in reversing the heavy green hue shift of the matcha filter." }]
+  }
 ];
 
 export function getToolBySlug(slug: string): ToolPageData | undefined {

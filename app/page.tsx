@@ -1,5 +1,5 @@
-import LocalizedHome from "@/components/LocalizedHome";
+import SparkpixExactBody from "@/components/SparkpixExactBody";
 
 export default function HomePage() {
-  return <LocalizedHome locale="en" />;
+  return <SparkpixExactBody />;
 }

@@ -34,7 +34,8 @@ export interface ToolPageData {
   /** Before/After 演示（拖动对比） */
   demos?: {
     title: string;
-    description: string;
+    description?: string;
+    prompt?: string;
     image?: string;
     beforeImage?: string;
     afterImage?: string;

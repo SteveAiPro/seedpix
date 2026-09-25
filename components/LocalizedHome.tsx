@@ -3,6 +3,8 @@ import PhotoEditor from "@/components/PhotoEditor";
 import HomeSeoContent from "@/components/HomeSeoContent";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import ModelShowcase from "@/components/ModelShowcase";
+import ShowcaseSection from "@/components/ShowcaseSection";
+import ExtendedHomeSections from "@/components/ExtendedHomeSections";
 import { tools, getToolCover, getToolBeforeAfter } from "@/lib/tools";
 import { landings } from "@/lib/landings";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -155,6 +157,12 @@ export default function LocalizedHome({ locale = "en" }: LocalizedHomeProps) {
           <PhotoEditor />
         </div>
       </section>
+
+      {/* 1:1 Showcase Before/After Comparison Sliders */}
+      <ShowcaseSection />
+
+      {/* Style Transformer, Restore Old Photos, Comparison Table & Personas */}
+      <ExtendedHomeSections />
 
       {/* Create Stunning Images with the Latest AI Models */}
       <ModelShowcase />

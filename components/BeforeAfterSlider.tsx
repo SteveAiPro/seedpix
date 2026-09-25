@@ -13,8 +13,10 @@ interface BeforeAfterSliderProps {
   afterFilter?: string;
   beforeLabel?: string;
   afterLabel?: string;
-  title: string;
-  description: string;
+  beforeAlt?: string;
+  afterAlt?: string;
+  title?: string;
+  description?: string;
   aspect?: string;
   /** 是否自动播放 before↔after 滑块动画（默认关闭，首页演示区开启） */
   autoPlay?: boolean;
@@ -30,8 +32,10 @@ export default function BeforeAfterSlider({
   afterFilter = "",
   beforeLabel = "Before",
   afterLabel = "After",
-  title,
-  description,
+  beforeAlt,
+  afterAlt,
+  title = "",
+  description = "",
   aspect = "4 / 3",
   autoPlay = false,
   autoPlayMs = 1600,

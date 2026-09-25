@@ -2,21 +2,10 @@ import type { MetadataRoute } from "next";
 import { tools } from "@/lib/tools";
 import { landings } from "@/lib/landings";
 import { blogPosts } from "@/lib/blogPosts";
+import { AI_MODELS, AI_TOOLS, STYLE_TOOLS } from "@/lib/catalog";
 
 const BASE = "https://seedpix.org";
-
-/**
- * 内容基线日期：页面没有单独标注 updatedAt 时使用。
- *
- * 注意：这里**不能**用 `new Date()`。
- * sitemap.ts 在构建时求值，`new Date()` 会变成构建时间，导致 21 个 URL 的
- * lastmod 完全相同、且每次部署都"全部刚更新过"——Google 会判定该字段不可信
- * 并直接忽略，等于白扔了"这页有更新，快来重抓"的信号。
- *
- * 正确做法：改完某一页的内容后，在 lib/tools.ts / lib/landings.ts 对应条目上
- * 写 `updatedAt: "YYYY-MM-DD"`。没有标注的页面回退到这个基线日期。
- */
-const CONTENT_BASELINE = "2026-09-05";
+const CONTENT_BASELINE = "2026-09-25";
 
 function lastMod(updatedAt?: string): Date {
   return new Date(updatedAt ?? CONTENT_BASELINE);
@@ -28,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: BASE,
       lastModified: lastMod(),
-      changeFrequency: "weekly",
+      changeFrequency: "daily",
       priority: 1,
     },
     {
@@ -63,35 +52,59 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/pricing`,
-      lastModified: lastMod("2026-09-20"),
+      lastModified: lastMod(),
       changeFrequency: "weekly",
       priority: 0.85,
     },
     {
       url: `${BASE}/about`,
-      lastModified: lastMod("2026-09-20"),
+      lastModified: lastMod(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${BASE}/privacy`,
-      lastModified: lastMod("2026-09-20"),
+      lastModified: lastMod(),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${BASE}/terms`,
-      lastModified: lastMod("2026-09-20"),
+      lastModified: lastMod(),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${BASE}/blog`,
-      lastModified: lastMod("2026-09-21"),
+      lastModified: lastMod(),
       changeFrequency: "weekly",
       priority: 0.85,
     },
   ];
+
+  // 模型落地页矩阵
+  const modelPages: MetadataRoute.Sitemap = AI_MODELS.map((m) => ({
+    url: `${BASE}/${m.slug}`,
+    lastModified: lastMod(),
+    changeFrequency: "weekly",
+    priority: 0.95,
+  }));
+
+  // AI 增强与上采样工具页矩阵 (/aitools/*)
+  const aiToolPages: MetadataRoute.Sitemap = AI_TOOLS.map((t) => ({
+    url: `${BASE}/aitools/${t.slug}`,
+    lastModified: lastMod(),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
+
+  // 风格迁移页矩阵 (/styles/*)
+  const stylePages: MetadataRoute.Sitemap = STYLE_TOOLS.map((s) => ({
+    url: `${BASE}/styles/${s.slug}`,
+    lastModified: lastMod(),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
 
   // 词族 landing 页（扛大词）
   const landingPages: MetadataRoute.Sitemap = landings.map((l) => ({
@@ -117,5 +130,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...landingPages, ...postPages, ...toolPages];
+  return [
+    ...staticPages,
+    ...modelPages,
+    ...landingPages,
+    ...postPages,
+    ...toolPages,
+    ...aiToolPages,
+    ...stylePages,
+  ];
 }

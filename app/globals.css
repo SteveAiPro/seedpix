@@ -19,15 +19,17 @@ body {
   overflow-x: hidden;
 }
 
-/* SparkPix signature Electric Neon Glow & Buttons */
-.sparkpix-glow-border {
+/* SeedPix signature Electric Neon Glow & Buttons */
+.sparkpix-glow-border,
+.seedpix-glow-border {
   background: 
     linear-gradient(#16161F, #16161F) padding-box, 
     linear-gradient(135deg, rgba(255, 229, 37, 0.4), rgba(66, 255, 65, 0.35)) border-box;
   border: 2px solid transparent;
 }
 
-.sparkpix-btn {
+.sparkpix-btn,
+.seedpix-btn {
   background: linear-gradient(135deg, #FFE525 0%, #42FF41 100%);
   color: #000000;
   font-weight: 700;
@@ -35,13 +37,15 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.sparkpix-btn:hover {
+.sparkpix-btn:hover,
+.seedpix-btn:hover {
   opacity: 0.94;
   transform: translateY(-1px);
   box-shadow: 0 0 35px 2px rgba(255, 229, 37, 0.5);
 }
 
-.sparkpix-btn:active {
+.sparkpix-btn:active,
+.seedpix-btn:active {
   transform: scale(0.98);
 }
 
