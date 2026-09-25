@@ -213,6 +213,7 @@ export default function SiteHeader() {
           if (res.ok) {
             const me = await res.json();
             if (typeof me.is_admin === "boolean") setIsAdmin(me.is_admin);
+            if (typeof me.credits === "number") setCredits(me.credits);
           }
         }
       } catch {
