@@ -2,8 +2,49 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+  useReactCompareSliderContext,
+} from "react-compare-slider";
 import { SHOWCASE_TIERS, getCasesForTier, ShowcaseCase, ShowcaseTier } from "@/lib/showcaseData";
+
+// AutoSlider that slides before and after automatically back and forth
+function AutoSlider({
+  min = 5,
+  max = 95,
+  stepPercent = 0.5,
+  intervalMs = 30,
+}: {
+  min?: number;
+  max?: number;
+  stepPercent?: number;
+  intervalMs?: number;
+}) {
+  const context = useReactCompareSliderContext();
+  const directionRef = useRef(1);
+
+  useEffect(() => {
+    if (!context) return;
+    const interval = setInterval(() => {
+      if (context.isDragging) return;
+      const currentPos = context.position.current ?? 50;
+      let nextPos = currentPos + directionRef.current * stepPercent;
+      if (nextPos >= max) {
+        nextPos = max;
+        directionRef.current = -1;
+      } else if (nextPos <= min) {
+        nextPos = min;
+        directionRef.current = 1;
+      }
+      context.setPosition(nextPos);
+    }, intervalMs);
+
+    return () => clearInterval(interval);
+  }, [context, min, max, stepPercent, intervalMs]);
+
+  return null;
+}
 
 // Carousel horizontal scroller with ‹ and › arrow controls
 function CarouselScroller({ children }: { children: React.ReactNode }) {
@@ -123,7 +164,7 @@ function ShowcaseCard({
         className={`group relative w-full overflow-hidden ${aspectClass} rounded-3xl bg-white/[0.04] backdrop-blur-2xl transition-colors cursor-pointer border border-white/5 block`}
         title={item.title}
       >
-        {/* Variant 1: Interactive Slider */}
+        {/* Variant 1: Interactive Slider with Auto-slide Animation */}
         {variant === "slider" && hasBoth && (
           <div className="w-full h-full relative select-none">
             <ReactCompareSlider
@@ -143,10 +184,21 @@ function ShowcaseCard({
                   onError={() => setBeforeError(true)}
                 />
               }
-              defaultPosition={50}
+              defaultPosition={5}
+              transition="30ms linear"
               handle={
                 <div className="h-full relative flex items-center justify-center">
-                  <div className="w-0.5 h-full bg-gradient-to-b from-transparent via-white to-transparent" />
+                  <AutoSlider min={5} max={95} stepPercent={0.5} intervalMs={30} />
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      width: 2,
+                      height: "100%",
+                      background:
+                        "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 100%)",
+                      pointerEvents: "none",
+                    }}
+                  />
                   <div className="absolute w-7 h-7 rounded-full bg-black/70 border border-white/40 shadow-xl flex items-center justify-center backdrop-blur-md">
                     <span className="text-[10px] text-white select-none">‹ ›</span>
                   </div>
