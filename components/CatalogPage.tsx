@@ -14,8 +14,8 @@ export default function CatalogPage({ item }: CatalogPageProps) {
   const [prompt, setPrompt] = useState(item.examplePrompt);
   const [image, setImage] = useState<string | null>(null);
 
-  const fallbackBefore = item.beforeImage || "https://cdn.sparkpix.ai/showcase/before-try-new-look.webp";
-  const fallbackAfter = item.afterImage || "https://cdn.sparkpix.ai/showcase/after-try-new-look.webp";
+  const fallbackBefore = item.beforeImage || "/showcase/before-try-new-look.webp";
+  const fallbackAfter = item.afterImage || "/showcase/after-try-new-look.webp";
 
   return (
     <div className="min-h-screen bg-[#0A0A0F] text-white">
