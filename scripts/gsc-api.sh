@@ -79,8 +79,8 @@ enc() { "$NODE_BIN" -e 'console.log(encodeURIComponent(process.argv[1]))' "$1"; 
 
 case "${1:-}" in
   submit-sitemap)
-    local sp=$(enc "$SITEMAP_URL")
-    local token=$(get_token)
+    sp=$(enc "$SITEMAP_URL")
+    token=$(get_token)
     curl -s --max-time 30 -x "http://127.0.0.1:7897" -X PUT "$API/sites/$SITE_URL/sitemaps/$sp" -H "Authorization: Bearer $token"
     echo " → sitemap 提交完成: $SITEMAP_URL"
     ;;
