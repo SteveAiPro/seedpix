@@ -13,6 +13,8 @@ export const MODELS = {
   "seedream-5-lite": { id: "doubao-seedream-5-0-260128", name: "Seedream 5.0 Lite", resolution: "1K" },
   "qwen3-image": { id: "qwen3-image", name: "Qwen Image 3.0", resolution: "1K" },
   "grok-imagine": { id: "grok-imagine-image", name: "Grok Imagine", resolution: "1K" },
+  "seedpix-free": { id: "sparkpix-image", name: "SeedPix", resolution: "1K" },
+  "seedpix": { id: "sparkpix-image", name: "SeedPix", resolution: "1K" },
 } as const;
 
 export type ModelId = keyof typeof MODELS;

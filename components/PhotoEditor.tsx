@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { useAuth } from "@/lib/auth-client";
+import { useAuth, getAccessToken } from "@/lib/auth-client";
+import { Download, RefreshCw, AlertCircle } from "lucide-react";
 
 const MODELS = [
   { id: "gpt-image-2", name: "GPT Image 2", time: "~60s" },
@@ -32,6 +33,8 @@ export default function PhotoEditor() {
   const [modelOpen, setModelOpen] = useState(false);
   const [ratioOpen, setRatioOpen] = useState(false);
   const [processing, setProcessing] = useState(false);
+  const [resultUrl, setResultUrl] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const modelRef = useRef<HTMLDivElement>(null);
@@ -78,17 +81,47 @@ export default function PhotoEditor() {
     reader.readAsDataURL(file);
   }
 
-  function handleProcess() {
+  async function handleProcess() {
     if (!prompt.trim() && !image) return;
     if (!user && authConfigured) {
-      window.location.href = "/sign-in";
+      window.location.href = "/sign-up?redirect=/";
       return;
     }
     setProcessing(true);
-    setTimeout(() => {
+    setError(null);
+    setResultUrl(null);
+
+    try {
+      const token = await getAccessToken();
+      const res = await fetch("/api/edit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        body: JSON.stringify({
+          prompt,
+          imageBase64: image || undefined,
+          model: model === "seedpix-free" ? "seedpix-free" : model,
+          aspectRatio: ratio === "Auto" ? undefined : ratio,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Generation failed. Please try again.");
+      }
+
+      if (data.urls && data.urls.length > 0) {
+        setResultUrl(data.urls[0]);
+      } else {
+        throw new Error("No image was returned. Please try again.");
+      }
+    } catch (err: any) {
+      setError(err.message || "Failed to generate image.");
+    } finally {
       setProcessing(false);
-      alert("Ready to generate!");
-    }, 1500);
+    }
   }
 
   const currentModelObj = MODELS.find((m) => m.id === model) || MODELS[1];
@@ -279,6 +312,41 @@ export default function PhotoEditor() {
             </button>
           </div>
         </div>
+
+        {/* Error Alert */}
+        {error && (
+          <div className="mt-4 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm flex items-center gap-2">
+            <AlertCircle className="w-5 h-5 shrink-0 text-red-400" />
+            <span>{error}</span>
+          </div>
+        )}
+
+        {/* Generated Image Result Card */}
+        {resultUrl && (
+          <div className="mt-6 p-4 sm:p-6 rounded-2xl bg-[#16161F]/80 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col items-center">
+            <div className="w-full flex items-center justify-between mb-4">
+              <span className="text-sm font-semibold text-[#FFE525]">Generation Completed</span>
+              <a
+                href={resultUrl}
+                download="seedpix-generated.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#FFE525] text-black font-semibold text-xs hover:bg-[#FFE525]/90 transition-colors"
+              >
+                <Download className="w-3.5 h-3.5" />
+                Download HD
+              </a>
+            </div>
+            <div className="relative max-w-xl w-full rounded-xl overflow-hidden border border-white/10 bg-black/40">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={resultUrl}
+                alt="AI Generated Result"
+                className="w-full h-auto object-contain max-h-[500px]"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
