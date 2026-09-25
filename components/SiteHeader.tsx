@@ -368,8 +368,12 @@ export default function SiteHeader() {
               <div className="w-20 h-9 rounded-xl bg-white/5 animate-pulse" />
             ) : email ? (
               <div className="flex items-center gap-2.5">
-                <div className="flex items-center gap-2 rounded-xl bg-white/5 px-3 py-1.5 border border-white/10">
-                  <span className="text-xs font-semibold text-white/80 max-w-[120px] truncate hidden sm:inline">
+                <Link
+                  href="/account"
+                  title="View Account & Orders"
+                  className="flex items-center gap-2 rounded-xl bg-white/5 hover:bg-white/10 px-3 py-1.5 border border-white/10 transition-colors group cursor-pointer"
+                >
+                  <span className="text-xs font-semibold text-white/80 group-hover:text-white max-w-[120px] truncate hidden sm:inline">
                     {email.split("@")[0]}
                   </span>
                   {typeof credits === "number" && (
@@ -377,7 +381,13 @@ export default function SiteHeader() {
                       {credits} credits
                     </span>
                   )}
-                </div>
+                </Link>
+                <Link
+                  href="/account"
+                  className="hidden sm:inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 px-2.5 py-1.5 text-xs text-white/80 hover:text-white transition"
+                >
+                  Orders
+                </Link>
                 {isAdmin && (
                   <Link
                     href="/admin"
@@ -562,9 +572,22 @@ export default function SiteHeader() {
                 <span>Sign In (5 Free Credits)</span>
               </Link>
             ) : (
-              <div className="flex items-center justify-between text-xs text-white/60">
-                <span>{email.split("@")[0]}</span>
-                <span className="text-[#FFE525] font-bold">{credits ?? 0} credits</span>
+              <div className="flex flex-col gap-2">
+                <Link
+                  href="/account"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition text-sm"
+                >
+                  <span className="text-white/80 font-medium truncate max-w-[160px]">{email.split("@")[0]}</span>
+                  <span className="text-[#FFE525] font-bold">{credits ?? 0} credits</span>
+                </Link>
+                <Link
+                  href="/account"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-center py-1 text-xs font-semibold text-[#FFE525] hover:underline"
+                >
+                  My Orders &amp; Billing →
+                </Link>
               </div>
             )}
           </div>
