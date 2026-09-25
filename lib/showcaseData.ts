@@ -37,7 +37,7 @@ export const SHOWCASE_TIERS: ShowcaseTier[] = [
     subtitle: 'One sentence. Any structural change. Swap background, change pose, relight the scene, add or remove anything.',
     tone: 'neutral',
     layout: 'carousel',
-    cardVariant: 'pip',
+    cardVariant: 'slider',
     order: 1,
   },
   {

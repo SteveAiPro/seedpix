@@ -11,10 +11,10 @@ import { SHOWCASE_TIERS, getCasesForTier, ShowcaseCase, ShowcaseTier } from "@/l
 
 // AutoSlider that slides before and after automatically back and forth
 function AutoSlider({
-  min = 5,
-  max = 95,
-  stepPercent = 0.5,
-  intervalMs = 30,
+  min = 10,
+  max = 90,
+  stepPercent = 0.8,
+  intervalMs = 25,
 }: {
   min?: number;
   max?: number;
