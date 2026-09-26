@@ -108,6 +108,40 @@ export const AI_MODELS: CatalogItem[] = [
 
 export const AI_TOOLS: CatalogItem[] = [
   {
+    slug: "image-upscaler",
+    title: "AI Image Upscaler - Upscale Images to 4K Quality Free",
+    description: "Upscale images to 4K resolution online free with AI. Enhance blurry pictures, reconstruct micro-details, and enlarge photos up to 400% with zero watermark.",
+    category: "aitool",
+    badge: "Hot",
+    tagline: "Ultra-sharp 4K super-resolution with generative neural details",
+    systemPrompt: "Upscale input photo to true 4K resolution. Synthesize missing high-frequency details, remove compression artifacts, and sharpen facial and texture elements naturally.",
+    examplePrompt: "Upscale to 4K high resolution, enhance fine details and remove noise",
+    beforeImage: "/demos/restoration-old-photo-low-resolution.webp",
+    afterImage: "/demos/photo-restoration.webp",
+    features: ["4K UHD super-resolution", "Generative micro-texture restoration", "100% free watermark-free downloads", "Zero sign-up required"],
+    faqs: [
+      { question: "How does AI image upscaling work?", answer: "Our neural network infers missing sub-pixel detail from photo context, reconstructing sharp textures rather than blurring pixels like traditional bicubic interpolation." },
+      { question: "Is this image upscaler free?", answer: "Yes, you can test and download upscaled 4K images free with no watermark or mandatory registration." }
+    ]
+  },
+  {
+    slug: "watermark-remover",
+    title: "AI Watermark Remover - Remove Watermarks Online Free",
+    description: "Remove watermarks, logos, timestamps, and text from photos online free with AI. Inpaint clean backgrounds without blurring.",
+    category: "aitool",
+    badge: "Popular",
+    tagline: "Clean, invisible watermark and logo erasure with zero smudging",
+    systemPrompt: "Detect and remove all watermarks, logos, timestamps, and text overlays cleanly, seamlessly reconstructing the natural background texture underneath.",
+    examplePrompt: "Remove all watermarks and logos from this image cleanly, reconstructing natural background",
+    beforeImage: "/demos/before-remove-watermark.webp",
+    afterImage: "/demos/after-remove-watermark.webp",
+    features: ["Semi-transparent watermark erasure", "Contextual diffusion inpainting", "Preserves original resolution & color", "1-click instant processing"],
+    faqs: [
+      { question: "Can it remove complex or patterned watermarks?", answer: "Yes, our deep inpainting model reconstructs realistic background textures even across repeating grids and semi-transparent logos." },
+      { question: "Will it blur the photo?", answer: "No. SeedPix synthesizes genuine photo textures so the edited area matches the surrounding photo seamlessly." }
+    ]
+  },
+  {
     slug: "photo-upscaler",
     title: "AI Photo Upscaler - Upscale Images to 4K/8K Free Online",
     description: "Upscale low-resolution photos to crystal-clear 4K and 8K with AI. Restore fine details, remove blur and pixelation without quality loss.",

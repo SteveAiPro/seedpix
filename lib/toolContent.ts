@@ -24,6 +24,118 @@ export interface ToolExtraContent {
 }
 
 export const toolExtraContent: Record<string, ToolExtraContent> = {
+  "image-upscaler": {
+    whyUse:
+      "Most image enlargers rely on basic mathematical bicubic interpolation, which merely duplicates and blurs existing pixels, producing muddy contours and magnified JPEG compression artifacts. SeedPix AI Image Upscaler uses deep-learning generative super-resolution trained on millions of high-definition photographs. Instead of stretching low-resolution blocks, it understands the context of the scene—synthesizing authentic micro-textures such as skin pores, eyelashes, fabric weaves, foliage, and architectural edges. The result is a crisp, photo-realistic 4K image that looks like it was captured with a high-end prime lens rather than digitally blown up.",
+    useCases: [
+      {
+        title: "E-Commerce & Amazon Product Zoom",
+        text: "Supplier photos or mobile shots often fall below Amazon and Shopify's minimum 1600px zoom requirement. Upscaling them to 4K provides crisp product detailing that builds buyer trust and drives conversions.",
+      },
+      {
+        title: "Print Preparation & Large Wall Art",
+        text: "Enlarge phone photos and AI-generated Midjourney/Flux art for 300 DPI canvas, poster, or marketing banner printing without visible grain, pixelation, or blurry edges.",
+      },
+      {
+        title: "Restoring Vintage & Archived Low-Res Photos",
+        text: "Rescue small web scans, early digital camera shots, or vintage family pictures by recovering authentic facial features and sharpness.",
+      },
+      {
+        title: "AI Canvas Expander & Wallpaper Creation",
+        text: "Transform cropped 1080p graphics into ultra-wide desktop wallpapers and 4K digital screen backdrops with immaculate clarity.",
+      },
+    ],
+    steps: [
+      {
+        title: "Upload your picture",
+        description:
+          "Drag and drop any low-res, compressed, or blurry JPG, PNG, or WebP photo up to 20MB. No signup required.",
+      },
+      {
+        title: "AI deep super-resolution",
+        description:
+          "The neural engine reconstructs lost details, eliminates compression noise, and enlarges resolution up to 4K in seconds.",
+      },
+      {
+        title: "Inspect slider & download",
+        description:
+          "Drag the interactive before/after slider to inspect microscopic details, then download your 4K file completely watermark-free.",
+      },
+    ],
+    extraFaqs: [
+      {
+        question: "How does AI upscaling differ from traditional bicubic enlargement?",
+        answer:
+          "Traditional enlargement estimates colors between existing pixels, which blurs sharp edges and magnifies compression artifacts. AI upscaling uses neural diffusion models that predict and generate realistic photographic detail that was lost or never captured.",
+      },
+      {
+        question: "What is the maximum output resolution?",
+        answer:
+          "SeedPix can upscale standard images up to 4K Ultra HD (3840×2160 pixels) or up to a 4× scale factor while preserving original color fidelity and proportions.",
+      },
+      {
+        question: "Is there any privacy risk when uploading photos?",
+        answer:
+          "None. Uploads are processed in an encrypted pipeline and automatically purged after your editing session. We never train public models on your private photos.",
+      },
+    ],
+  },
+  "watermark-remover": {
+    whyUse:
+      "Standard watermark removers simply apply a heavy Gaussian blur or a clumsy clone stamp across the text area, leaving distracting smudges and mismatched color patches that ruin the photo's commercial value. SeedPix AI Watermark Remover operates with contextual inpainting: our diffusion model analyzes the entire image structure, light direction, and surrounding texture patterns. It isolates the semi-transparent watermark layer and seamlessly reconstructs the original surface beneath—whether it's complex human skin, rippling water, detailed fabric, or wood grain—leaving zero trace of editing.",
+    useCases: [
+      {
+        title: "Erase Translucent Logos & Copyright Stamps",
+        text: "Clean up photos where old branding, distributor logos, or stock preview grids obscure essential product visuals.",
+      },
+      {
+        title: "Remove Camera Timestamps & Date Stamps",
+        text: "Wipe away retro digital camera timestamps, GPS location markers, and phone camera watermarks from vacation and family portraits.",
+      },
+      {
+        title: "Restore Clean Backgrounds from Social Captions",
+        text: "Erase baked-in subtitles, TikTok or Instagram username tags, and meme captions to recover clean, reusable graphics.",
+      },
+      {
+        title: "Clean AI SynthID & Generation Tags",
+        text: "Remove AI generator watermark badges from personal creations to prepare clean assets for professional presentation decks and portfolios.",
+      },
+    ],
+    steps: [
+      {
+        title: "Upload your watermarked image",
+        description:
+          "Select any photo with watermarks, logos, timestamps, or text overlays. Compatible with JPG, PNG, and WebP.",
+      },
+      {
+        title: "One-click AI detection & inpainting",
+        description:
+          "Our model accurately isolates watermark pixels and synthesizes matching background texture with zero blur.",
+      },
+      {
+        title: "Download full-res clean photo",
+        description:
+          "Review the pristine result with the before/after slider and download in original resolution with zero watermarks added.",
+      },
+    ],
+    extraFaqs: [
+      {
+        question: "Can this tool remove full-frame patterned watermarks?",
+        answer:
+          "Yes. Our diffusion inpainting model is trained on multi-layer image decomposition, allowing it to remove repeating patterned watermark grids without damaging underlying subjects.",
+      },
+      {
+        question: "Will the background look blurry or smudged?",
+        answer:
+          "No. Unlike legacy blurring tools, SeedPix generates authentic high-frequency texture and gradient continuity so the repaired area matches the rest of the photograph perfectly.",
+      },
+      {
+        question: "Can I use the cleaned images commercially?",
+        answer:
+          "Yes, provided you own the rights to the underlying media or are authorized to remove the marks. SeedPix imposes no restrictions or licensing fees on your output.",
+      },
+    ],
+  },
   "filter-remover": {
     whyUse:
       "Filter remover is what you reach for when an AI filter has flattened a real photo into a trend. A saturation slider cannot undo that — it only mutes the effect. SeedPix reconstructs the photo underneath: real skin texture, individual hair strands, and true colour under the original lighting. The subject, pose, framing and crop stay exactly where they were, so the result still looks like the photo you took rather than a repainted version of it.",

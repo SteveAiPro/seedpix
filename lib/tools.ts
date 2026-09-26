@@ -427,6 +427,114 @@ export const tools: ToolPageData[] = [
     updatedAt: "2026-09-21",
   },
   {
+    slug: "watermark-remover",
+    title: "Free Watermark Remover Online - AI Watermark & Logo Eraser",
+    description:
+      "Remove watermarks, logos, stamps, and text from photos online free with AI. Erase transparent watermarks and inpaint clean background naturally with no signup.",
+    shortDescription: "Erase watermarks, logos & stamps with AI",
+    category: "remove",
+    credits: 10,
+    systemPrompt:
+      "You are an advanced AI watermark and text removal engine. Detect and erase all watermarks, logos, text overlays, copyright marks, date stamps, and signature icons from the uploaded image. Reconstruct the underlying background texture, gradient, color, and visual elements seamlessly so no blur, smear, or artifact remains. Only process images the user is authorized to edit.",
+    examplePrompt: "Remove all watermarks and logos from this image cleanly, reconstructing natural background",
+    keywords: [
+      "watermark remover",
+      "remove watermark",
+      "free watermark remover",
+      "watermark remover ai",
+      "remove watermark from photo",
+      "erase watermark online free",
+      "ai watermark remover",
+      "remove logo from image",
+      "remove watermark without blur",
+      "shutterstock watermark remover alternative",
+    ],
+    updatedAt: "2026-09-26",
+    faqs: [
+      {
+        question: "How does the AI watermark remover work?",
+        answer:
+          "Our context-aware AI analyzes the pixels around and beneath the watermark. It separates the translucent overlay from the true image data, erasing the watermark and inpainting realistic texture, grain, and color to restore the original composition seamlessly.",
+      },
+      {
+        question: "Can it remove semi-transparent or full-image watermarks?",
+        answer:
+          "Yes. Unlike traditional clone-stamp tools that leave blurry smudges, our deep-learning model handles complex semi-transparent stamps, stock photo grids, and gradient logos across varied textures.",
+      },
+      {
+        question: "Is SeedPix watermark remover free to use?",
+        answer:
+          "Yes, you can remove watermarks immediately with no mandatory signup. New accounts receive 10 free credits plus 1 daily credit, allowing you to test full-resolution results for free.",
+      },
+      {
+        question: "Will removing a watermark blur my photo?",
+        answer:
+          "No. The AI reconstructs natural image details rather than blurring or pixelating the affected area, preserving sharp edges and realistic lighting.",
+      },
+      {
+        question: "What image formats are supported?",
+        answer:
+          "We support high-resolution JPG, PNG, and WebP images up to 20MB, maintaining original dimensions and color profiles upon download.",
+      },
+      {
+        question: "Is it legal to remove watermarks?",
+        answer:
+          "You should only remove watermarks from images you own, personal photographs, or content you have legitimate rights to modify and publish.",
+      },
+    ],
+    comparison: [
+      {
+        name: "SeedPix AI Watermark Remover",
+        rows: [
+          "AI contextual inpainting",
+          "Zero smudging / clean texture recovery",
+          "100% free with no watermark added",
+          "Instant browser execution, no signup",
+        ],
+      },
+      {
+        name: "Manual clone stamp (Photoshop)",
+        rows: [
+          "Requires advanced manual editing skills",
+          "Leaves noticeable smudges on gradients",
+          "Costly monthly subscription ($22.99/mo)",
+          "Complex desktop installation",
+        ],
+      },
+      {
+        name: "Generic online watermark tools",
+        rows: [
+          "Simple blur box overlay",
+          "Destroys original resolution and texture",
+          "Forces own branding/watermark on download",
+          "Requires sign up after 1 low-res export",
+        ],
+      },
+    ],
+    steps: [
+      {
+        title: "Upload your watermarked photo",
+        description: "Drop your image into the editor. Supports JPG, PNG, or WebP up to 20MB.",
+      },
+      {
+        title: "AI detects and inpaints the area",
+        description: "Click once to let AI erase the watermark and reconstruct the background automatically.",
+      },
+      {
+        title: "Inspect & download clean image",
+        description: "Check the before/after comparison slider and download full resolution with no watermark.",
+      },
+    ],
+    demos: [
+      {
+        title: "Watermark → Clean natural background",
+        description: "Seamless removal of translucent watermarks and logos without blurring.",
+        beforeImage: "/demos/before-remove-watermark.webp",
+        afterImage: "/demos/after-remove-watermark.webp",
+      },
+    ],
+  },
+  {
     slug: "gemini-watermark-remover",
     title: "Gemini Watermark Remover - Remove It Free",
     description:
@@ -543,6 +651,114 @@ export const tools: ToolPageData[] = [
         title: "Blurry old photo → sharp",
         description: "Motion blur and out-of-focus areas are fixed instantly.",
         beforeImage: "/demos/unblur-oldphoto.webp",
+        afterImage: "/demos/photo-restoration.webp",
+      },
+    ],
+  },
+  {
+    slug: "image-upscaler",
+    title: "Free AI Image Upscaler - 4K Quality Photo Enhancer Online",
+    description:
+      "Upscale images to 4K quality online free with AI. Enhance blurry photos, sharpen pixelated details, and enlarge pictures up to 400% with no watermark and no signup.",
+    shortDescription: "Upscale images up to 4K free with AI",
+    category: "enhance",
+    credits: 10,
+    systemPrompt:
+      "You are an AI image upscaling and super-resolution engine. Upscale the uploaded image to ultra-high resolution (up to 4K). Reconstruct lost micro-details, sharpen blurry contours, eliminate JPEG compression noise and pixelation, and enhance textures (skin pores, hair, foliage, fabric) naturally without generating plastic artifacts or oversharpened halos. Maintain exact original colors, composition, and subject integrity.",
+    examplePrompt: "Upscale this image to 4K high resolution, enhance fine details and remove noise",
+    keywords: [
+      "image upscaler",
+      "image upscaler free",
+      "free ai image upscaler",
+      "4k image upscaler",
+      "ai image upscaler",
+      "upscale image online",
+      "ai image expander",
+      "photo upscaler free",
+      "image resolution enhancer",
+      "enlarge image without losing quality",
+    ],
+    updatedAt: "2026-09-26",
+    faqs: [
+      {
+        question: "How does the AI image upscaler work?",
+        answer:
+          "Traditional upscalers stretch existing pixels using bicubic interpolation, which causes blurriness. Our AI neural network analyzes image context and generates realistic missing high-frequency details (textures, contours, eyelashes, fabric weaves) to create true 4K resolution.",
+      },
+      {
+        question: "How much can I upscale my image?",
+        answer:
+          "You can enlarge images up to 2x, 4x, or up to 4K UHD resolution (3840×2160 pixels) while maintaining sharp definition and natural grain.",
+      },
+      {
+        question: "Can I upscale photos for free without signing up?",
+        answer:
+          "Yes. You can test the upscaler immediately directly in your browser. New accounts get 10 free credits plus 1 daily credit with zero mandatory credit card requirement.",
+      },
+      {
+        question: "Will the upscaled photo have a watermark?",
+        answer:
+          "No. All processed images downloaded from SeedPix are 100% watermark-free and cleared for personal and commercial projects.",
+      },
+      {
+        question: "Is it suitable for printing and e-commerce?",
+        answer:
+          "Absolutely. It is specially optimized for Shopify/Amazon product zoom requirements, large-format canvas printing, marketing banners, and digital wallpapers.",
+      },
+      {
+        question: "What file formats and sizes are supported?",
+        answer:
+          "We support JPG, PNG, and WebP images up to 20MB. Output matches the input aspect ratio precisely.",
+      },
+    ],
+    comparison: [
+      {
+        name: "SeedPix AI Image Upscaler",
+        rows: [
+          "Deep learning super-resolution",
+          "Reconstructs lost texture & micro-details",
+          "Free 4K full-resolution export",
+          "Watermark-free with instant web preview",
+        ],
+      },
+      {
+        name: "Photoshop Bicubic interpolation",
+        rows: [
+          "Pixel stretching with math interpolation",
+          "Blurs fine edges and magnifies compression noise",
+          "Expensive monthly Creative Cloud plan",
+          "Requires desktop installation and manual setup",
+        ],
+      },
+      {
+        name: "Traditional online upscalers",
+        rows: [
+          "Limited to 2x low-resolution upscale",
+          "Heavy waxy plastic smoothing",
+          "Forced watermarks on free downloads",
+          "Aggressive sign-up and credit card paywalls",
+        ],
+      },
+    ],
+    steps: [
+      {
+        title: "Upload low-res or blurry photo",
+        description: "Drop your image into the upscaler. Compatible with JPG, PNG, and WebP up to 20MB.",
+      },
+      {
+        title: "AI reconstructs details to 4K",
+        description: "Our diffusion engine removes compression artifacts and sharpens micro-details in seconds.",
+      },
+      {
+        title: "Compare and download 4K image",
+        description: "Slide to inspect fine hair, skin, and text detail, then download full resolution with no watermark.",
+      },
+    ],
+    demos: [
+      {
+        title: "Low resolution → Crisp 4K detail",
+        description: "True AI super-resolution that reconstructs facial features, textures, and edges.",
+        beforeImage: "/demos/restoration-old-photo-low-resolution.webp",
         afterImage: "/demos/photo-restoration.webp",
       },
     ],
