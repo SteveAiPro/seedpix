@@ -114,6 +114,16 @@ export default function PhotoEditor() {
 
       if (data.urls && data.urls.length > 0) {
         setResultUrl(data.urls[0]);
+        // GA4 关键事件：生成成功
+        try {
+          (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.(
+            "event",
+            "generate_success",
+            { model }
+          );
+        } catch {
+          /* analytics 未加载时静默跳过 */
+        }
       } else {
         throw new Error("No image was returned. Please try again.");
       }

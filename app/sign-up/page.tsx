@@ -9,6 +9,21 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 const configured =
   !!supabaseUrl && !!supabaseAnonKey && !supabaseUrl.includes("YOUR-PROJECT");
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+/** GA4 关键事件：注册成功（GA4 后台已配置同名关键事件） */
+function trackSignUp(method: "email" | "google") {
+  try {
+    window.gtag?.("event", "sign_up", { method });
+  } catch {
+    /* analytics 未加载时静默跳过 */
+  }
+}
+
 export default function SignUpPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -38,9 +53,12 @@ export default function SignUpPage() {
     }
     if (data.session) {
       // 已自动登录（未开邮箱验证时）
+      trackSignUp("email");
       router.push("/");
       router.refresh();
     } else {
+      // 账号已创建，等待邮箱确认
+      trackSignUp("email");
       setDone(true);
     }
     setLoading(false);
@@ -51,6 +69,7 @@ export default function SignUpPage() {
     setLoading(true);
     setError(null);
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    trackSignUp("google");
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo: `${window.location.origin}/` },
