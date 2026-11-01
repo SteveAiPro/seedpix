@@ -67,6 +67,18 @@ export const landings: KeywordLandingData[] = [
           "Yes, you can start for free. New users get 10 free credits on signup plus 1 free credit every day, and each generation costs 10 credits. You can try the generator immediately without signing up. When you run out of credits, packs start at $9.99 for 350 credits - a fraction of what other AI art tools charge.",
         ],
       },
+      {
+        heading: "How to write prompts that generate better images",
+        paragraphs: [
+          "The difference between a mediocre and a stunning generation is usually the prompt. Lead with the subject, then add style, lighting, and mood: 'a golden retriever puppy, photorealistic, soft morning light, shallow depth of field' beats 'cute dog'. Name the medium when you want it - 'oil painting', '35mm film photo', '3D render', 'anime style'. Add composition cues like 'close-up', 'wide angle', or 'centered' to control framing, and keep one idea per prompt; stacking five unrelated concepts confuses the model.",
+        ],
+      },
+      {
+        heading: "No watermark, full resolution, commercial rights included",
+        paragraphs: [
+          "Many free AI image generators stamp a watermark across your download, cap the resolution, or restrict commercial use to paid tiers. SeedPix does none of that: every generated image downloads clean and full resolution, and you own the output for commercial use - ads, client work, print-on-demand, social content, anything. That makes it a practical pick for marketers, indie makers, and anyone who needs publishable images on day one.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -99,7 +111,7 @@ export const landings: KeywordLandingData[] = [
           "One generation costs 10 credits. Signup gives you 10 free credits plus 1 daily credit, and credit packs start at $9.99 for 350 credits.",
       },
     ],
-    updatedAt: "2026-09-23",
+    updatedAt: "2026-11-01",
   },
   {
     slug: "ai-photo-editor-free",
@@ -594,6 +606,509 @@ export const landings: KeywordLandingData[] = [
       },
     ],
     updatedAt: "2026-09-21",
+  },
+  {
+    slug: "ai-photo-editor-online",
+    title: "AI Photo Editor Free - Edit Photos Online Without Limits",
+    description:
+      "Free AI photo editor online with no sign up and no restrictions. Remove objects, change backgrounds, enhance quality, unblur, and upscale to 4K - all in your browser, no watermark.",
+    keywords: [
+      "ai photo editor",
+      "ai photo editor free",
+      "ai photo editor online",
+      "free ai photo editor",
+      "ai photo editor no sign up",
+      "ai photo editor no restrictions",
+      "online ai photo editor",
+      "ai photo editor no watermark",
+      "edit photos with ai",
+      "unrestricted ai photo editor",
+      "ai photo editing tool",
+      "best ai photo editor",
+    ],
+    toolSlugs: [
+      "ai-photo-editor",
+      "ai-image-editor",
+      "remove-object-from-photo",
+      "background-remover",
+      "ai-photo-enhancer",
+      "4k-image-upscaler",
+      "filter-remover",
+      "photo-restoration",
+      "remove-ai-look",
+      "ai-image-humanizer",
+    ],
+    sections: [
+      {
+        heading: "What is an AI photo editor?",
+        paragraphs: [
+          "An AI photo editor uses generative vision models to edit your photos from plain-language instructions instead of manual layers and brushes. Instead of selecting, masking, and cloning by hand, you describe the change - 'remove the tourist in the background', 'make the colors pop', 'turn this into a clean white background' - and the AI rebuilds the pixels to match. SeedPix puts a full suite of these editing models behind one simple editor, so you can handle almost any retouch without opening Photoshop.",
+        ],
+      },
+      {
+        heading: "Everything you can do with the SeedPix AI photo editor",
+        paragraphs: [
+          "The SeedPix AI photo editor covers the edits people actually need: remove unwanted objects, people, and text; cut out and replace backgrounds; enhance sharpness and color; unblur shaky shots; erase camera filters; restore old and damaged photos; and upscale low-resolution images to 4K. Each tool runs in your browser, keeps the original subject, pose, and framing of your photo, and adds no watermark to the result.",
+        ],
+      },
+      {
+        heading: "Free, no sign up, no restrictions",
+        paragraphs: [
+          "Most online editors force you to register, watermark every download, or throttle your resolution after a single edit. SeedPix is built the opposite way: you can start editing immediately without creating an account, download clean images with zero watermark, and export in full resolution. New users get 10 free credits on signup - exactly what one full edit costs - plus 1 free credit every day, so your first edit is completely free with no credit card and no subscription.",
+        ],
+      },
+      {
+        heading: "Why SeedPix is the best AI photo editor for everyday photos",
+        paragraphs: [
+          "SeedPix combines a generous free tier, a real browser-based editor, and a broad toolset in one place. There are no feature gates, no daily lockouts, and no watermarks. One sentence or one click does the job that used to take hours in professional software, and your downloads are yours to use commercially - in social posts, client work, ecommerce, or prints.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the best free AI photo editor?",
+        answer:
+          "The best free AI photo editor is one that lets you actually finish an edit without paying, signing up, or getting a watermark. SeedPix gives new users 10 free credits - enough for a full edit - plus 1 free credit daily, and adds no watermark to any result.",
+      },
+      {
+        question: "Can I use the AI photo editor without signing up?",
+        answer:
+          "Yes. You can open the SeedPix editor and start editing right away without creating an account or sharing your email. Sign up only when you want to save history and claim free credits.",
+      },
+      {
+        question: "Is the AI photo editor really free with no restrictions?",
+        answer:
+          "Yes. There are no watermarks, no resolution caps, and no daily lockouts. Each edit costs 10 credits; you get 10 free on signup plus 1 daily, and packs start at $9.99 for 350 credits with no subscription.",
+      },
+      {
+        question: "Will my edited photos have a watermark?",
+        answer:
+          "No. Every image edited on SeedPix is 100% watermark-free and yours to use commercially.",
+      },
+      {
+        question: "What can I do with an AI photo editor?",
+        answer:
+          "Remove objects, people, and text; replace backgrounds; enhance quality; unblur; erase filters; restore old photos; and upscale to 4K - all from plain-language instructions.",
+      },
+      {
+        question: "Do I need Photoshop to edit photos with AI?",
+        answer:
+          "No. SeedPix runs entirely in your browser. Upload a photo, describe the edit in plain words, and download the result in about 30 seconds - no downloads, no layers, no learning curve.",
+      },
+      {
+        question: "What image formats are supported?",
+        answer: "JPG, PNG, and WebP files up to 20MB are supported, and output keeps your original aspect ratio.",
+      },
+    ],
+    updatedAt: "2026-11-01",
+  },
+  {
+    slug: "photo-text-editor-online",
+    title: "Photo Text Editor - Add & Edit Text on Photos Online Free",
+    description:
+      "Add, edit, and remove text on your photos online free with the SeedPix AI photo text editor. Type captions, quotes, and labels onto any image - no sign up, no watermark.",
+    keywords: [
+      "photo text editor",
+      "add text to photo",
+      "edit text in image",
+      "photo text editor online free",
+      "add text to photo online",
+      "edit text on picture",
+      "photo editor with text",
+      "text on photo app",
+      "photo caption editor",
+      "edit words in image",
+      "photo text editor no sign up",
+      "write text on picture",
+    ],
+    toolSlugs: [
+      "photo-text-editor",
+      "edit-text-in-image",
+      "remove-text-from-photo",
+      "type-to-edit",
+      "text-to-image",
+      "ai-photo-editor",
+    ],
+    sections: [
+      {
+        heading: "What is a photo text editor?",
+        paragraphs: [
+          "A photo text editor lets you place, style, and adjust text directly on an image - captions, quotes, labels, prices, memes, or call-to-action overlays. A traditional photo text editor just drops a text box on top. SeedPix goes further: its AI can also read text that is already burned into a photo, edit it in place, or remove it entirely and reconstruct the background underneath - something manual tools cannot do.",
+        ],
+      },
+      {
+        heading: "How to add text to a photo online for free",
+        paragraphs: [
+          "1. Upload your photo (JPG, PNG, or WebP, up to 20MB) into the SeedPix editor. 2. Choose the text tool and type your caption, quote, or label. 3. Pick a font, size, color, and position - or just describe the look you want in plain words. 4. Click apply and download your finished image with no watermark. No sign up is required to try it.",
+        ],
+      },
+      {
+        heading: "How to edit or remove existing text in a photo",
+        paragraphs: [
+          "If text is already part of your image - a screenshot label, a mis-spelled meme, a timestamp, or a logo - SeedPix can edit it in place or erase it cleanly. The AI detects the words, changes or removes them, and reconstructs the realistic background behind them with no visible trace. This is far more reliable than painting over text with a blur brush.",
+        ],
+      },
+      {
+        heading: "Creative ways to use a photo text editor",
+        paragraphs: [
+          "Photo text editors power social media captions and quote cards, promotional posters and flyers, product photos with prices and badges, event announcements, and memes. Because SeedPix also generates imagery, you can create a background and add text in one flow - ideal for thumbnails, covers, and marketing graphics.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How do I add text to a photo online for free?",
+        answer:
+          "Upload your image to SeedPix, open the text tool, type your words, style them, and download. New users get 10 free credits on signup plus 1 daily credit, and there is no watermark on the result.",
+      },
+      {
+        question: "Can I edit text that is already in a photo?",
+        answer:
+          "Yes. SeedPix reads text burned into an image and can change it in place or remove it, then reconstructs the background so the edit looks natural.",
+      },
+      {
+        question: "How do I remove text or words from a picture?",
+        answer:
+          "Use the SeedPix text-removal tool: it detects the words, erases them, and fills in the realistic photo underneath - no blur smudge, no leftover box.",
+      },
+      {
+        question: "Is there a photo text editor with no sign up?",
+        answer:
+          "Yes. You can add and edit text on photos in SeedPix without creating an account. Sign up only to save your work and claim free credits.",
+      },
+      {
+        question: "Will the text look natural on my photo?",
+        answer:
+          "SeedPix matches font, lighting, and perspective to your image so captions and labels sit naturally. For text already in the photo, the AI preserves the original style when editing in place.",
+      },
+      {
+        question: "What image formats are supported?",
+        answer: "JPG, PNG, and WebP files up to 20MB are supported, and downloads keep your original aspect ratio.",
+      },
+    ],
+    updatedAt: "2026-11-01",
+  },
+  {
+    slug: "photo-fixer",
+    title: "AI Photo Fixer - Fix Blurry, Old & Damaged Photos Free",
+    description:
+      "Fix blurry, grainy, old, and damaged photos online with AI. Restore faces, open closed eyes, remove shadows and creases, and sharpen details - free to try, no watermark.",
+    keywords: [
+      "photo fixer",
+      "ai photo fixer",
+      "fix blurry photos",
+      "photo restoration online free",
+      "fix old photos",
+      "repair damaged photos",
+      "fix grainy photos",
+      "unblur photo ai",
+      "open closed eyes in photo",
+      "remove shadow from photo",
+      "fix creased photos",
+      "old photo restoration ai",
+    ],
+    toolSlugs: [
+      "photo-restoration",
+      "unblur-image",
+      "fix-creased-photos",
+      "open-closed-eyes-ai",
+      "remove-shadow-from-photo",
+      "gfpgan-face-enhancement",
+    ],
+    sections: [
+      {
+        heading: "What is an AI photo fixer?",
+        paragraphs: [
+          "An AI photo fixer repairs photo problems that used to need hours of manual retouching: blur, noise, faded colors, scratches, creases, shadows, and even closed eyes. You upload the picture, describe or pick the fix, and generative models rebuild the damaged detail while keeping the original subject, pose, and identity intact. SeedPix bundles a complete repair suite - restoration, deblur, face enhancement, crease and shadow removal - behind one browser editor.",
+        ],
+      },
+      {
+        heading: "Photo problems SeedPix can fix",
+        paragraphs: [
+          "Blurry or soft focus? The deblur and sharpen models recover edge detail from shaky or out-of-focus shots. Grainy high-ISO photos? Noise is cleaned while keeping texture. Old family photos? The restoration model repairs scratches, creases, and fading, and GFPGAN face enhancement brings faded faces back into focus. Squinted or closed eyes in an otherwise perfect shot? The open-eyes model fixes them naturally. Harsh shadows across a face or product? They are lifted without touching the rest of the image.",
+        ],
+      },
+      {
+        heading: "Free to fix, no watermark, no sign up wall",
+        paragraphs: [
+          "You can upload and preview fixes without creating an account, and every download is clean - no watermark, full resolution. New users get 10 free credits, exactly the cost of one full fix, plus 1 free credit every day. That makes SeedPix a practical photo fixer for family archives, marketplace listings, passport photos, and social media saves alike.",
+        ],
+      },
+      {
+        heading: "When should you restore instead of retake?",
+        paragraphs: [
+          "Some photos cannot be retaken - a grandparent's wedding portrait, a childhood print, a one-time event shot. AI restoration is made for exactly these cases: it rebuilds what time and damage took away while preserving the moment. For photos you can retake, a fix is usually faster and cheaper than a reshoot. Either way, the whole repair takes seconds in your browser with nothing to install.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How do I fix a blurry photo with AI?",
+        answer:
+          "Upload the photo to SeedPix, choose the unblur tool, and the AI rebuilds edge detail and sharpness automatically. It works on shaky shots, missed focus, and compressed images, and the result downloads without a watermark.",
+      },
+      {
+        question: "Can AI repair old damaged photos?",
+        answer:
+          "Yes. The photo restoration model repairs scratches, creases, tears, and fading, while GFPGAN face enhancement restores facial detail in old portraits. Heavily damaged originals get the best results when you upload the highest-resolution scan you have.",
+      },
+      {
+        question: "Can AI open closed eyes in a photo?",
+        answer:
+          "Yes. The open-closed-eyes model reconstructs natural-looking eyes that match the person's face, lighting, and angle - useful for group photos where one person blinked.",
+      },
+      {
+        question: "Is the photo fixer free?",
+        answer:
+          "You can try fixes without signing up. New accounts get 10 free credits - one full fix - plus 1 free credit daily. Credit packs start at $9.99 for 350 credits, and there is no subscription.",
+      },
+      {
+        question: "Will fixing reduce my photo quality?",
+        answer:
+          "No. Repairs export at full resolution in JPG, PNG, or WebP (up to 20MB), keeping your original aspect ratio. The AI only rebuilds the damaged areas you asked it to fix.",
+      },
+    ],
+    updatedAt: "2026-11-01",
+  },
+  {
+    slug: "cartoon-photo-editor",
+    title: "Cartoon Photo Editor - Turn Photos Into Cartoons & Anime Free",
+    description:
+      "Turn your photos into cartoon, anime, or painting styles online with AI. Free to try, no sign up required, no watermark on downloads - works right in your browser.",
+    keywords: [
+      "cartoon photo editor",
+      "turn photo into cartoon",
+      "photo to cartoon ai",
+      "cartoonizer online free",
+      "anime photo editor",
+      "photo to anime",
+      "3d cartoon photo editor online",
+      "cartoon photo converter",
+      "ai cartoon generator",
+      "photo to painting",
+      "cartoon filter online",
+      "caricature photo editor",
+    ],
+    toolSlugs: [
+      "text-to-image",
+      "ai-photo-generator",
+      "ai-portrait-generator",
+      "ai-photo-to-real",
+      "remove-matcha-filter",
+      "filter-remover",
+    ],
+    sections: [
+      {
+        heading: "Turn any photo into a cartoon or anime style",
+        paragraphs: [
+          "A cartoon photo editor redraws your picture in a stylized art style - flat cartoon, Japanese anime, 3D animation, oil painting, or comic book line art - while keeping the person or scene recognizable. With SeedPix you describe the style you want or pick a preset, and the AI regenerates the image in seconds. It runs entirely in your browser, so there is nothing to install.",
+        ],
+      },
+      {
+        heading: "Cartoon styles you can create",
+        paragraphs: [
+          "Popular looks include: clean flat cartoons for profile pictures, soft anime portraits for social media, Pixar-style 3D characters, vintage oil painting versions of pet and wedding photos, and bold comic-book panels. You can also go the other direction - the remove-AI-look and filter-remover tools strip cartoon filters back off an image when you want the original photo back.",
+        ],
+      },
+      {
+        heading: "Free cartoon edits, no watermark",
+        paragraphs: [
+          "SeedPix does not put watermarks on cartoon results and does not lock downloads behind an account. You can try a style on your photo right away; new users get 10 free credits - a full cartoon render - plus 1 free credit daily. Downloads keep full resolution, so results work as avatars, gifts, prints, or profile pictures.",
+        ],
+      },
+      {
+        heading: "Tips for the best cartoon conversion",
+        paragraphs: [
+          "Use a clear, well-lit photo with the face unobstructed. Name the style specifically - 'Studio Ghibli style anime', 'Pixar-style 3D character', 'flat vector cartoon' - rather than just 'cartoon'. Keep the prompt focused on style, not content, since the AI preserves your original composition. And if the first result is too strong or too subtle, regenerate with words like 'subtle' or 'exaggerated' added.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How do I turn a photo into a cartoon for free?",
+        answer:
+          "Upload your photo to SeedPix, pick or describe a cartoon style, and the AI converts it in seconds. You can try it without signing up, and downloads have no watermark.",
+      },
+      {
+        question: "Can I turn a photo into anime style?",
+        answer:
+          "Yes. Describe the anime style you want - for example '90s anime portrait' or 'Ghibli style' - and the AI redraws your photo accordingly while keeping your face recognizable.",
+      },
+      {
+        question: "Is there a 3D cartoon photo editor online?",
+        answer:
+          "Yes. SeedPix supports Pixar-style 3D cartoon renders. Upload a photo and ask for a '3D animated movie character' version to get that look.",
+      },
+      {
+        question: "Will the cartoon image have a watermark?",
+        answer:
+          "No. Every cartoon conversion downloads clean, in full resolution, with no watermark and no account required for the first edit.",
+      },
+      {
+        question: "Can I remove a cartoon filter later?",
+        answer:
+          "Yes. The remove-AI-look and filter-remover tools can strip cartoon or AI styling back off an image, or you can simply keep your original file.",
+      },
+    ],
+    updatedAt: "2026-11-01",
+  },
+  {
+    slug: "remove-watermark",
+    title: "Remove Watermark From Photo With AI - Free Online",
+    description:
+      "Remove watermarks, logos, stamps, and text from photos online with AI. Clean, natural-looking results in seconds - free to try, no sign up, no watermark added.",
+    keywords: [
+      "remove watermark from photo",
+      "watermark remover ai",
+      "remove logo from photo",
+      "remove watermark online free",
+      "ai watermark remover",
+      "delete watermark from image",
+      "remove text from photo",
+      "remove stamp from photo",
+      "get rid of watermark",
+      "clean watermark from picture",
+    ],
+    toolSlugs: [
+      "watermark-remover",
+      "gemini-watermark-remover",
+      "remove-text-from-photo",
+      "remove-object-from-photo",
+      "erase-and-replace-ai",
+    ],
+    sections: [
+      {
+        heading: "Remove watermarks without leaving a trace",
+        paragraphs: [
+          "AI watermark removal works by rebuilding the pixels under the mark instead of just blurring it. SeedPix's watermark remover detects the logo, stamp, or text overlay, then reconstructs the background behind it - sky, skin, fabric, product surface - so the area looks like the watermark was never there. You get a clean, full-resolution image with nothing added to it.",
+        ],
+      },
+      {
+        heading: "What kinds of marks can it remove?",
+        paragraphs: [
+          "Semi-transparent stock-photo watermarks and tiled logos, corner logos and signatures, date stamps and timestamps, decorative text overlays, and small stickers or emoji. For stubborn or large marks, combine the watermark remover with erase-and-replace: brush over the area and describe what should be behind it, and the AI fills it in convincingly.",
+        ],
+      },
+      {
+        heading: "Free to try - and we never add our own watermark",
+        paragraphs: [
+          "Most 'free' watermark removers stamp their own logo on your download or cap the resolution. SeedPix does neither: you can try removal without signing up, downloads are full resolution with zero watermark, and new users get 10 free credits plus 1 free credit every day.",
+        ],
+      },
+      {
+        heading: "Use watermarks responsibly",
+        paragraphs: [
+          "Watermark removal is intended for photos you own or have rights to - your own shots with a tool's auto-stamp, old family scans with a studio stamp, or licensed images you need in clean form. Removing a watermark does not transfer copyright; only use it on images you have the legal right to edit.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How do I remove a watermark from a photo?",
+        answer:
+          "Upload the photo to SeedPix's watermark remover, and the AI detects and rebuilds the area under the mark automatically. For large or complex marks, brush over them with erase-and-replace and describe the background.",
+      },
+      {
+        question: "Is the result really watermark-free?",
+        answer:
+          "Yes - both ways. The AI removes the existing mark, and SeedPix never adds its own watermark to any download.",
+      },
+      {
+        question: "Can it remove tiled or semi-transparent watermarks?",
+        answer:
+          "It handles most semi-transparent and tiled stock-style watermarks. For very dense tiling, remove the pattern section by section, or use erase-and-replace to rebuild large regions.",
+      },
+      {
+        question: "Does removing a watermark make the photo mine?",
+        answer:
+          "No. Copyright stays with the original owner regardless of watermarks. Only remove marks from photos you own or have a license to edit.",
+      },
+      {
+        question: "Is the watermark remover free?",
+        answer:
+          "You can try it without an account. New users get 10 free credits - one full removal - plus 1 free credit daily, and downloads are always full resolution with no watermark.",
+      },
+    ],
+    updatedAt: "2026-11-01",
+  },
+  {
+    slug: "linkedin-photo-generator",
+    title: "LinkedIn Photo Generator - Professional AI Headshots Free",
+    description:
+      "Generate professional LinkedIn headshots from your selfies with AI. Business attire, studio lighting, clean backgrounds - free to try, no watermark, no photographer needed.",
+    keywords: [
+      "linkedin photo generator",
+      "linkedin headshot ai",
+      "professional headshot generator free",
+      "ai business photo",
+      "linkedin profile photo maker",
+      "ai headshot generator free",
+      "corporate headshot ai",
+      "professional photo for resume",
+      "business portrait generator",
+      "ai linkedin picture",
+    ],
+    toolSlugs: [
+      "ai-linkedin-headshot-generator",
+      "ai-headshot-generator",
+      "ai-portrait-generator",
+      "passport-photo-maker",
+      "dating-profile-photo",
+    ],
+    sections: [
+      {
+        heading: "Professional headshots without a photo studio",
+        paragraphs: [
+          "A LinkedIn profile photo is the first thing recruiters see, and studies keep showing that polished headshots get more profile views. SeedPix's LinkedIn photo generator turns ordinary selfies into business-ready headshots: it upgrades your attire to business or business-casual, relights the face with soft studio lighting, and places you on a clean neutral or blurred-office background - while keeping your face recognizably yours.",
+        ],
+      },
+      {
+        heading: "What makes a good LinkedIn headshot?",
+        paragraphs: [
+          "The formula recruiters expect: a tight head-and-shoulders crop, eyes to camera, natural smile, solid or softly blurred background, and clothing one notch dressier than your daily wear. The generator applies all of it automatically, and you can direct finer details with a sentence - 'navy blazer, glass-office background, warm smile' - to match your industry, from corporate finance to creative fields.",
+        ],
+      },
+      {
+        heading: "Free to generate, no watermark on your headshot",
+        paragraphs: [
+          "SeedPix lets you try a headshot without creating an account, and downloads come full-resolution with no watermark - important when the same photo goes on LinkedIn, your company site, conference bios, and press kits. New users get 10 free credits, enough for a first professional headshot, plus 1 free credit daily.",
+        ],
+      },
+      {
+        heading: "Which selfies work best as source photos?",
+        paragraphs: [
+          "Upload 1-3 recent selfies taken in daylight, face the camera, and keep glasses and hats off unless you always wear them. Avoid heavy filters - the AI needs your real features to build a headshot that looks like you on Monday morning. Passport-style straight shots give the sharpest results.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Can AI generate a professional LinkedIn headshot?",
+        answer:
+          "Yes. Upload your selfies and the AI produces business-attire, studio-lit headshots with clean backgrounds that keep your face recognizable - ready for LinkedIn, resumes, and company pages.",
+      },
+      {
+        question: "Is the AI headshot generator free?",
+        answer:
+          "You can generate your first headshot without paying: new users get 10 free credits, exactly one headshot's cost, plus 1 free credit daily. There is no subscription and no watermark on downloads.",
+      },
+      {
+        question: "Will it look like me?",
+        answer:
+          "The generator preserves your facial structure and features while upgrading attire, lighting, and background. Clear, unfiltered, well-lit selfies give the most faithful results.",
+      },
+      {
+        question: "What should I wear in my LinkedIn photo?",
+        answer:
+          "Business or business-casual, one notch above your daily wear - blazers, collared shirts, and solid colors photograph well. You can specify the outfit in the prompt and the AI renders it.",
+      },
+      {
+        question: "Can I use the headshot elsewhere?",
+        answer:
+          "Yes. Downloads are full-resolution with no watermark, so the same image works on LinkedIn, resumes, email signatures, conference bios, and company websites.",
+      },
+    ],
+    updatedAt: "2026-11-01",
   },
 ];
 
