@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Check, Loader2, Sparkles, AlertCircle, CheckCircle2, ShieldCheck } from "lucide-react";
@@ -94,8 +94,42 @@ export default function PricingCards() {
 
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [liveBalance, setLiveBalance] = useState<number | null>(null);
 
   const paymentStatus = searchParams?.get("payment");
+
+  // 支付成功后轮询余额：webhook 加积分通常在数秒内完成，最多等 ~25s
+  useEffect(() => {
+    if (paymentStatus !== "success") return;
+    let cancelled = false;
+    let attempts = 0;
+    const poll = async () => {
+      attempts += 1;
+      try {
+        const token = await getAccessToken();
+        if (token) {
+          const res = await fetch("/api/credits", {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+          if (res.ok) {
+            const data = await res.json();
+            if (typeof data.credits === "number" && !cancelled) {
+              setLiveBalance(data.credits);
+            }
+          }
+        }
+      } catch {
+        /* 网络抖动时忽略，继续下一轮 */
+      }
+      if (attempts < 6 && !cancelled) {
+        setTimeout(poll, 4000);
+      }
+    };
+    poll();
+    return () => {
+      cancelled = true;
+    };
+  }, [paymentStatus]);
 
   async function handleBuy(planId: string) {
     if (planId === "free") {
@@ -151,7 +185,19 @@ export default function PricingCards() {
               Payment Successful! Your Credits Have Been Added.
             </h4>
             <p className="mt-1 text-xs sm:text-sm text-emerald-800 leading-relaxed">
-              Thank you for supporting SeedPix. Your account balance has been updated immediately. Start editing or generating high-resolution images now!
+              Thank you for supporting SeedPix.{" "}
+              {liveBalance !== null ? (
+                <>
+                  Your current balance:{" "}
+                  <strong className="font-bold text-emerald-950">
+                    {liveBalance} credits
+                  </strong>
+                  .
+                </>
+              ) : (
+                "Confirming your credit balance…"
+              )}{" "}
+              Start editing or generating high-resolution images now!
             </p>
             <div className="mt-3">
               <Link

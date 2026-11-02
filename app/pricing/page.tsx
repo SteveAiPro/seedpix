@@ -119,6 +119,24 @@ export default function PricingPage() {
         </div>
       </div>
 
+      {/* Billing Links */}
+      <div className="mt-8 flex flex-col items-center gap-3 text-center">
+        <p className="text-[11px] text-white/40">
+          Payments securely processed by{" "}
+          <span className="font-semibold text-white/60">Stripe</span> · Visa ·
+          Mastercard · American Express
+        </p>
+        <p className="text-[11px] text-white/40">
+          Credits never expire · 14-day refund window on unused credits ·{" "}
+          <Link
+            href="/terms#refunds"
+            className="font-semibold text-[#FFE525]/80 underline decoration-[#FFE525]/30 underline-offset-2 hover:text-[#FFE525] hover:decoration-[#FFE525]"
+          >
+            Read our Refund Policy
+          </Link>
+        </p>
+      </div>
+
       {/* Pricing FAQ Section */}
       <div className="mt-16 border-t border-white/5 pt-14">
         <div className="mb-10 text-center">

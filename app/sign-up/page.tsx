@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
+import Turnstile from "@/components/Turnstile";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 const configured =
   !!supabaseUrl && !!supabaseAnonKey && !supabaseUrl.includes("YOUR-PROJECT");
 
@@ -31,6 +33,7 @@ export default function SignUpPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   async function handleSignUp(e: React.FormEvent) {
     e.preventDefault();
@@ -38,30 +41,46 @@ export default function SignUpPage() {
       setError("Auth not configured yet - add Supabase keys to .env.local");
       return;
     }
-    setLoading(true);
-    setError(null);
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: { emailRedirectTo: `${window.location.origin}/` },
-    });
-    if (error) {
-      setError(error.message);
-      setLoading(false);
+    // 配置了 Turnstile 时必须先通过人机验证
+    if (turnstileSiteKey && !turnstileToken) {
+      setError("Please complete the human verification first.");
       return;
     }
-    if (data.session) {
-      // 已自动登录（未开邮箱验证时）
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          password,
+          turnstileToken: turnstileToken ?? undefined,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Sign up failed. Please try again.");
+      }
       trackSignUp("email");
-      router.push("/");
-      router.refresh();
-    } else {
-      // 账号已创建，等待邮箱确认
-      trackSignUp("email");
-      setDone(true);
+      if (data.hasSession && data.session) {
+        // 已自动登录（未开邮箱验证时）：在客户端建立会话
+        const supabase = createClient(supabaseUrl, supabaseAnonKey);
+        await supabase.auth.setSession({
+          access_token: data.session.access_token,
+          refresh_token: data.session.refresh_token,
+        });
+        router.push("/");
+        router.refresh();
+      } else {
+        // 账号已创建，等待邮箱确认
+        setDone(true);
+      }
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Sign up failed. Please try again.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   }
 
   async function handleGoogleSignUp() {
@@ -133,6 +152,7 @@ export default function SignUpPage() {
                 placeholder="Password (min 6 characters)"
                 className="w-full rounded-xl border border-white/10 bg-[#0F0F1A] px-4 py-2.5 text-sm text-white outline-none focus:border-[#FFE525]/60 transition"
               />
+              <Turnstile onToken={setTurnstileToken} />
               {error && <p className="text-xs text-red-400">{error}</p>}
               <button
                 type="submit"
